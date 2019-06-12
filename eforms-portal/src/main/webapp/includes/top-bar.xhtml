@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:p="http://primefaces.org/ui"
+	xmlns:pe="http://primefaces.org/ui/extensions"
+	xmlns:sec="http://www.springframework.org/security/tags"
+	>
+
+	<style type="text/css">
+#layout-menu_menu {
+	z-index: 9997 !important;
+}
+
+#layout-menu_menu span.ui-menuitem-text {
+	margin-left: 2px;
+}
+</style>
+	<ul class="nav navbar-nav">
+<sec:authorize
+				access="hasAnyRole('ROLE_MEMBERFI','ROLE_ADMINISTRATOR','ROLE_MANAGERPO','ROLE_MEMBERSD')">
+		<li class="dropdown notifications-menu">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true"> 
+				<i class="fa fa-bell-o"></i> <span	class="label label-info">#{notification.counter}</span>
+			</a>
+			<ul class="dropdown-menu">
+				<p:dataList value="#{notification.listMsg}" var="note">
+					<h:outputLabel value="#{jmsg.get(note[0])} (#{note[1]} бр.)" />
+				</p:dataList>
+				<li class="footer"><a href="../app/notification">Всички съобщения</a></li>
+			</ul>
+		</li>
+		</sec:authorize>
+		<li>
+			<!--             <h:form prependId="false"> --> <!--                 <p:menuButton value="Layout" style="margin:10px 10px 0 0 " id="layout-menu"> --> <!--                     <p:menuitem value="Default" action="#{layoutMB.setDefaultLayout}" ajax="false" icon="fa fa-list-ul"/> -->
+			<!--                     <p:menuitem value="Horizontal menu"  action="#{layoutMB.setHorizontalLayout}" ajax="false" icon="fa fa-credit-card"/> --> <!--                 </p:menuButton> -->
+			<!--             </h:form> -->
+		</li>
+		<li><h5><!-- #{userDetails.userProfile.firstName} #{userDetails.userProfile.lastName} --></h5></li>
+
+
+		<li>
+
+			<!-- <p>#{logonMB.currentUser}
+			<h5>#{userDetails.userProfile.organizationUnit.ouName}</h5>
+			</p> -->
+		</li>
+
+		<li><h:form id="formLogout" method="post" prependId="false" onsubmit="document.getElementById('formLogout').action='${request.contextPath}/app/logout';">
+				<!-- <div class="pull-left">
+                             <p:commandLink styleClass="btn btn-danger" value="Change password"/>
+                         </div>-->
+				<div class="pull-right">
+					<p:commandLink id="logout" title="Изход" ajax="false">
+						<i class="fa fa-sign-out fa-2x" />
+					</p:commandLink>
+				</div>
+			</h:form></li>
+
+
+	</ul>
+
+</ui:composition>

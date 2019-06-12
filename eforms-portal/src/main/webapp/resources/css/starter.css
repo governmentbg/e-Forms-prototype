@@ -1,0 +1,43 @@
+li.header {
+	text-transform: uppercase;
+}
+
+.sidebar-form {
+	border-radius: 3px;
+	border: 1px solid #374850;
+	margin: 10px 10px;
+}
+
+.sidebar-form, .sidebar-menu>li.header {
+	overflow: hidden;
+	text-overflow: clip;
+}
+
+#userImage {
+	float: left;
+	width: 25px;
+	height: 25px;
+	border-radius: 50%;
+	margin-right: 10px;
+	margin-top: -2px;
+}
+
+ul.dropdown-menu>li.user-header {
+	height: auto !important;
+}
+
+.dropdown-menu {
+	box-shadow: 5px 5px 10px #3A3836;
+	opacity: 0.9;
+	filter: alpha(opacity = 90);
+	background: #e2e2e2;
+}
+
+a.dropdown-toggle {
+	background-color: #3c8dbc !important;
+}
+
+a#logout {
+	color: #3c8dbc !important;
+	background: transparent;
+}

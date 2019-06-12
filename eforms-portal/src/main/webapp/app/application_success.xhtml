@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:sec="http://www.springframework.org/security/tags"
+	template="#{currentLayout.layout}">
+
+	<ui:define name="body">
+		<div class="content-wrapper no-left-margin">
+
+
+			<section class="content">
+				<section class="content-header"
+					style="margin-bottom: 1%; margin-top: -3%;">
+					<h1 style="text-align: center; margin-bottom: 2%;">
+						Подадено заявление
+						<h:graphicImage value="/images/arrow.png"
+							style="width:20px; margin-right: 1%; margin-left: 1%;" />
+						Проверка на статус на заявление
+					</h1>
+
+				</section>
+				<div class="col-md-12">
+					<p:outputPanel id="info">
+
+						<div class="box box-info">
+							<div class="box-header with-border">
+								<h3>Подадено заявление</h3>
+
+								Успешно подадено заявление за услуга:<br />
+								<h:outputText
+									value="#{serviceController.selectedService.shortName}" />
+
+								<h:outputText value=" с номер: " />
+								<b><h:outputText value="#{param['id']}" /></b>
+							</div>
+						</div>
+					</p:outputPanel>
+					<p:commandButton
+						style="float:right;     font-size: 18px;    border-color: #0b6b8a;"
+						value="Печат на уникален номер на заявка" type="button"
+						class="btn  btn-default">
+						<p:printer target="info" />
+					</p:commandButton>
+
+
+					<div class="box box-info" style="margin-top: 7%">
+
+						<div class="box-header with-border">
+							<h3>Проверка на статус на заявление</h3>
+							<p>Можете да проверите статуса на подаденото заявление и
+								резултата в системата за електронно връчване.</p>
+							<p>След подаване на заявлението за услуга:</p>
+							<ul>
+								<li>Заявлението е изпратено на системата за електронно
+									връчване</li>
+								<li>Заявката за услуга ще бъде обработена от съответната
+									администрация</li>
+								<li>Можете да проверявате статуса на заявлението в профила
+									си в системата за електронно връчване</li>
+
+							</ul>
+							<a style="border-color: #0b6b8a; float: right;"
+								href="https://edelivery.egov.bg/" class="btn  btn-primary">Към
+								системата за електронно връчване</a>
+							<h3>Плащане на заявление</h3>
+							<ul>
+								<li>Към заявката за услуга ще бъде регистрирано задължение
+									от съответната администрация</li>
+								<li>Информация за всички задължения можете да намерите в
+									портала за електронни плащания</li>
+
+
+
+							</ul>
+							<a style="border-color: #0b6b8a; float: right;"
+								href="https://pay.egov.bg/" class="btn  btn-primary">Към
+								портала за електронни плащания</a>
+							<h3>Избор на нова услуга</h3>
+							<p>
+								Можете да зявите нова услуга
+								<h:outputLink rendered="#{request.isUserInRole('ROLE_EAUTH')}"
+									value="service.xhtml">тук</h:outputLink>
+							</p>
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
+	</ui:define>
+</ui:composition>

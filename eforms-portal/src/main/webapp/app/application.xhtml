@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:sec="http://www.springframework.org/security/tags"
+	template="#{currentLayout.layout}">
+
+	<ui:define name="body">
+
+
+		<!-- Left side column. contains the logo and sidebar -->
+
+
+		<!-- Content Wrapper. Contains page content -->
+		<div class="content-wrapper no-left-margin">
+			<!-- Content Header (Page header) -->
+			<section class="content-header"></section>
+
+			<!-- Main content -->
+			<section class="content">
+				<section class="content-header"
+					style="margin-bottom: 1%; margin-top: -3%;">
+					<h1 style="text-align: center; margin-bottom: 2%; font-size: 20px;">
+						Подготовка на необходимите документи
+						<h:graphicImage value="/images/arrow.png"
+							style="width:20px;margin-right: 1%; margin-left: 1%;" />
+						<h:graphicImage value="/images/1.png" style="width:3%" />
+						Изтегляне на документи
+						<h:graphicImage value="/images/arrow.png"
+							style="width:20px; margin-right: 1%; margin-left: 1%;" />
+						<h:graphicImage value="/images/2.png" style="width:3%" />
+						Попълване на документи
+						<h:graphicImage value="/images/arrow.png"
+							style="width:20px; margin-right: 1%; margin-left: 1%;" />
+						<h:graphicImage value="/images/3.png" style="width:3%" />
+						Прикачване на документи
+						<h:graphicImage value="/images/arrow.png"
+							style="width:20px; margin-right: 1%; margin-left: 1%;" />
+						<h:graphicImage value="/images/4.png" style="width:3%" />
+						Подаване на заявление
+					</h1>
+
+
+				</section>
+				<div class="col-md-4">
+					<!-- Horizontal Form -->
+					<div class="box box-warning">
+						<div class="box-header with-border">
+							<h3>
+								<h:outputText
+									value="#{serviceController.selectedService.shortName}"
+									escape="false" />
+
+							</h3>
+
+							<h:graphicImage value="/images/info.png"
+								style="width: 20%;  padding: 3%;" />
+
+							За да заявите услугата: <br />
+							<ul style="list-style: none !important">
+								<li><b>1. Изтегляне на документи</b></li>
+
+								<li>1.1. От колона "Изтегляне на документ" в таблицата в
+									дясната част на екрана изтеглете и запишете локално на Вашия
+									компютър необходимото ви заявление и съпътстващи документи, за
+									които в тази колона има бутон "Изтегли"</li>
+								<li>1.2. При изтеглянето трябва да запазите локално на
+									Вашия компютър файловете без да променяте имената им.</li>
+								<li><b>2. Попълване на документи</b></li>
+								<li>2.1. Отворете документа с Adobe Reader.</li>
+								<li>2.2. Попълнете всички полета с изискваната информация.
+								</li>
+								<li>2.3. Подпишете документа с Вашия Квалифицира електронен
+									подпис (КЕП)</li>
+								<li>2.4. Проверете наличието на генериран номер в полето
+									"Уникален номер на заявка". Този номер е идентифициращ
+									заявената от вас услуга и по него ще можете да проверявате
+									статуса на завлението в системите еВръчване и еПлащане. Ако в
+									това поле липсва генериран номер моля уверете се, че правилно
+									сте изпълнили предходните стъпки .</li>
+
+								<li>2.5. Запишете направените промени във файла, без да
+									променяте името му.</li>
+								<li><b>3. Прикачване на документи</b></li>
+								<li>3.1. Прикачете последователно необходимите документи,
+									като използвате бутоните "Прикачи" във всеки ред на таблицата.
+									Моля обърнете внимание за съвпадение на имената в третата и
+									четвъртата колона в таблицата. Ако не е посочено в третата
+									колона име на файл, то прикаченият файл може да е с произволно
+									избрано от Вас име.</li>
+								<li>3.2. При необходимост, имате възможност да прикачите
+									допълнителни документи към заявлението, като използвате бутон
+									"Прикачи" в частта "Прикачване на допълнителни документи"</li>
+
+
+								<li><b>4. Заявяване на услугата</b></li>
+
+
+
+								<li>Чрез натискане на бутона "Подаване на заявление",
+									попълнените и прикачени от Вас документи ще бъдат връчени на
+									доставчика на съответната услуга, чрез системата за сигурно
+									електронно връчване</li>
+							</ul>
+						</div>
+						<!-- /.box-header -->
+						<!-- form start -->
+						<form class="form-horizontal">
+							<div class="box-body">
+								<div class="egov-content-description">
+									<h:graphicImage value="/images/info.png"
+										style="width: 20%;  padding: 3%;" />
+									Обща информация за услугата: <br />
+
+									<h:outputText
+										value="#{serviceController.selectedService.serviceDescription}"
+										escape="false" />
+
+
+									<a class="primary"
+										href="#{serviceController.selectedServiceAddition.link}">Към
+										Единен портал за електронни административни услуги</a>
+								</div>
+
+							</div>
+							<!-- /.box-body -->
+
+							<!-- /.box-footer -->
+						</form>
+					</div>
+					<!-- /.box -->
+					<!-- general form elements disabled -->
+				</div>
+				<div class="col-md-8">
+					<h:form prependId="false" enctype="multipart/form-data">
+						<div class="box box-primary">
+							<div class="box-header with-border">
+								<h3>
+									<h:graphicImage value="/images/1.png" style="width:30px" />
+									Попълване на заявление / Прикачване на необходими документи
+								</h3>
+
+							</div>
+							<!-- /.box-header -->
+							<div class="box-body">
+								<div class="egov-content-description">
+									<p>За да ползвате услугата, трябва да предоставите следните
+										документи:</p>
+									<p style="margin-top: 2%">
+										<b>1. Иницииращи документи:</b>
+										 <br /><i>Необходимо е да
+											прикачите поне един документ от иницииращи документи</i>
+									</p>
+									<p:dataTable value="#{serviceController.selectedServiceFiles}"
+										var="doc" rowIndexVar="rowIndex" emptyMessage="Няма намерен резултат.">
+
+										<p:column headerText="№" style="width:35px;">
+											<h:outputText value="#{rowIndex + 1}" />
+										</p:column>
+
+										<p:column headerText="Документ">
+											<h:outputText value="#{doc.name}" escape="false" />
+										</p:column>
+
+										<p:column headerText="Изтегли документ">
+											<i class="fa fa-fw fa-download"
+												style="word-break: break-all;"><h:outputText
+													value="#{doc.fileName}" escape="false" /></i>
+											<br />
+											<a href="download_file.xhtml?id=#{doc.id}"
+												class="ui-fileupload-simple ui-widget">Изтегли</a>
+
+										</p:column>
+
+										<p:column headerText="Прикачи документ">
+											<div class="form-group">
+
+												<p:fileUpload style="float: right;" value="#{doc.file}"
+													mode="simple" skinSimple="true" label="Прикачи" />
+												<br />
+											</div>
+										</p:column>
+									</p:dataTable>
+									<p style="margin-top: 3%">
+										<b>2. Съпътстващи документи: </b>
+									</p>
+									<p:dataTable styleClass="custom-table"
+										value="#{serviceController.selectedServiceDocuments}"
+										var="doc" rowIndexVar="rowIndex" emptyMessage="Няма намерен резултат.">
+
+										<p:column headerText="№" style="width:35px;">
+											<h:outputText value="#{rowIndex + 1}" />
+										</p:column>
+
+										<p:column headerText="Документ">
+											<h:outputText value="#{doc.name}" escape="false" />
+										</p:column>
+
+										<p:column headerText="Изтегли документ">
+											<i class="fa fa-fw fa-download"
+												style="word-break: break-all;"><h:outputText
+													value="#{doc.fileName}" escape="false" /></i>
+											<br />
+											<a href="download_file.xhtml?id=#{doc.id}"
+												class="ui-fileupload-simple ui-widget">Изтегли</a>
+
+										</p:column>
+
+										<p:column headerText="Прикачи документ">
+											<div class="form-group">
+
+												<p:fileUpload style="float: right;" value="#{doc.file}"
+													mode="simple" skinSimple="true" label="Прикачи" />
+												<br />
+											</div>
+										</p:column>
+									</p:dataTable>
+
+								</div>
+							</div>
+
+							<div class="box-header with-border">
+
+								<h3>Прикачване на допълнителни документи</h3>
+
+							</div>
+							<!-- /.box-header -->
+							<div class="box-body">
+								<div class="form-group">
+									<p>
+										<i>При необходимост, имате възможност да прикачите
+											допълнителен документ или архив от докуемтни към заявлението.</i><br />
+										<i>Допустими файлови формати: document, rtf, pdf, jpeg,
+											png, tiff, gif, rar, zip. <br />
+										</i> <i>Допустим размер: до 10МБ</i>
+
+
+										<p:fileUpload style="float: right;" mode="simple"
+											skinSimple="true" label="Прикачи"
+											value="#{serviceController.selectedServiceAddDocument.file}" />
+									</p>
+
+									<p class="help-block"></p>
+								</div>
+
+
+
+
+							</div>
+						</div>
+						<div class="box box-primary">
+							<div class="box-header with-border">
+								<h3>
+									<h:graphicImage value="/images/2.png" style="width:30px" />
+									Подаване на заявление
+								</h3>
+							</div>
+							<div class="box-body">След прилагане на всички необходими
+								документи вашето заявление ще бъде изпратено към системата за
+								електронно връчване</div>
+
+						</div>
+						<!-- /.box-body -->
+
+						<!-- /.box -->
+
+						<h:commandButton action="#{serviceController.registerApp()}"
+							value="Подаване на заявление"
+							styleClass="btn  btn-primary btn-lg  col-md-3"
+							style="margin-left: 35%" />
+						<!-- /.box-body -->
+
+
+
+						<!-- /.box -->
+					</h:form>
+				</div>
+
+			</section>
+			<!-- /.content -->
+		</div>
+		<!-- /.content-wrapper -->
+
+	</ui:define>
+</ui:composition>

@@ -1,0 +1,228 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>bg.bulsi.eforms</groupId>
+	<artifactId>eforms-parent</artifactId>
+	<version>1.0.0</version>
+	<packaging>pom</packaging>
+	<name>eForms Main</name>
+	<description>Parent project of all modules in group bg.bulsi.eforms</description>
+
+	<modules>
+		<module>admin-template-spring</module>
+		<module>eforms-portal</module>
+		<module>eforms-model</module>
+	</modules>
+
+	<properties>
+    	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    	<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+
+			<!-- epayment rs client -->
+			<dependency>
+				<groupId>bg.bulsi.modules</groupId>
+				<artifactId>epayment-rs-client</artifactId>
+				<version>1.0.0</version>
+			</dependency>
+
+			<!-- edelivery ws client -->
+			<dependency>
+				<groupId>bg.bulsi.modules</groupId>
+				<artifactId>edelivery-ws-client</artifactId>
+				<version>1.0.0</version>
+			</dependency>
+
+			<!-- epdaeu rs client -->
+			<dependency>
+				<groupId>bg.bulsi.modules</groupId>
+				<artifactId>epdaeu-rs-client</artifactId>
+				<version>1.0.0</version>
+			</dependency>
+
+			<!-- eForms model -->
+			<dependency>
+				<groupId>bg.bulsi.eforms</groupId>
+				<artifactId>eforms-model</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+
+			<!-- eAuth client -->
+			<dependency>
+				<groupId>bg.bulsi.modules</groupId>
+				<artifactId>eauth-client-util</artifactId>
+				<version>1.0.0</version>
+			</dependency>
+
+			<!-- bouncycastle jdk15on -->
+			<dependency>
+				<groupId>org.bouncycastle</groupId>
+				<artifactId>bcpkix-jdk15on</artifactId>
+				<version>1.60</version>
+			</dependency>
+
+			<!-- iText -->
+			<dependency>
+				<groupId>com.itextpdf</groupId>
+				<artifactId>itextpdf</artifactId>
+				<version>5.5.13</version>
+			</dependency>
+
+			<!-- Jwt -->
+			<dependency>
+				<groupId>io.jsonwebtoken</groupId>
+				<artifactId>jjwt</artifactId>
+				<version>0.9.1</version>
+			</dependency>
+
+			<!-- Spring -->
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-framework-bom</artifactId>
+				<version>5.1.2.RELEASE</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springframework.security</groupId>
+				<artifactId>spring-security-bom</artifactId>
+				<version>5.1.1.RELEASE</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springframework.data</groupId>
+				<artifactId>spring-data-jpa</artifactId>
+				<version>2.1.2.RELEASE</version>
+			</dependency>
+
+
+			<!-- Primefaces -->
+			<dependency>
+				<groupId>org.primefaces</groupId>
+				<artifactId>primefaces</artifactId>
+				<version>6.2</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.primefaces.themes</groupId>
+				<artifactId>all-themes</artifactId>
+				<version>1.0.10</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.primefaces.extensions</groupId>
+				<artifactId>primefaces-extensions</artifactId>
+				<version>6.2.3</version>
+			</dependency>
+
+			<!-- Jsf -->
+			<dependency>
+				<groupId>com.sun.faces</groupId>
+				<artifactId>jsf-api</artifactId>
+				<version>2.2.17</version>
+			</dependency>
+			<dependency>
+				<groupId>com.sun.faces</groupId>
+				<artifactId>jsf-impl</artifactId>
+				<version>2.2.17</version>
+			</dependency>
+
+			<dependency>
+				<groupId>javax.servlet</groupId>
+				<artifactId>jstl</artifactId>
+				<version>1.2</version>
+			</dependency>
+
+			<!-- Logging -->
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-log4j12</artifactId>
+				<version>1.7.25</version>
+			</dependency>
+
+			<dependency>
+				<groupId>log4j</groupId>
+				<artifactId>apache-log4j-extras</artifactId>
+				<version>1.2.17</version>
+			</dependency>
+
+			<!-- Postgresql -->
+			<dependency>
+				<groupId>org.postgresql</groupId>
+				<artifactId>postgresql</artifactId>
+				<version>42.2.5</version>
+			</dependency>
+
+			<!-- Ms sql -->
+			<dependency>
+				<groupId>com.microsoft.sqlserver</groupId>
+				<artifactId>mssql-jdbc</artifactId>
+				<version>7.2.0.jre8</version>
+			</dependency>
+
+			<!-- h2 -->
+			<dependency>
+				<groupId>com.h2database</groupId>
+				<artifactId>h2</artifactId>
+				<version>1.4.192</version>
+			</dependency>
+
+			<!-- Hibernate core -->
+			<dependency>
+				<groupId>org.hibernate</groupId>
+				<artifactId>hibernate-core</artifactId>
+				<version>5.3.7.Final</version>
+			</dependency>
+
+			<!-- Tomcat dbcp -->
+			<dependency>
+				<groupId>org.apache.tomcat</groupId>
+				<artifactId>tomcat-dbcp</artifactId>
+				<version>9.0.12</version>
+			</dependency>
+
+			<!-- IBAN -->
+			<dependency>
+				<groupId>commons-validator</groupId>
+				<artifactId>commons-validator</artifactId>
+				<version>1.4.0</version>
+			</dependency>
+
+		</dependencies>
+	</dependencyManagement>
+
+	<repositories>
+		<repository>
+			<id>prime-repo</id>
+			<name>PrimeFaces Maven Repository</name>
+			<url>http://repository.primefaces.org</url>
+			<layout>default</layout>
+		</repository>
+
+		<repository>
+			<id>BulSIRepository</id>
+			<name>BulSI maven repository</name>
+			<url>http://repository.bul-si.bg:9081/repository/maven-public/</url>
+			<layout>default</layout>
+			<releases>
+				<updatePolicy>always</updatePolicy>
+			</releases>
+			<snapshots>
+				<updatePolicy>always</updatePolicy>
+			</snapshots>
+		</repository>
+
+		<repository>
+			<id>jboss-public-repository-group</id>
+			<name>JBoss Public Repository Group</name>
+			<url>http://repository.jboss.org/nexus/content/groups/public/</url>
+		</repository>
+	</repositories>
+</project>

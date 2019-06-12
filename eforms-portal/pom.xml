@@ -1,0 +1,281 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<artifactId>eforms-parent</artifactId>
+		<groupId>bg.bulsi.eforms</groupId>
+		<version>1.0.0</version>
+	</parent>
+
+	<artifactId>eforms-portal</artifactId>
+	<name>eForms Portal</name>
+	<description>eForms Portal</description>
+	<packaging>war</packaging>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<deployTo>127.0.0.1</deployTo>
+		<deployPort>8080</deployPort>
+		<deployUsername>admin</deployUsername>
+		<deployPassword>admin</deployPassword>
+	</properties>
+
+	<dependencies>
+
+		<!-- EPAYMENT CLIENT -->
+		<dependency>
+			<groupId>bg.bulsi.modules</groupId>
+			<artifactId>epayment-rs-client</artifactId>
+		</dependency>
+
+		<!-- EDELIVERY CLIENT -->
+		<dependency>
+			<groupId>bg.bulsi.modules</groupId>
+			<artifactId>edelivery-ws-client</artifactId>
+			<exclusions>
+				<exclusion>
+					<groupId>commons-codec</groupId>
+					<artifactId>commons-codec</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<!-- EPDAEU CLIENT -->
+		<dependency>
+			<groupId>bg.bulsi.modules</groupId>
+			<artifactId>epdaeu-rs-client</artifactId>
+		</dependency>
+
+		<!-- EAUTH CLIENT -->
+		<dependency>
+			<groupId>bg.bulsi.modules</groupId>
+			<artifactId>eauth-client-util</artifactId>
+			<exclusions>
+				<exclusion>
+					<groupId>commons-codec</groupId>
+					<artifactId>commons-codec</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<!-- EFORMS MODEL -->
+		<dependency>
+			<groupId>bg.bulsi.eforms</groupId>
+			<artifactId>eforms-model</artifactId>
+		</dependency>
+
+		<!-- BOUNCYCASTLE JDK15ON -->
+		<dependency>
+			<groupId>org.bouncycastle</groupId>
+			<artifactId>bcpkix-jdk15on</artifactId>
+		</dependency>
+
+		<!-- ITEXT -->
+		<dependency>
+			<groupId>com.itextpdf</groupId>
+			<artifactId>itextpdf</artifactId>
+		</dependency>
+
+		<!-- JWT -->
+		<dependency>
+			<groupId>io.jsonwebtoken</groupId>
+			<artifactId>jjwt</artifactId>
+		</dependency>
+
+		<!-- PRIMEFACES -->
+		<dependency>
+			<groupId>org.primefaces</groupId>
+			<artifactId>primefaces</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.primefaces.extensions</groupId>
+			<artifactId>primefaces-extensions</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.primefaces.themes</groupId>
+			<artifactId>all-themes</artifactId>
+		</dependency>
+
+		<!-- ADMIN TEMPLATE -->
+		<dependency>
+			<groupId>com.soahouse.adminfaces</groupId>
+			<artifactId>admin-template-spring</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+
+		<!-- SERVLET API - APPLICATION SERVER PROVIDES -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>3.1.0</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- TOMCAT DBCP: DATABASE -->
+		<dependency>
+			<groupId>org.apache.tomcat</groupId>
+			<artifactId>tomcat-dbcp</artifactId>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- POSTGRESQL JDBC DRIVER -->
+		<dependency>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+		</dependency>
+
+		<!-- MS SQL JDBC DRIVER -->
+		<dependency>
+			<groupId>com.microsoft.sqlserver</groupId>
+			<artifactId>mssql-jdbc</artifactId>
+		</dependency>
+
+		<!-- H2 JDBC DRIVER -->
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+		</dependency>
+
+		<!-- HIBERNATE AS JPA PROVIDER -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+		</dependency>
+
+		<!-- SPRING -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-orm</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-tx</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.data</groupId>
+			<artifactId>spring-data-jpa</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-config</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+		</dependency>
+
+
+		<!-- JSF -->
+		<dependency>
+			<groupId>com.sun.faces</groupId>
+			<artifactId>jsf-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.sun.faces</groupId>
+			<artifactId>jsf-impl</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+		</dependency>
+
+		<!-- LOGGING -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>apache-log4j-extras</artifactId>
+		</dependency>
+
+		<!-- IBAN -->
+		<dependency>
+			<groupId>commons-validator</groupId>
+			<artifactId>commons-validator</artifactId>
+		</dependency>
+
+	</dependencies>
+
+	<profiles>
+		<profile>
+			<id>production</id>
+			<build>
+
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-war-plugin</artifactId>
+						<version>3.2.2</version>
+						<configuration>
+							<source>1.8</source>
+							<target>1.8</target>
+							<packagingExcludes>eauth/eauthRsTest.xhtml,WEB-INF/classes/bg/bulsi/eforms/jsf/bean/EauthRsTestController.class</packagingExcludes>
+						</configuration>
+					</plugin>
+				</plugins>
+
+			</build>
+		</profile>
+	</profiles>
+
+	<build>
+		<resources>
+			<resource>
+				<directory>src/main/external-lib-resources</directory>
+			</resource>
+			<resource>
+				<directory>src/main/resources</directory>
+			</resource>
+		</resources>
+
+
+		<finalName>eforms-portal</finalName>
+		<plugins>
+			<!-- COMPILER PLUGIN - SOURCE AND BUILD CODE CONFIGURATION -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.5.1</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+
+			<!-- TOMCAT DEPLOY PLUGIN -->
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>tomcat-maven-plugin</artifactId>
+				<version>1.1</version>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>deploy</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<path>/${project.build.finalName}</path>
+					<update>true</update>
+					<url>http://${deployTo}:${deployPort}/manager/text</url>
+					<username>${deployUsername}</username>
+					<password>${deployPassword}</password>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>

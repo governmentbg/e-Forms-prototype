@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+	template="#{currentLayout.layout}">
+
+	<ui:define name="body">
+
+		<!-- Left side column. contains the logo and sidebar -->
+
+
+		<!-- Content Wrapper. Contains page content -->
+		<div class="content-wrapper">
+			<!-- Content Header (Page header) -->
+
+
+			<!-- Main content -->
+			<section class="content">
+				<section class="content-header"
+					style="margin-bottom: 1%; margin-top: -3%;">
+					<h1 style="text-align: center; margin-bottom: 2%;">
+						Регистриране на плащане<h:graphicImage value="/images/arrow.png" style="width:20px; margin-right: 1%; margin-left: 1%;"/>
+						<h:graphicImage value="/images/1.png" style="width:3%" />
+						Автентикация<h:graphicImage value="/images/arrow.png" style="width:20px; margin-right: 1%; margin-left: 1%;"/>
+						<h:graphicImage value="/images/2.png" style="width:3%" />
+						Регистриране на плащане
+					</h1>
+					<p style="text-align: center;">Регистриране на дължими такси за
+						услуга в профила на заявителя в системата за електронно плащане</p>
+				</section>
+
+
+				<div class="col-md-4">
+					<div class="box box-warning">
+						<div class="box-header with-border">
+							<h3><h:graphicImage value="/images/1.png" style="width:5%"/> Автентикация</h3>
+
+							<!-- LOGIN FORM -->
+							<h:form id="loginForm" prependId="false">
+
+								<!-- USERNAME -->
+								<h:outputLabel for="username">Потребителско име</h:outputLabel>
+								<h:inputText id="username" styleClass="form-control"
+									required="true" a:placeholder="#{i18n['username']}"
+									a:required="true" a:autofocus="autofocus"
+									style="margin-bottom:2.5%" />
+
+								<!-- PASSWORD -->
+								<h:outputLabel for="password">Парола</h:outputLabel>
+								<h:inputSecret id="password" styleClass="form-control"
+									required="true" a:placeholder="#{i18n['password']}"
+									a:required="true" a:autofocus="autofocus" />
+
+								<!-- SUBMIT BUTTON -->
+								<h:commandButton id="signin" value="Вход"
+									styleClass="btn btn-lg btn-primary btn-block"
+									style="margin-top:4%;" />
+
+								<!-- LOGIN ERROR MESSAGE -->
+								<h:panelGroup layout="block"
+									styleClass="alert alert-danger alert-dismissible"
+									rendered="#{param['source'] eq 'loginError'}" a:role="alert">
+									<button type="button" class="close" data-dismiss="alert"
+										aria-label="Close">
+										<i class="glyphicon glyphicon-remove"></i>
+									</button>
+									<h:outputText value="#{jmsg['login.failure']}" />
+								</h:panelGroup>
+
+								<!-- LOGOUT MESSAGE -->
+								<h:panelGroup layout="block"
+									styleClass="alert alert-info alert-dismissible"
+									rendered="#{param['source'] eq 'logout'}" a:role="alert">
+									<button type="button" class="close" data-dismiss="alert"
+										aria-label="Close">
+										<i class="glyphicon glyphicon-remove"></i>
+									</button>
+									<h:outputText value="#{jmsg['logout.success']}" />
+								</h:panelGroup>
+							</h:form>
+
+						</div>
+						<!-- /.box-header -->
+						<!-- form start -->
+
+					</div>
+				</div>
+				<div class="col-md-8" style="margin-bottom: 5%">
+					<div class="box box-primary">
+						<div class="box-header with-border">
+							<h3>Информация</h3>
+							<p>Станицата предоставя възможност представител на
+								администрация да заявява плащане на дължими такси за услуга в
+								профила на заявителя в системата за електронно плащане.</p>
+							<p>Достъп на регистрирани вече представители на
+								адмнистрацията в системата за електронно плащане</p>
+
+
+							<h3>Включени хоризонтални системи</h3>
+							<ul>
+								<li>Единен портал за достъп до електронни административни
+									услуги (ЕПДЕАУ)- централна точка за предоставяне на ЕАУ
+									(еGov.bg). Порталът ще осигурява сигурен достъп и канал за
+									комуникация с потребителите на ЕАУ и всички лица,
+									заинтересовани от информация относно начините, условията и
+									изискванията за предоставяне на административни услуги, както и
+									лицата, които желаят да ги заявят и получат по електронен път;</li>
+								<li>Система за електронна автентикация (еАвт)- реализира
+									процеса, свързан с еднократна идентификация и автентикация на
+									заявители на предоставяните от администрациите електронни
+									услуги.</li>
+								<li>Система за електронно връчване (еВръчване) – управлява
+									изпращането на електронни документи от публични органи,
+									физически и юридически лица при еднозначно удостоверяване на
+									момента на изпращане, получаване и връчване, от една страна,
+									както и сигурен достъп на потребителите, посредством
+									регистриран профил в системата</li>
+								<li>Система за електронно плащане- еПлащане - система за
+									управление на единната среда за електронни разплащания,
+									предназначена да осъществи взаимовръзка между заявителите на
+									ЕАУ, техните доставчици и доставчиците на платежни инструменти
+									(банки).</li>
+							</ul>
+
+							<h3>Електронни Административни услуги</h3>
+
+						</div>
+						<!-- /.box-header -->
+						<!-- form start -->
+
+					</div>
+				</div>
+
+			</section>
+			<!-- /.content -->
+		</div>
+		<!-- /.content-wrapper -->
+		<!-- Control Sidebar -->
+
+
+		<!-- /.control-sidebar -->
+		<!-- Add the sidebar's background. This div must be placed
+       immediately after the control sidebar -->
+
+
+		<!-- ./wrapper -->
+
+
+	</ui:define>
+</ui:composition>

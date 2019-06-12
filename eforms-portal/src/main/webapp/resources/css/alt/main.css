@@ -1,0 +1,66 @@
+@font-face {
+	font-family: 'BloggerSans-Light';
+	src: url('../fonts/BloggerSans-Light') format('woff'),
+		/* Pretty Modern Browsers */
+       url('../fonts/BloggerSans-Light.ttf') format('truetype'),
+		/* Safari, Android, iOS */
+       url('../fonts/BloggerSans-Light.svg#svgFontName')
+		format('svg'); /* Legacy iOS */
+}
+.navbar-nav {
+    margin: 7.5px -15px;
+    display: flex;
+}
+
+
+body {
+	font-family: 'BloggerSans-Light' !important;
+	font-size:16px !important;
+}
+a, .exampleAll, button, p, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, label {
+    font-family: 'BloggerSans-Light' !important;
+}
+.sidebar-toggle{
+	font: normal normal normal 14px/1 FontAwesome !important;
+	}
+	.form-group, .row{
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+.modal-info .modal-body {
+    background-color: #fff !important;
+}
+.main-header .sidebar-toggle:before {
+    content: "" !important;
+}
+.content-wrapper, .main-footer {
+	margin-left:0 !important;
+}
+.login-box, .register-box {
+    
+    margin: 7% auto;
+    background: #fff;
+    width: 50% !important;
+    padding: 2%;
+}
+.btn{
+	font-size:18px;
+}
+label {
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 5px;
+    font-weight: 700;
+    font-size: 16px;
+	font-family: 'BloggerSans-Light' !important;
+}
+button, a{
+	font-family: 'BloggerSans-Light' !important;
+	 font-size: 18px;
+	 
+}
+table a{
+	color:#333 !important;
+	font-family: 'BloggerSans-Light' !important;
+	 font-size: 16px !important;
+}

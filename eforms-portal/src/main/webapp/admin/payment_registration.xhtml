@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:sec="http://www.springframework.org/security/tags"
+	template="#{currentLayout.layout}">
+
+	<ui:define name="body">
+
+		<!-- Left side column. contains the logo and sidebar -->
+
+
+		<!-- Content Wrapper. Contains page content -->
+		<div class="content-wrapper">
+			<!-- Content Header (Page header) -->
+
+
+			<!-- Main content -->
+			<section class="content">
+
+				<section class="content-header"
+					style="margin-bottom: 1%; margin-top: -3%;">
+					<h1 style="text-align: center; margin-bottom: 2%;">
+						<h:graphicImage value="/images/1.png" style="width:3%" />
+						Попълване на форма
+						<h:graphicImage value="/images/arrow.png"
+							style="width:20px; margin-right: 1%; margin-left: 1%;" />
+						<h:graphicImage value="/images/2.png" style="width:3%" />
+						Регистриране на плащане
+					</h1>
+
+
+				</section>
+
+				<h:form prependId="false">
+					<div class="col-md-12">
+						<div class="box box-primary">
+							<div class="box-header with-border"></div>
+							<!-- /.box-header -->
+							<div class="box-body">
+
+								<div>
+									<p:selectOneRadio layout="responsive" columns="2" id="userType"
+										style="width:30%; display:inline-block;"
+										value="#{epaymentController.epayment.isIndividual}">
+										<f:selectItem itemLabel="Физическо лице" itemValue="#{true}" />
+										<f:selectItem itemLabel="Юридическо лице" itemValue="#{false}" />
+										<p:ajax event="change" update="userDetails" />
+									</p:selectOneRadio>
+
+									<p:selectOneMenu
+										value="#{epaymentController.selectedDepartment}"
+										converter="#{vwDepartmentAisClientsConverter}"
+										style="width:20%; display:inline-block;">
+										<f:selectItems value="#{epaymentController.departments}"
+											var="department"
+											itemLabel="#{department.departmentname} - #{department.aisname}" />
+										<p:ajax listener="#{epaymentController.populatePaymentData()}"
+											event="change" process="@this" update="iban,bic,bankName" />
+									</p:selectOneMenu>
+								</div>
+
+								<h:panelGroup id="userDetails">
+									<h:panelGroup id="individual"
+										rendered="#{epaymentController.epayment.isIndividual}">
+										<div class="col-md-3">
+											<div class="form-group">
+												<label for="name">Име *</label>
+												<h:inputText id="name"
+													value="#{epaymentController.epayment.firstName}"
+													styleClass="form-control" required="true" />
+												<i style="font-size: 12px;">Име по документ за
+													самоличност</i>
+												<p:message for="name" />
+											</div>
+										</div>
+										<div class="col-md-3">
+											<div class="form-group">
+												<label for="middlename">Презиме </label>
+												<h:inputText id="middlename"
+													value="#{epaymentController.epayment.surName}"
+													styleClass="form-control" />
+												<i style="font-size: 12px;">Презиме по документ за
+													самоличност</i>
+												<p:message for="middlename" />
+											</div>
+										</div>
+										<div class="col-md-3">
+											<div class="form-group">
+												<label for="familyname">Фамилия *</label>
+												<h:inputText id="familyname"
+													value="#{epaymentController.epayment.familyName}"
+													styleClass="form-control" required="true" />
+												<i style="font-size: 12px;">Фамилия по документ за
+													самоличност</i>
+												<p:message for="familyname" />
+											</div>
+										</div>
+										<div class="col-md-3">
+											<div class="form-group">
+												<label for="identifier">ЕГН/ЛНЧ *</label>
+												<h:inputText id="identifier"
+													value="#{epaymentController.epayment.egn}"
+													styleClass="form-control" required="true"
+													validator="egnValidator" />
+												<i style="font-size: 12px;">ЕГН по документ за
+													самоличност</i>
+												<p:message for="identifier" />
+											</div>
+										</div>
+									</h:panelGroup>
+
+									<h:panelGroup id="legal"
+										rendered="#{not epaymentController.epayment.isIndividual}">
+										<div class="col-md-6">
+											<div class="form-group">
+												<label for="companyName">Наименование *</label>
+												<h:inputText id="companyName"
+													value="#{epaymentController.epayment.companyName}"
+													styleClass="form-control" required="true" />
+												<i style="font-size: 12px;">Наименование на дружеството</i>
+												<p:message for="companyName" />
+											</div>
+										</div>
+										<div class="col-md-6">
+											<div class="form-group">
+												<label for="eik">ЕИК/Булстат *</label>
+												<h:inputText id="eik"
+													value="#{epaymentController.epayment.companyEik}"
+													styleClass="form-control" required="true" />
+												<i style="font-size: 12px;">ЕИК на дружеството</i>
+												<p:message for="eik" />
+											</div>
+										</div>
+									</h:panelGroup>
+								</h:panelGroup>
+								<div class="col-md-3">
+									<div class="form-group">
+										<label for="uri">Уникален номер на заявка *</label>
+										<h:inputText id="uri"
+											value="#{epaymentController.epayment.appNumber}"
+											styleClass="form-control" required="true" />
+										<i style="font-size: 12px;">Служи за уникално
+											идентифициране на услугата при последващите действия по
+											нейната обработка, заплащане и доставка</i>
+										<p:message for="uri" />
+									</div>
+								</div>
+								<div class="col-md-3">
+									<div class="form-group">
+										<label for="number">Вид на документ *</label>
+										<h:inputText id="number"
+											value="#{epaymentController.epayment.paymentReferenceType}"
+											styleClass="form-control" required="true" />
+										<i style="font-size: 12px;">Тип на референтен документ за
+											плащане</i>
+										<p:message for="number" />
+									</div>
+								</div>
+								<div class="col-md-3">
+									<div class="form-group">
+										<label for="notes">Основание *</label>
+										<h:inputText id="notes"
+											value="#{epaymentController.epayment.comments}"
+											styleClass="form-control" required="true" />
+										<i style="font-size: 12px;">Основание за плащането</i>
+										<p:message for="notes" />
+									</div>
+								</div>
+
+								<div class="col-md-3">
+									<div class="form-group"
+										style="border: 2px solid #f39c12; padding: 3%">
+										<label for="total">Сума за плащане *</label>
+										<h:inputText id="total"
+											value="#{epaymentController.epayment.sumToPay}"
+											styleClass="form-control" required="true"
+											validator="curencyFormatValidator">
+										</h:inputText>
+										<i style="font-size: 12px;">Дължима сума за плащане.
+											Допустима сума само в BGN лева</i>
+										<p:message for="total" />
+									</div>
+								</div>
+							</div>
+							<div class="box-header with-border">
+
+								<h3>Информация за банка и банкова сметка, по която да се
+									извърши плащането за съответната услуга</h3>
+
+								<div class="col-md-4">
+									<div class="form-group">
+										<label for="iban">IBAN *</label>
+										<h:inputText id="iban"
+											value="#{epaymentController.epayment.iban}"
+											styleClass="form-control" required="true"
+											validator="ibanValidator">
+										</h:inputText>
+										<i style="font-size: 12px;">Международен номер на банкова
+											сметка</i>
+										<p:message for="iban" />
+									</div>
+								</div>
+								<div class="col-md-4">
+									<div class="form-group">
+										<label for="bic">BIC Номер *</label>
+										<h:inputText id="bic"
+											value="#{epaymentController.epayment.bic}"
+											styleClass="form-control" required="true"
+											validator="bicValidator">
+										</h:inputText>
+										<i style="font-size: 12px;">Банков идентификационен код на
+											услуга</i>
+										<p:message for="bic" />
+									</div>
+								</div>
+								<div class="col-md-4">
+									<div class="form-group">
+										<label for="bankName">Наименование на Банка *</label>
+										<h:inputText id="bankName"
+											value="#{epaymentController.epayment.bankName}"
+											styleClass="form-control" required="true">
+										</h:inputText>
+										<i style="font-size: 12px;">Наименование на Банка</i>
+										<p:message for="bankName" />
+									</div>
+								</div>
+
+							</div>
+
+							<!-- /.box-body -->
+
+
+							<!-- /.box -->
+
+						</div>
+
+						<div class="col-md-2">
+
+							<h:commandButton action="#{epaymentController.registerPayment()}"
+								value="Регистрирай плащане"
+								styleClass="btn btn-block btn-primary btn-lg" />
+						</div>
+					</div>
+				</h:form>
+
+			</section>
+			<!-- /.content -->
+		</div>
+		<!-- /.content-wrapper -->
+		<!-- Control Sidebar -->
+
+
+		<!-- /.control-sidebar -->
+		<!-- Add the sidebar's background. This div must be placed
+       immediately after the control sidebar -->
+
+
+		<!-- ./wrapper -->
+
+
+	</ui:define>
+</ui:composition>

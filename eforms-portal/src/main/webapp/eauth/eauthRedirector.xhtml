@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<f:view xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:s="http://jboss.org/schema/seam/taglib">
+
+	<h:html>
+
+	<h:head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<f:metadata>
+			<f:event type="preRenderComponent"
+				listener="#{eauthController.generateSaml()}" />
+		</f:metadata>
+	</h:head>
+
+	<h:body onload="document.forms[0].submit()">
+		<noscript>
+			<p>
+				<strong>Note:</strong> Since your browser does not support
+				JavaScript, you must press the Continue button once to proceed.
+			</p>
+		</noscript>
+
+		<div
+			style="margin: 0 auto; margin-top: 15%; width: 80%; text-align: center; font-family: Kelson Sans Regular BG;">
+			<br /> <br /> <br /> <br /> <br /> <br /> <img
+				src="../images/waitDialogImage.gif" /> <br /> <br /> Моля
+			изчакайте...
+		</div>
+
+		<form action="#{eauthController.authRqParams.eAuthenticatorUrl}"
+			method="post">
+			<div>
+				<input type="hidden" name="SAMLRequest"
+					value="#{eauthController.authRqParams.samlRequest}" /> <input
+					type="hidden" name="RelayState"
+					value="#{eauthController.authRqParams.relayState}" />
+			</div>
+			<noscript>
+				<div>
+					<input type="submit" value="Continue" />
+				</div>
+			</noscript>
+		</form>
+	</h:body>
+	</h:html>
+</f:view>

@@ -1,0 +1,3396 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/" timeStamp="2019-01-29T09:21:25Z" uuid="09ae0633-7d6d-40d3-ad11-4ff14fb469b5">
+<config xmlns="http://www.xfa.org/schema/xci/3.0/">
+<agent name="designer">
+<!--  [0..n]  -->
+<destination>pdf</destination>
+<pdf>
+<!--  [0..n]  -->
+<fontInfo/>
+</pdf>
+</agent>
+<present>
+<!--  [0..n]  -->
+<pdf>
+<!--  [0..n]  -->
+<version>1.7</version>
+<adobeExtensionLevel>5</adobeExtensionLevel>
+<renderPolicy>client</renderPolicy>
+<creator>Adobe LiveCycle Designer 11.0</creator>
+<producer>Adobe LiveCycle Designer 11.0</producer>
+<scriptModel>XFA</scriptModel>
+<interactive>1</interactive>
+<tagged>0</tagged>
+<fontInfo>
+<embed>0</embed>
+</fontInfo>
+<compression>
+<level>6</level>
+<compressLogicalStructure>1</compressLogicalStructure>
+<compressObjectStream>1</compressObjectStream>
+</compression>
+<linearized>1</linearized>
+<silentPrint>
+<addSilentPrint>0</addSilentPrint>
+<printerName/>
+</silentPrint>
+<viewerPreferences>
+<duplexOption>simplex</duplexOption>
+<numberOfCopies>0</numberOfCopies>
+<printScaling>appDefault</printScaling>
+<pickTrayByPDFSize>0</pickTrayByPDFSize>
+<enforce/>
+<ADBE_JSDebugger>delegate</ADBE_JSDebugger>
+<ADBE_JSConsole>delegate</ADBE_JSConsole>
+<addViewerPreferences>0</addViewerPreferences>
+</viewerPreferences>
+</pdf>
+<common>
+<log>
+<to>memory</to>
+<mode>overwrite</mode>
+</log>
+<template>
+<base>E:\ISOS\eFormStandart\Neli\</base>
+</template>
+</common>
+<script>
+<runScripts>server</runScripts>
+</script>
+<xdp>
+<packets>*</packets>
+</xdp>
+<destination>pdf</destination>
+<output>
+<to>uri</to>
+<uri>E:\ISOS\eFormStandart\Neli\2382_Zayavlenie_Prl6.pdf</uri>
+</output>
+</present>
+<acrobat>
+<acrobat7>
+<dynamicRender>required</dynamicRender>
+</acrobat7>
+<common>
+<versionControl sourceBelow="maintain"/>
+<data>
+<xsl>
+<uri/>
+</xsl>
+<outputXSL>
+<uri/>
+</outputXSL>
+</data>
+<template>
+<base>E:\ISOS\eFormStandart\Neli\</base>
+<relevant/>
+<uri/>
+</template>
+</common>
+<autoSave/>
+<validate>preSubmit</validate>
+</acrobat>
+</config>
+<template xmlns="http://www.xfa.org/schema/xfa-template/3.0/">
+<?formServer defaultPDFRenderFormat acrobat11.0dynamic?>
+<?formServer allowRenderCaching 0?>
+<?formServer formModel both?>
+<subform layout="tb" locale="bg_BG" name="form1" restoreState="auto">
+<pageSet>
+<pageArea id="Page1" name="Page1">
+<contentArea h="284.3mm" w="197.3mm" x="6.35mm" y="6.35mm"/>
+<medium long="297mm" short="210mm" stock="a4"/>
+<subform h="10.546mm" name="metadataFields" w="98.752mm" x="27.093mm" y="286.412mm">
+<field access="readOnly" h="5.164mm" name="title" presence="hidden" w="83.394mm" x="0.358mm" y="0.093mm">
+<ui>
+<textEdit>
+<border>
+<?templateDesigner StyleID aped3?>
+<edge stroke="lowered"/>
+</border>
+<margin/>
+</textEdit>
+</ui>
+<font size="8pt" typeface="Arial"/>
+<margin bottomInset="0mm" leftInset="0mm" rightInset="0mm" topInset="0mm"/>
+<para vAlign="middle"/>
+<caption reserve="7.6432mm">
+<para vAlign="middle"/>
+<value>
+<text>title</text>
+</value>
+</caption>
+<value>
+<text>123456789_Testblank_Test_1</text>
+</value>
+<bind match="none"/>
+</field>
+<bind match="none"/>
+<border>
+<edge presence="hidden">
+<color value="255,255,0"/>
+</edge>
+<corner presence="hidden" thickness="0.176mm">
+<color value="255,255,0"/>
+</corner>
+</border>
+<?templateDesigner expand 1?>
+</subform>
+<draw minH="5.164mm" name="Pages" x="173.762mm" y="291.098mm">
+<ui>
+<textEdit>
+<margin/>
+</textEdit>
+</ui>
+<value>
+<exData contentType="text/html" maxLength="0">
+<body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/">
+<p style="letter-spacing:0in">Стр.<span style="xfa-spacerun:yes"> </span>
+<span xfa:embed="#floatingField000041" xfa:embedMode="raw" xfa:embedType="uri"/> от<span style="xfa-spacerun:yes"> </span>
+<span xfa:embed="#floatingField018467" xfa:embedMode="raw" xfa:embedType="uri"/>
+</p>
+</body>
+</exData>
+</value>
+<font size="8pt" typeface="Arial"/>
+<margin bottomInset="0mm" leftInset="0mm" rightInset="0mm" topInset="0mm"/>
+<para hAlign="right" vAlign="middle"/>
+</draw>
+<field access="readOnly" h="7.5mm" id="floatingField000041" name="CurrentPage" presence="hidden" w="55mm" x="478.645mm" y="831.34mm">
+<ui>
+<numericEdit>
+<border>
+<edge stroke="lowered"/>
+</border>
+<margin/>
+</numericEdit>
+</ui>
+<font typeface="Myriad Pro"/>
+<margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+<para vAlign="middle"/>
+<caption reserve="20mm">
+<para vAlign="middle"/>
+<value>
+<text>Text Field</text>
+</value>
+</caption>
+<calculate override="error"/>
+<event activity="ready" name="event__layout_ready" ref="$layout">
+<script contentType="application/x-javascript">this.rawValue = xfa.layout.page(this);
+</script>
+</event>
+<?templateDesigner floatingFieldPlaceholder #?>
+<bind match="none"/>
+</field>
+<field access="readOnly" h="7.5mm" id="floatingField018467" name="PageCount" presence="hidden" w="55mm" x="478.645mm" y="831.34mm">
+<ui>
+<numericEdit>
+<border>
+<edge stroke="lowered"/>
+</border>
+<margin/>
+</numericEdit>
+</ui>
+<font typeface="Myriad Pro"/>
+<margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+<para vAlign="middle"/>
+<caption reserve="20mm">
+<para vAlign="middle"/>
+<value>
+<text>Text Field</text>
+</value>
+</caption>
+<calculate override="error"/>
+<event activity="ready" name="event__layout_ready" ref="$layout">
+<script contentType="application/x-javascript">this.rawValue = xfa.layout.pageCount();
+</script>
+</event>
+<?templateDesigner floatingFieldPlaceholder ##?>
+<bind match="none"/>
+</field>
+<field access="readOnly" name="uri" usehref=".#som($template.#subform.designer__stylesheet.TextFieldStyle8)" x="26.819mm" y="291.658mm">
+<ui>
+<textEdit/>
+</ui>
+<caption>
+<value>
+<text>URI</text>
+</value>
+</caption>
+<value>
+<text>2382</text>
+</value>
+<bind match="none"/>
+</field>
+<?templateDesigner expand 1?>
+</pageArea>
+<?templateDesigner expand 1?>
+</pageSet>
+<subform layout="tb" w="196.402mm">
+<subform h="81.37mm" w="197.3mm">
+<keep intact="none"/>
+<draw h="35.751mm" name="text" w="181.87mm" x="7.334mm" y="45.334mm">
+<ui>
+<textEdit/>
+</ui>
+<value>
+<exData contentType="text/html">
+<body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/">
+<p style="text-decoration:none">ЗАЯВЛЕНИЕ</p>
+<p style="font-size:12pt;font-weight:normal;text-decoration:none;kerning-mode:pair;letter-spacing:0.05em">за издаване на Сертификат за съответствие на пътните превозни средства (ППС) с технически норми и изисквания за безопасност и сигурност</p>
+<p style="font-size:12pt;font-weight:normal;text-decoration:none;kerning-mode:pair;letter-spacing:0.05em">(Приложение №6 от наредба № Н-32)</p>
+</body>
+</exData>
+</value>
+<font baselineShift="0pt" letterSpacing="0.3em" size="14pt" typeface="Arial" weight="bold"/>
+<margin bottomInset="0.254mm" leftInset="0.508mm" rightInset="0.508mm" topInset="0.254mm"/>
+<para hAlign="center" marginLeft="0pt" marginRight="0pt" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" vAlign="middle"/>
+<assist>
+<speak disable="1"/>
+</assist>
+</draw>
+<field h="9mm" name="ddl_avtomobilnaAdm" w="146.05mm" x="7.571mm" y="13.491mm">
+<ui>
+<choiceList>
+<border>
+<edge stroke="lowered"/>
+</border>
+<margin/>
+</choiceList>
+</ui>
+<font typeface="Arial"/>
+<margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+<para vAlign="middle"/>
+<caption reserve="6.6778mm">
+<para vAlign="middle"/>
+<value>
+<text>ДО</text>
+</value>
+</caption>
+<items save="1">
+<text>ИЗПЪЛНИТЕЛНА АГЕНЦИЯ АВТОМОБИЛНА АДМИНИСТРАЦИЯ</text>
+<text>ОБЛАСТЕН ОТДЕЛ АВТОМОБИЛНА АДМИНИСТРАЦИЯ - ВАРНА</text>
+<text>ОБЛАСТЕН ОТДЕЛ АВТОМОБИЛНА АДМИНИСТРАЦИЯ - ВЕЛИКО ТЪРНОВО</text>
+<text>ОБЛАСТЕН ОТДЕЛ АВТОМОБИЛНА АДМИНИСТРАЦИЯ - ВИДИН</text>
+<text>ОБЛАСТЕН ОТДЕЛ АВТОМОБИЛНА АДМИНИСТРАЦИЯ - ВРАЦА</text>
+<text>ОБЛАСТЕН ОТДЕЛ АВТОМОБИЛНА АДМИНИСТРАЦИЯ - ГАБРОВО</text>
+<text>ОБЛАСТЕН ОТДЕЛ АВТОМОБИЛНА АДМИНИСТРАЦИЯ - ДОБРИЧ</text>
+<text>ОБЛАСТЕН ОТДЕЛ АВТОМОБИЛНА АДМИНИСТРАЦИЯ - КЪРДЖАЛИ</text>
+<text>ОБЛАСТЕН ОТДЕЛ АВТОМОБИЛНА АДМИНИСТРАЦИЯ - КЮСТЕНДИЛ</text>
+<text>ОБЛАСТЕН ОТДЕЛ АВТОМОБИЛНА АДМИНИСТРАЦИЯ - ЛОВЕЧ</text>
+<text>ОБЛАСТЕН ОТДЕЛ АВТОМОБИЛНА АДМИНИСТРАЦИЯ - МОНТАНА</text>
+<text>ОБЛАСТЕН ОТДЕЛ АВТОМОБИЛНА АДМИНИСТРАЦИЯ - БЛАГОЕВГРАД</text>
+<text>ОБЛАСТЕН ОТДЕЛ АВТОМОБИЛНА АДМИНИСТРАЦИЯ - БУРГАС</text>
+<text>ОБЛАСТЕН ОТДЕЛ АВТОМОБИЛНА АДМИНИСТРАЦИЯ - ПАЗАРДЖИК</text>
+<text>ОБЛАСТЕН ОТДЕЛ АВТОМОБИЛНА АДМИНИСТРАЦИЯ - ПЕРНИК</text>
+<text>ОБЛАСТЕН ОТДЕЛ АВТОМОБИЛНА АДМИНИСТРАЦИЯ - ПЛЕВЕН</text>
+<text>ОБЛАСТЕН ОТДЕЛ АВТОМОБИЛНА АДМИНИСТРАЦИЯ - ПЛОВДИВ</text>
+<text>ОБЛАСТЕН ОТДЕЛ АВТОМОБИЛНА АДМИНИСТРАЦИЯ - РАЗГРАД</text>
+<text>ОБЛАСТЕН ОТДЕЛ АВТОМОБИЛНА АДМИНИСТРАЦИЯ - РУСЕ</text>
+<text>ОБЛАСТЕН ОТДЕЛ АВТОМОБИЛНА АДМИНИСТРАЦИЯ - СИЛИСТРА</text>
+<text>ОБЛАСТЕН ОТДЕЛ АВТОМОБИЛНА АДМИНИСТРАЦИЯ - СЛИВЕН</text>
+<text>ОБЛАСТЕН ОТДЕЛ АВТОМОБИЛНА АДМИНИСТРАЦИЯ - СМОЛЯН</text>
+<text>ОБЛАСТЕН ОТДЕЛ АВТОМОБИЛНА АДМИНИСТРАЦИЯ - СОФИЯ</text>
+<text>ОБЛАСТЕН ОТДЕЛ АВТОМОБИЛНА АДМИНИСТРАЦИЯ - СТАРА ЗАГОРА</text>
+<text>ОБЛАСТЕН ОТДЕЛ АВТОМОБИЛНА АДМИНИСТРАЦИЯ - ТЪРГОВИЩЕ</text>
+<text>ОБЛАСТЕН ОТДЕЛ АВТОМОБИЛНА АДМИНИСТРАЦИЯ - ХАСКОВО</text>
+<text>ОБЛАСТЕН ОТДЕЛ АВТОМОБИЛНА АДМИНИСТРАЦИЯ - ШУМЕН</text>
+<text>ОБЛАСТЕН ОТДЕЛ АВТОМОБИЛНА АДМИНИСТРАЦИЯ - ЯМБОЛ</text>
+</items>
+</field>
+<?templateDesigner expand 1?>
+</subform>
+<subform layout="lr-tb" name="Subform2" usehref=".#som($template.#subform.designer__stylesheet.SubformStyle1)">
+<field minH="8.527mm" name="txtТriImena" w="185.771mm">
+<ui>
+<textEdit multiLine="1">
+<border>
+<edge stroke="lowered"/>
+<?templateDesigner StyleID aped3?>
+</border>
+<margin/>
+</textEdit>
+</ui>
+<font typeface="Arial"/>
+<margin bottomInset="1mm" leftInset="0.508mm" rightInset="0.508mm" topInset="1mm"/>
+<para vAlign="middle"/>
+<caption reserve="27.8414mm">
+<para marginLeft="0pt" marginRight="0pt" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" vAlign="middle"/>
+<value>
+<text>Трите имена</text>
+</value>
+<font baselineShift="0pt" size="12pt" typeface="Arial"/>
+</caption>
+<assist>
+<speak disable="1"/>
+</assist>
+</field>
+<field h="9mm" name="ddlNaselenoMyasto" usehref=".#som($template.#subform.designer__stylesheet.DropdownListStyle1)" w="81.681mm">
+<ui>
+<choiceList textEntry="1"/>
+</ui>
+<caption reserve="24.8653mm">
+<value>
+<text>Адрес: гр./с.</text>
+</value>
+</caption>
+<assist>
+<speak disable="1"/>
+</assist>
+<items save="1">
+<text>Айтос</text>
+<text>Алфатар</text>
+<text>Антоново</text>
+<text>Априлци</text>
+<text>Ардино</text>
+<text>Асеновград</text>
+<text>Ахелой</text>
+<text>Ахтопол</text>
+<text>Балчик</text>
+<text>Банкя</text>
+<text>Банско</text>
+<text>Баня</text>
+<text>Батак</text>
+<text>Батановци</text>
+<text>Белене</text>
+<text>Белица</text>
+<text>Белово</text>
+<text>Белоградчик</text>
+<text>Белослав</text>
+<text>Берковица</text>
+<text>Благоевград</text>
+<text>Бобов дол</text>
+<text>Бобошево</text>
+<text>Божурище</text>
+<text>Бойчиновци</text>
+<text>Болярово</text>
+<text>Борово</text>
+<text>Ботевград</text>
+<text>Брацигово</text>
+<text>Брегово</text>
+<text>Брезник</text>
+<text>Брезово</text>
+<text>Брусарци</text>
+<text>Бургас</text>
+<text>Бухово</text>
+<text>Българово</text>
+<text>Бяла Слатина</text>
+<text>Бяла черква</text>
+<text>Бяла</text>
+<text>Бяла</text>
+<text>Варна</text>
+<text>Велики Преслав</text>
+<text>Велико Търново</text>
+<text>Велинград</text>
+<text>Ветово</text>
+<text>Ветрен</text>
+<text>Видин</text>
+<text>Враца</text>
+<text>Вълчедръм</text>
+<text>Вълчи дол</text>
+<text>Върбица</text>
+<text>Вършец</text>
+<text>Габрово</text>
+<text>Генерал Тошево</text>
+<text>Главиница</text>
+<text>Глоджево</text>
+<text>Годеч</text>
+<text>Горна Оряховица</text>
+<text>Гоце Делчев</text>
+<text>Грамада</text>
+<text>Гулянци</text>
+<text>Гурково</text>
+<text>Гълъбово</text>
+<text>Две могили</text>
+<text>Дебелец</text>
+<text>Девин</text>
+<text>Девня</text>
+<text>Джебел</text>
+<text>Димитровград</text>
+<text>Димово</text>
+<text>Добринище</text>
+<text>Добрич</text>
+<text>Долна баня</text>
+<text>Долна Митрополия</text>
+<text>Долна Оряховица</text>
+<text>Долни Дъбник</text>
+<text>Долни чифлик</text>
+<text>Доспат</text>
+<text>Драгоман</text>
+<text>Дряново</text>
+<text>Дулово</text>
+<text>Дунавци</text>
+<text>Дупница</text>
+<text>Дългопол</text>
+<text>Елена</text>
+<text>Елин Пелин</text>
+<text>Елхово</text>
+<text>Етрополе</text>
+<text>Завет</text>
+<text>Земен</text>
+<text>Златарица</text>
+<text>Златица</text>
+<text>Златоград</text>
+<text>Ивайловград</text>
+<text>Искър</text>
+<text>Исперих</text>
+<text>Ихтиман</text>
+<text>Каблешково</text>
+<text>Каварна</text>
+<text>Казанлък</text>
+<text>Калофер</text>
+<text>Камено</text>
+<text>Каолиново</text>
+<text>Карлово</text>
+<text>Карнобат</text>
+<text>Каспичан</text>
+<text>Кермен</text>
+<text>Килифарево</text>
+<text>Китен</text>
+<text>Клисура</text>
+<text>Кнежа</text>
+<text>Козлодуй</text>
+<text>Койнаре</text>
+<text>Копривщица</text>
+<text>Костандово</text>
+<text>Костенец</text>
+<text>Костинброд</text>
+<text>Котел</text>
+<text>Кочериново</text>
+<text>Кресна</text>
+<text>Криводол</text>
+<text>Кричим</text>
+<text>Крумовград</text>
+<text>Кубрат</text>
+<text>Кула</text>
+<text>Кърджали</text>
+<text>Кюстендил</text>
+<text>Левски</text>
+<text>Летница</text>
+<text>Ловеч</text>
+<text>Лозница</text>
+<text>Лом</text>
+<text>Луковит</text>
+<text>Лъки</text>
+<text>Любимец</text>
+<text>Лясковец</text>
+<text>Мадан</text>
+<text>Маджарово</text>
+<text>Малко Търново</text>
+<text>Мартен</text>
+<text>Мездра</text>
+<text>Мелник</text>
+<text>Меричлери</text>
+<text>Мизия</text>
+<text>Момчилград</text>
+<text>Монтана</text>
+<text>Мъглиж</text>
+<text>Неделино</text>
+<text>Несебър</text>
+<text>Николаево</text>
+<text>Никопол</text>
+<text>Нова Загора</text>
+<text>Нови Искър</text>
+<text>Нови пазар</text>
+<text>Обзор</text>
+<text>Омуртаг</text>
+<text>Опака</text>
+<text>Оряхово</text>
+<text>Павел баня</text>
+<text>Павликени</text>
+<text>Пазарджик</text>
+<text>Панагюрище</text>
+<text>Перник</text>
+<text>Перущица</text>
+<text>Петрич</text>
+<text>Пещера</text>
+<text>Пирдоп</text>
+<text>Плачковци</text>
+<text>Плевен</text>
+<text>Плиска</text>
+<text>Пловдив</text>
+<text>Полски Тръмбеш</text>
+<text>Поморие</text>
+<text>Попово</text>
+<text>Пордим</text>
+<text>Правец</text>
+<text>Приморско</text>
+<text>Провадия</text>
+<text>Първомай</text>
+<text>Раднево</text>
+<text>Радомир</text>
+<text>Разград</text>
+<text>Разлог</text>
+<text>Ракитово</text>
+<text>Раковски</text>
+<text>Рила</text>
+<text>Роман</text>
+<text>Рудозем</text>
+<text>Русе</text>
+<text>Садово</text>
+<text>Самоков</text>
+<text>Сандански</text>
+<text>Сапарева баня</text>
+<text>Свети Влас</text>
+<text>Свиленград</text>
+<text>Свищов</text>
+<text>Своге</text>
+<text>Севлиево</text>
+<text>Сеново</text>
+<text>Септември</text>
+<text>Силистра</text>
+<text>Симеоновград</text>
+<text>Симитли</text>
+<text>Славяново</text>
+<text>Сливен</text>
+<text>Сливница</text>
+<text>Сливо поле</text>
+<text>Смолян</text>
+<text>Смядово</text>
+<text>Созопол</text>
+<text>Сопот</text>
+<text>София</text>
+<text>Средец</text>
+<text>Стамболийски</text>
+<text>Стара Загора</text>
+<text>Стражица</text>
+<text>Стралджа</text>
+<text>Стрелча</text>
+<text>Суворово</text>
+<text>Сунгурларе</text>
+<text>Сухиндол</text>
+<text>Съединение</text>
+<text>Сърница</text>
+<text>Твърдица</text>
+<text>Тервел</text>
+<text>Тетевен</text>
+<text>Тополовград</text>
+<text>Троян</text>
+<text>Трън</text>
+<text>Тръстеник</text>
+<text>Трявна</text>
+<text>Тутракан</text>
+<text>Търговище</text>
+<text>Угърчин</text>
+<text>Хаджидимово</text>
+<text>Харманли</text>
+<text>Хасково</text>
+<text>Хисаря</text>
+<text>Цар Калоян</text>
+<text>Царево</text>
+<text>Чепеларе</text>
+<text>Червен бряг</text>
+<text>Черноморец</text>
+<text>Чипровци</text>
+<text>Чирпан</text>
+<text>Шабла</text>
+<text>Шивачево</text>
+<text>Шипка</text>
+<text>Шумен</text>
+<text>Ябланица</text>
+<text>Якоруда</text>
+<text>Ямбол</text>
+</items>
+</field>
+<field minH="8.527mm" name="txtUlica" w="80.456mm">
+<ui>
+<textEdit multiLine="1">
+<border>
+<edge stroke="lowered"/>
+<?templateDesigner StyleID aped3?>
+</border>
+<margin/>
+</textEdit>
+</ui>
+<font typeface="Arial"/>
+<margin bottomInset="1mm" leftInset="0.508mm" rightInset="0.508mm" topInset="1mm"/>
+<para vAlign="middle"/>
+<caption reserve="9.7772mm">
+<para marginLeft="0pt" marginRight="0pt" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" vAlign="middle"/>
+<value>
+<text>, ул.</text>
+</value>
+<font baselineShift="0pt" size="12pt" typeface="Arial"/>
+</caption>
+<assist>
+<speak disable="1"/>
+</assist>
+</field>
+<field h="9mm" hAlign="left" name="txtNomerAdres" w="23.008mm">
+<ui>
+<textEdit>
+<border>
+<edge stroke="lowered"/>
+</border>
+<margin/>
+</textEdit>
+</ui>
+<font posture="normal" size="12pt" typeface="Arial" weight="normal"/>
+<margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+<para vAlign="middle"/>
+<caption reserve="7.5388mm">
+<para vAlign="middle"/>
+<value>
+<text>№</text>
+</value>
+<font posture="normal" size="12pt" typeface="Arial" weight="normal"/>
+</caption>
+</field>
+<field name="txtTelefon" usehref=".#som($template.#subform.designer__stylesheet.TextFieldStyle3)">
+<ui>
+<textEdit multiLine="1"/>
+</ui>
+<caption>
+<value>
+<text>телефон</text>
+</value>
+</caption>
+<assist>
+<speak priority="toolTip"/>
+<toolTip>Телефонният номер трябва да започва с кода на съответната държава (+359*********)</toolTip>
+</assist>
+<event activity="change" name="event__change">
+<script contentType="application/x-javascript">if (!xfa.event.newText.match(/^\+?\d*$/)) {  
+xfa.event.change = "";  
+} 
+</script>
+</event>
+<event activity="exit" name="event__exit">
+<script contentType="application/x-javascript">var phone = this.rawValue;
+if (this.rawValue.length &gt; 0){
+if (!phone.startsWith("+")){
+	xfa.host.messageBox("Телефонният номер трябва да започва с кода на съответната държава (+359*********)");
+	this.rawValue = "";
+	xfa.host.setFocus(this);
+}
+      
+if (!phone.match(/^\+?\d*$/)) {  
+	xfa.host.messageBox("Телефонният номер трябва да започва с кода на съответната държава (+359*********)");
+    this.rawValue = "";
+    xfa.host.setFocus(this);
+}
+}
+</script>
+</event>
+</field>
+<subform columnWidths="16.207mm 22.627mm 2.045597in 16.207mm 24.58mm 52.518mm" layout="table" name="Table1">
+<border>
+<edge/>
+</border>
+<subform id="HeaderRow_ID" layout="row" name="HeaderRow" x="0in" y="0in">
+<assist role="TH"/>
+<draw colSpan="3" h="10mm" name="Cell1" w="59.891mm">
+<border>
+<edge thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<edge thickness="0.5pt"/>
+<edge thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<edge thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<corner thickness="0.1778mm"/>
+<corner thickness="0.1778mm"/>
+<corner thickness="0.1778mm"/>
+<corner thickness="0.1778mm"/>
+</border>
+<ui>
+<textEdit/>
+</ui>
+<value>
+<text>Влекач/товарен автомобил:</text>
+</value>
+<font posture="normal" size="12pt" typeface="Arial" weight="normal">
+<fill>
+<color/>
+</fill>
+</font>
+<margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+<para hAlign="center" vAlign="middle"/>
+</draw>
+<draw colSpan="3" h="10mm" name="Cell4" w="90mm">
+<border>
+<edge thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<edge thickness="0.5pt"/>
+<edge thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<edge thickness="0.5pt"/>
+<corner thickness="0.1778mm"/>
+<corner thickness="0.1778mm"/>
+<corner thickness="0.1778mm"/>
+<corner thickness="0.1778mm"/>
+</border>
+<ui>
+<textEdit/>
+</ui>
+<value>
+<text>Ремарке/полуремарке:</text>
+</value>
+<font posture="normal" size="12pt" typeface="Arial" weight="normal"/>
+<margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+<para hAlign="center" vAlign="middle"/>
+</draw>
+<border>
+<edge presence="hidden" stroke="solid"/>
+<edge presence="hidden" stroke="solid"/>
+<edge presence="hidden" stroke="solid"/>
+<edge presence="hidden" stroke="solid"/>
+<fill presence="hidden"/>
+</border>
+<occur max="-1" min="1"/>
+<?templateDesigner expand 0?>
+</subform>
+<subform layout="row" name="Row1" x="0in" y="0in">
+<assist role="TR"/>
+<draw h="10mm" name="Cell1" x="0in" y="0mm">
+<border>
+<edge/>
+<corner thickness="0.1778mm"/>
+</border>
+<ui>
+<textEdit/>
+</ui>
+<value>
+<text>1</text>
+</value>
+<font size="12pt" typeface="Arial"/>
+<margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+<para hAlign="center" vAlign="middle"/>
+</draw>
+<draw h="10mm" name="Cell2" x="0in" y="0mm">
+<border>
+<edge/>
+<corner thickness="0.1778mm"/>
+</border>
+<ui>
+<textEdit/>
+</ui>
+<value>
+<text>Рег.№</text>
+</value>
+<font size="12pt" typeface="Arial"/>
+<margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+<para hAlign="center" vAlign="middle"/>
+</draw>
+<field colSpan="1" minH="10mm" name="TextField1" usehref=".#som($template.#subform.designer__stylesheet.TextFieldStyle5)" w="51.958mm" x="0in" y="0mm">
+<ui>
+<textEdit multiLine="1">
+<border break="close" presence="hidden">
+<edge presence="hidden" stroke="solid" thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<corner inverted="0" join="square" presence="hidden" radius="0in" stroke="solid" thickness="0.176mm">
+<color value="0,0,0"/>
+</corner>
+<edge presence="hidden" stroke="solid" thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<corner inverted="0" join="square" presence="hidden" radius="0in" stroke="solid" thickness="0.176mm">
+<color value="0,0,0"/>
+</corner>
+<edge presence="hidden" stroke="solid" thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<corner inverted="0" join="square" presence="hidden" radius="0in" stroke="solid" thickness="0.176mm">
+<color value="0,0,0"/>
+</corner>
+<edge presence="hidden" stroke="solid" thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<corner inverted="0" join="square" presence="hidden" radius="0in" stroke="solid" thickness="0.176mm">
+<color value="0,0,0"/>
+</corner>
+</border>
+</textEdit>
+</ui>
+</field>
+<draw colSpan="1" minH="10mm" name="Cell1" w="30.176mm" x="0in" y="0mm">
+<border>
+<edge/>
+<corner thickness="0.1778mm"/>
+</border>
+<ui>
+<textEdit/>
+</ui>
+<value>
+<text>1</text>
+</value>
+<font size="12pt" typeface="Arial"/>
+<margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+<para hAlign="center" vAlign="middle"/>
+</draw>
+<draw colSpan="1" minH="10mm" name="Cell2" w="30mm" x="0in" y="0mm">
+<border>
+<edge/>
+<corner thickness="0.1778mm"/>
+</border>
+<ui>
+<textEdit/>
+</ui>
+<value>
+<text>Рег.№</text>
+</value>
+<font size="12pt" typeface="Arial"/>
+<margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+<para hAlign="center" vAlign="middle"/>
+</draw>
+<field colSpan="1" minH="10mm" name="TextField1" usehref=".#som($template.#subform.designer__stylesheet.TextFieldStyle5)" w="52.518mm" x="0in" y="0mm">
+<ui>
+<textEdit multiLine="1">
+<border break="close" presence="hidden">
+<edge presence="hidden" stroke="solid" thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<corner inverted="0" join="square" presence="hidden" radius="0in" stroke="solid" thickness="0.176mm">
+<color value="0,0,0"/>
+</corner>
+<edge presence="hidden" stroke="solid" thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<corner inverted="0" join="square" presence="hidden" radius="0in" stroke="solid" thickness="0.176mm">
+<color value="0,0,0"/>
+</corner>
+<edge presence="hidden" stroke="solid" thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<corner inverted="0" join="square" presence="hidden" radius="0in" stroke="solid" thickness="0.176mm">
+<color value="0,0,0"/>
+</corner>
+<edge presence="hidden" stroke="solid" thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<corner inverted="0" join="square" presence="hidden" radius="0in" stroke="solid" thickness="0.176mm">
+<color value="0,0,0"/>
+</corner>
+</border>
+</textEdit>
+</ui>
+</field>
+<border>
+<edge presence="hidden" stroke="solid"/>
+<edge presence="hidden" stroke="solid"/>
+<edge presence="hidden" stroke="solid"/>
+<edge presence="hidden" stroke="solid"/>
+<fill presence="hidden"/>
+</border>
+<?templateDesigner expand 0?>
+</subform>
+<subform layout="row" name="Row2" x="0in" y="0in">
+<assist role="TR"/>
+<draw colSpan="1" h="10mm" name="Cell1" x="0in" y="0mm">
+<border>
+<edge thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<edge thickness="0.5pt"/>
+<edge thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<edge thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<corner thickness="0.1778mm"/>
+<corner thickness="0.1778mm"/>
+<corner thickness="0.1778mm"/>
+<corner thickness="0.1778mm"/>
+</border>
+<ui>
+<textEdit/>
+</ui>
+<value>
+<text>2</text>
+</value>
+<font posture="normal" size="12pt" typeface="Arial" weight="normal">
+<fill>
+<color/>
+</fill>
+</font>
+<margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+<para hAlign="center" vAlign="middle"/>
+</draw>
+<draw colSpan="1" h="10mm" name="Cell2" x="0in" y="0mm">
+<border>
+<edge thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<edge thickness="0.5pt"/>
+<edge thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<edge thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<corner thickness="0.1778mm"/>
+<corner thickness="0.1778mm"/>
+<corner thickness="0.1778mm"/>
+<corner thickness="0.1778mm"/>
+</border>
+<ui>
+<textEdit/>
+</ui>
+<value>
+<text>Рег.№</text>
+</value>
+<font baselineShift="0pt" fontHorizontalScale="100%" fontVerticalScale="100%" kerningMode="none" letterSpacing="0" lineThrough="0" posture="normal" size="12pt" typeface="Arial" underline="0" weight="normal">
+<fill>
+<color value="0,0,0"/>
+</fill>
+</font>
+<margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+<para hAlign="center" lineHeight="0pt" marginLeft="0pt" marginRight="0pt" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" vAlign="middle"/>
+</draw>
+<field colSpan="1" name="TextField1" usehref=".#som($template.#subform.designer__stylesheet.TextFieldStyle5)" x="0in" y="0mm">
+<ui>
+<textEdit multiLine="1"/>
+</ui>
+</field>
+<draw colSpan="1" minH="10mm" name="Cell1" w="16.207mm" x="0in" y="0mm">
+<border>
+<edge/>
+<corner thickness="0.1778mm"/>
+</border>
+<ui>
+<textEdit/>
+</ui>
+<value>
+<text>2</text>
+</value>
+<font size="12pt" typeface="Arial"/>
+<margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+<para hAlign="center" vAlign="middle"/>
+</draw>
+<draw colSpan="1" minH="10mm" name="Cell2" w="30mm" x="0in" y="0mm">
+<border>
+<edge/>
+<corner thickness="0.1778mm"/>
+</border>
+<ui>
+<textEdit/>
+</ui>
+<value>
+<text>Рег.№</text>
+</value>
+<font size="12pt" typeface="Arial"/>
+<margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+<para hAlign="center" vAlign="middle"/>
+</draw>
+<field colSpan="1" minH="10mm" name="TextField1" usehref=".#som($template.#subform.designer__stylesheet.TextFieldStyle5)" w="52.518mm" x="0in" y="0mm">
+<ui>
+<textEdit multiLine="1">
+<border break="close" presence="hidden">
+<edge presence="hidden" stroke="solid" thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<corner inverted="0" join="square" presence="hidden" radius="0in" stroke="solid" thickness="0.176mm">
+<color value="0,0,0"/>
+</corner>
+<edge presence="hidden" stroke="solid" thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<corner inverted="0" join="square" presence="hidden" radius="0in" stroke="solid" thickness="0.176mm">
+<color value="0,0,0"/>
+</corner>
+<edge presence="hidden" stroke="solid" thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<corner inverted="0" join="square" presence="hidden" radius="0in" stroke="solid" thickness="0.176mm">
+<color value="0,0,0"/>
+</corner>
+<edge presence="hidden" stroke="solid" thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<corner inverted="0" join="square" presence="hidden" radius="0in" stroke="solid" thickness="0.176mm">
+<color value="0,0,0"/>
+</corner>
+</border>
+</textEdit>
+</ui>
+</field>
+<border>
+<edge presence="hidden" stroke="solid"/>
+<edge presence="hidden" stroke="solid"/>
+<edge presence="hidden" stroke="solid"/>
+<edge presence="hidden" stroke="solid"/>
+<fill presence="hidden"/>
+</border>
+<?templateDesigner expand 0?>
+</subform>
+<subform layout="row" name="Row3" x="0in" y="0in">
+<assist role="TR"/>
+<draw colSpan="1" h="10mm" name="Cell1" x="0in" y="0in">
+<border>
+<edge thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<edge thickness="0.5pt"/>
+<edge thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<edge thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<corner thickness="0.1778mm"/>
+<corner thickness="0.1778mm"/>
+<corner thickness="0.1778mm"/>
+<corner thickness="0.1778mm"/>
+</border>
+<ui>
+<textEdit/>
+</ui>
+<value>
+<text>3</text>
+</value>
+<font posture="normal" size="12pt" typeface="Arial" weight="normal">
+<fill>
+<color/>
+</fill>
+</font>
+<margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+<para hAlign="center" vAlign="middle"/>
+</draw>
+<draw colSpan="1" h="10mm" name="Cell2" x="0in" y="0in">
+<border>
+<edge thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<edge thickness="0.5pt"/>
+<edge thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<edge thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<corner thickness="0.1778mm"/>
+<corner thickness="0.1778mm"/>
+<corner thickness="0.1778mm"/>
+<corner thickness="0.1778mm"/>
+</border>
+<ui>
+<textEdit/>
+</ui>
+<value>
+<text>Рег.№</text>
+</value>
+<font baselineShift="0pt" fontHorizontalScale="100%" fontVerticalScale="100%" kerningMode="none" letterSpacing="0" lineThrough="0" posture="normal" size="12pt" typeface="Arial" underline="0" weight="normal">
+<fill>
+<color value="0,0,0"/>
+</fill>
+</font>
+<margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+<para hAlign="center" lineHeight="0pt" marginLeft="0pt" marginRight="0pt" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" vAlign="middle"/>
+</draw>
+<field colSpan="1" minH="10mm" name="TextField1" usehref=".#som($template.#subform.designer__stylesheet.TextFieldStyle5)" w="51.958mm" x="0in" y="0in">
+<ui>
+<textEdit multiLine="1">
+<border break="close" presence="hidden">
+<edge presence="hidden" stroke="solid" thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<corner inverted="0" join="square" presence="hidden" radius="0in" stroke="solid" thickness="0.176mm">
+<color value="0,0,0"/>
+</corner>
+<edge presence="hidden" stroke="solid" thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<corner inverted="0" join="square" presence="hidden" radius="0in" stroke="solid" thickness="0.176mm">
+<color value="0,0,0"/>
+</corner>
+<edge presence="hidden" stroke="solid" thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<corner inverted="0" join="square" presence="hidden" radius="0in" stroke="solid" thickness="0.176mm">
+<color value="0,0,0"/>
+</corner>
+<edge presence="hidden" stroke="solid" thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<corner inverted="0" join="square" presence="hidden" radius="0in" stroke="solid" thickness="0.176mm">
+<color value="0,0,0"/>
+</corner>
+</border>
+</textEdit>
+</ui>
+</field>
+<draw colSpan="1" minH="10mm" name="Cell1" w="16.207mm" x="0in" y="0in">
+<border>
+<edge/>
+<corner thickness="0.1778mm"/>
+</border>
+<ui>
+<textEdit/>
+</ui>
+<value>
+<text>3</text>
+</value>
+<font size="12pt" typeface="Arial"/>
+<margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+<para hAlign="center" vAlign="middle"/>
+</draw>
+<draw colSpan="1" minH="10mm" name="Cell2" w="30mm" x="0in" y="0in">
+<border>
+<edge/>
+<corner thickness="0.1778mm"/>
+</border>
+<ui>
+<textEdit/>
+</ui>
+<value>
+<text>Рег.№</text>
+</value>
+<font size="12pt" typeface="Arial"/>
+<margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+<para hAlign="center" vAlign="middle"/>
+</draw>
+<field colSpan="1" minH="10mm" name="TextField1" usehref=".#som($template.#subform.designer__stylesheet.TextFieldStyle5)" w="52.518mm" x="0in" y="0in">
+<ui>
+<textEdit multiLine="1">
+<border break="close" presence="hidden">
+<edge presence="hidden" stroke="solid" thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<corner inverted="0" join="square" presence="hidden" radius="0in" stroke="solid" thickness="0.176mm">
+<color value="0,0,0"/>
+</corner>
+<edge presence="hidden" stroke="solid" thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<corner inverted="0" join="square" presence="hidden" radius="0in" stroke="solid" thickness="0.176mm">
+<color value="0,0,0"/>
+</corner>
+<edge presence="hidden" stroke="solid" thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<corner inverted="0" join="square" presence="hidden" radius="0in" stroke="solid" thickness="0.176mm">
+<color value="0,0,0"/>
+</corner>
+<edge presence="hidden" stroke="solid" thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<corner inverted="0" join="square" presence="hidden" radius="0in" stroke="solid" thickness="0.176mm">
+<color value="0,0,0"/>
+</corner>
+</border>
+</textEdit>
+</ui>
+</field>
+<border>
+<edge presence="hidden" stroke="solid"/>
+<edge presence="hidden" stroke="solid"/>
+<edge presence="hidden" stroke="solid"/>
+<edge presence="hidden" stroke="solid"/>
+<fill presence="hidden"/>
+</border>
+<?templateDesigner expand 0?>
+</subform>
+<subform layout="row" name="Row4" x="0in" y="0in">
+<assist role="TR"/>
+<draw colSpan="1" h="10mm" name="Cell1">
+<border>
+<edge thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<edge thickness="0.5pt"/>
+<edge thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<edge thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<corner thickness="0.1778mm"/>
+<corner thickness="0.1778mm"/>
+<corner thickness="0.1778mm"/>
+<corner thickness="0.1778mm"/>
+</border>
+<ui>
+<textEdit/>
+</ui>
+<value>
+<text>4</text>
+</value>
+<font posture="normal" size="12pt" typeface="Arial" weight="normal">
+<fill>
+<color/>
+</fill>
+</font>
+<margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+<para hAlign="center" vAlign="middle"/>
+</draw>
+<draw colSpan="1" h="10mm" name="Cell2">
+<border>
+<edge thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<edge thickness="0.5pt"/>
+<edge thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<edge thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<corner thickness="0.1778mm"/>
+<corner thickness="0.1778mm"/>
+<corner thickness="0.1778mm"/>
+<corner thickness="0.1778mm"/>
+</border>
+<ui>
+<textEdit/>
+</ui>
+<value>
+<text>Рег.№</text>
+</value>
+<font baselineShift="0pt" fontHorizontalScale="100%" fontVerticalScale="100%" kerningMode="none" letterSpacing="0" lineThrough="0" posture="normal" size="12pt" typeface="Arial" underline="0" weight="normal">
+<fill>
+<color value="0,0,0"/>
+</fill>
+</font>
+<margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+<para hAlign="center" lineHeight="0pt" marginLeft="0pt" marginRight="0pt" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" vAlign="middle"/>
+</draw>
+<field colSpan="1" minH="10mm" name="TextField1" usehref=".#som($template.#subform.designer__stylesheet.TextFieldStyle5)" w="51.958mm">
+<ui>
+<textEdit multiLine="1">
+<border break="close" presence="hidden">
+<edge presence="hidden" stroke="solid" thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<corner inverted="0" join="square" presence="hidden" radius="0in" stroke="solid" thickness="0.176mm">
+<color value="0,0,0"/>
+</corner>
+<edge presence="hidden" stroke="solid" thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<corner inverted="0" join="square" presence="hidden" radius="0in" stroke="solid" thickness="0.176mm">
+<color value="0,0,0"/>
+</corner>
+<edge presence="hidden" stroke="solid" thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<corner inverted="0" join="square" presence="hidden" radius="0in" stroke="solid" thickness="0.176mm">
+<color value="0,0,0"/>
+</corner>
+<edge presence="hidden" stroke="solid" thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<corner inverted="0" join="square" presence="hidden" radius="0in" stroke="solid" thickness="0.176mm">
+<color value="0,0,0"/>
+</corner>
+</border>
+</textEdit>
+</ui>
+</field>
+<draw colSpan="1" minH="10mm" name="Cell1" w="16.207mm">
+<border>
+<edge/>
+<corner thickness="0.1778mm"/>
+</border>
+<ui>
+<textEdit/>
+</ui>
+<value>
+<text>4</text>
+</value>
+<font size="12pt" typeface="Arial"/>
+<margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+<para hAlign="center" vAlign="middle"/>
+</draw>
+<draw colSpan="1" minH="10mm" name="Cell2" w="30mm">
+<border>
+<edge/>
+<corner thickness="0.1778mm"/>
+</border>
+<ui>
+<textEdit/>
+</ui>
+<value>
+<text>Рег.№</text>
+</value>
+<font size="12pt" typeface="Arial"/>
+<margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+<para hAlign="center" vAlign="middle"/>
+</draw>
+<field colSpan="1" minH="10mm" name="TextField1" usehref=".#som($template.#subform.designer__stylesheet.TextFieldStyle5)" w="52.518mm">
+<ui>
+<textEdit multiLine="1">
+<border break="close" presence="hidden">
+<edge presence="hidden" stroke="solid" thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<corner inverted="0" join="square" presence="hidden" radius="0in" stroke="solid" thickness="0.176mm">
+<color value="0,0,0"/>
+</corner>
+<edge presence="hidden" stroke="solid" thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<corner inverted="0" join="square" presence="hidden" radius="0in" stroke="solid" thickness="0.176mm">
+<color value="0,0,0"/>
+</corner>
+<edge presence="hidden" stroke="solid" thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<corner inverted="0" join="square" presence="hidden" radius="0in" stroke="solid" thickness="0.176mm">
+<color value="0,0,0"/>
+</corner>
+<edge presence="hidden" stroke="solid" thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<corner inverted="0" join="square" presence="hidden" radius="0in" stroke="solid" thickness="0.176mm">
+<color value="0,0,0"/>
+</corner>
+</border>
+</textEdit>
+</ui>
+</field>
+<border>
+<edge presence="hidden" stroke="solid"/>
+<edge presence="hidden" stroke="solid"/>
+<edge presence="hidden" stroke="solid"/>
+<edge presence="hidden" stroke="solid"/>
+<fill presence="hidden"/>
+</border>
+<?templateDesigner expand 0?>
+</subform>
+<subform layout="row" name="Row5" x="0in" y="0in">
+<assist role="TR"/>
+<draw colSpan="1" h="10mm" name="Cell1">
+<border>
+<edge thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<edge thickness="0.5pt"/>
+<edge thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<edge thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<corner thickness="0.1778mm"/>
+<corner thickness="0.1778mm"/>
+<corner thickness="0.1778mm"/>
+<corner thickness="0.1778mm"/>
+</border>
+<ui>
+<textEdit/>
+</ui>
+<value>
+<text>5</text>
+</value>
+<font posture="normal" size="12pt" typeface="Arial" weight="normal">
+<fill>
+<color/>
+</fill>
+</font>
+<margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+<para hAlign="center" vAlign="middle"/>
+</draw>
+<draw colSpan="1" h="10mm" name="Cell2">
+<border>
+<edge thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<edge thickness="0.5pt"/>
+<edge thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<edge thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<corner thickness="0.1778mm"/>
+<corner thickness="0.1778mm"/>
+<corner thickness="0.1778mm"/>
+<corner thickness="0.1778mm"/>
+</border>
+<ui>
+<textEdit/>
+</ui>
+<value>
+<text>Рег.№</text>
+</value>
+<font baselineShift="0pt" fontHorizontalScale="100%" fontVerticalScale="100%" kerningMode="none" letterSpacing="0" lineThrough="0" posture="normal" size="12pt" typeface="Arial" underline="0" weight="normal">
+<fill>
+<color value="0,0,0"/>
+</fill>
+</font>
+<margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+<para hAlign="center" lineHeight="0pt" marginLeft="0pt" marginRight="0pt" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" vAlign="middle"/>
+</draw>
+<field colSpan="1" minH="10mm" name="TextField1" usehref=".#som($template.#subform.designer__stylesheet.TextFieldStyle5)" w="51.958mm">
+<ui>
+<textEdit multiLine="1">
+<border break="close" presence="hidden">
+<edge presence="hidden" stroke="solid" thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<corner inverted="0" join="square" presence="hidden" radius="0in" stroke="solid" thickness="0.176mm">
+<color value="0,0,0"/>
+</corner>
+<edge presence="hidden" stroke="solid" thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<corner inverted="0" join="square" presence="hidden" radius="0in" stroke="solid" thickness="0.176mm">
+<color value="0,0,0"/>
+</corner>
+<edge presence="hidden" stroke="solid" thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<corner inverted="0" join="square" presence="hidden" radius="0in" stroke="solid" thickness="0.176mm">
+<color value="0,0,0"/>
+</corner>
+<edge presence="hidden" stroke="solid" thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<corner inverted="0" join="square" presence="hidden" radius="0in" stroke="solid" thickness="0.176mm">
+<color value="0,0,0"/>
+</corner>
+</border>
+</textEdit>
+</ui>
+</field>
+<draw colSpan="1" minH="10mm" name="Cell1" w="16.207mm">
+<border>
+<edge/>
+<corner thickness="0.1778mm"/>
+</border>
+<ui>
+<textEdit/>
+</ui>
+<value>
+<text>5</text>
+</value>
+<font size="12pt" typeface="Arial"/>
+<margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+<para hAlign="center" vAlign="middle"/>
+</draw>
+<draw colSpan="1" minH="10mm" name="Cell2" w="30mm">
+<border>
+<edge/>
+<corner thickness="0.1778mm"/>
+</border>
+<ui>
+<textEdit/>
+</ui>
+<value>
+<text>Рег.№</text>
+</value>
+<font size="12pt" typeface="Arial"/>
+<margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+<para hAlign="center" vAlign="middle"/>
+</draw>
+<field colSpan="1" minH="10mm" name="TextField1" usehref=".#som($template.#subform.designer__stylesheet.TextFieldStyle5)" w="52.518mm">
+<ui>
+<textEdit multiLine="1">
+<border break="close" presence="hidden">
+<edge presence="hidden" stroke="solid" thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<corner inverted="0" join="square" presence="hidden" radius="0in" stroke="solid" thickness="0.176mm">
+<color value="0,0,0"/>
+</corner>
+<edge presence="hidden" stroke="solid" thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<corner inverted="0" join="square" presence="hidden" radius="0in" stroke="solid" thickness="0.176mm">
+<color value="0,0,0"/>
+</corner>
+<edge presence="hidden" stroke="solid" thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<corner inverted="0" join="square" presence="hidden" radius="0in" stroke="solid" thickness="0.176mm">
+<color value="0,0,0"/>
+</corner>
+<edge presence="hidden" stroke="solid" thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<corner inverted="0" join="square" presence="hidden" radius="0in" stroke="solid" thickness="0.176mm">
+<color value="0,0,0"/>
+</corner>
+</border>
+</textEdit>
+</ui>
+</field>
+<border>
+<edge presence="hidden" stroke="solid"/>
+<edge presence="hidden" stroke="solid"/>
+<edge presence="hidden" stroke="solid"/>
+<edge presence="hidden" stroke="solid"/>
+<fill presence="hidden"/>
+</border>
+<?templateDesigner expand 0?>
+</subform>
+<subform layout="row" name="Row6" x="0in" y="0in">
+<assist role="TR"/>
+<draw colSpan="1" h="10mm" name="Cell1">
+<border>
+<edge thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<edge thickness="0.5pt"/>
+<edge thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<edge thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<corner thickness="0.1778mm"/>
+<corner thickness="0.1778mm"/>
+<corner thickness="0.1778mm"/>
+<corner thickness="0.1778mm"/>
+</border>
+<ui>
+<textEdit/>
+</ui>
+<value>
+<text>6</text>
+</value>
+<font posture="normal" size="12pt" typeface="Arial" weight="normal">
+<fill>
+<color/>
+</fill>
+</font>
+<margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+<para hAlign="center" vAlign="middle"/>
+</draw>
+<draw colSpan="1" h="10mm" name="Cell2">
+<border>
+<edge thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<edge thickness="0.5pt"/>
+<edge thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<edge thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<corner thickness="0.1778mm"/>
+<corner thickness="0.1778mm"/>
+<corner thickness="0.1778mm"/>
+<corner thickness="0.1778mm"/>
+</border>
+<ui>
+<textEdit/>
+</ui>
+<value>
+<text>Рег.№</text>
+</value>
+<font baselineShift="0pt" fontHorizontalScale="100%" fontVerticalScale="100%" kerningMode="none" letterSpacing="0" lineThrough="0" posture="normal" size="12pt" typeface="Arial" underline="0" weight="normal">
+<fill>
+<color value="0,0,0"/>
+</fill>
+</font>
+<margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+<para hAlign="center" lineHeight="0pt" marginLeft="0pt" marginRight="0pt" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" vAlign="middle"/>
+</draw>
+<field colSpan="1" minH="10mm" name="TextField1" usehref=".#som($template.#subform.designer__stylesheet.TextFieldStyle5)" w="51.958mm">
+<ui>
+<textEdit multiLine="1">
+<border break="close" presence="hidden">
+<edge presence="hidden" stroke="solid" thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<corner inverted="0" join="square" presence="hidden" radius="0in" stroke="solid" thickness="0.176mm">
+<color value="0,0,0"/>
+</corner>
+<edge presence="hidden" stroke="solid" thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<corner inverted="0" join="square" presence="hidden" radius="0in" stroke="solid" thickness="0.176mm">
+<color value="0,0,0"/>
+</corner>
+<edge presence="hidden" stroke="solid" thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<corner inverted="0" join="square" presence="hidden" radius="0in" stroke="solid" thickness="0.176mm">
+<color value="0,0,0"/>
+</corner>
+<edge presence="hidden" stroke="solid" thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<corner inverted="0" join="square" presence="hidden" radius="0in" stroke="solid" thickness="0.176mm">
+<color value="0,0,0"/>
+</corner>
+</border>
+</textEdit>
+</ui>
+</field>
+<draw colSpan="1" h="10mm" name="Cell4">
+<border>
+<edge thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<edge thickness="0.5pt"/>
+<edge thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<edge thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<corner thickness="0.1778mm"/>
+<corner thickness="0.1778mm"/>
+<corner thickness="0.1778mm"/>
+<corner thickness="0.1778mm"/>
+</border>
+<ui>
+<textEdit/>
+</ui>
+<value>
+<text>6</text>
+</value>
+<font posture="normal" size="12pt" typeface="Arial" weight="normal"/>
+<margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+<para hAlign="center" vAlign="middle"/>
+</draw>
+<draw colSpan="1" minH="10mm" name="Cell2" w="30mm">
+<border>
+<edge/>
+<corner thickness="0.1778mm"/>
+</border>
+<ui>
+<textEdit/>
+</ui>
+<value>
+<text>Рег.№</text>
+</value>
+<font size="12pt" typeface="Arial"/>
+<margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+<para hAlign="center" vAlign="middle"/>
+</draw>
+<field colSpan="1" minH="10mm" name="TextField1" usehref=".#som($template.#subform.designer__stylesheet.TextFieldStyle5)" w="52.518mm">
+<ui>
+<textEdit multiLine="1">
+<border break="close" presence="hidden">
+<edge presence="hidden" stroke="solid" thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<corner inverted="0" join="square" presence="hidden" radius="0in" stroke="solid" thickness="0.176mm">
+<color value="0,0,0"/>
+</corner>
+<edge presence="hidden" stroke="solid" thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<corner inverted="0" join="square" presence="hidden" radius="0in" stroke="solid" thickness="0.176mm">
+<color value="0,0,0"/>
+</corner>
+<edge presence="hidden" stroke="solid" thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<corner inverted="0" join="square" presence="hidden" radius="0in" stroke="solid" thickness="0.176mm">
+<color value="0,0,0"/>
+</corner>
+<edge presence="hidden" stroke="solid" thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<corner inverted="0" join="square" presence="hidden" radius="0in" stroke="solid" thickness="0.176mm">
+<color value="0,0,0"/>
+</corner>
+</border>
+</textEdit>
+</ui>
+</field>
+<border>
+<edge presence="hidden" stroke="solid"/>
+<edge presence="hidden" stroke="solid"/>
+<edge presence="hidden" stroke="solid"/>
+<edge presence="hidden" stroke="solid"/>
+<fill presence="hidden"/>
+</border>
+<?templateDesigner expand 0?>
+</subform>
+<subform layout="row" name="Row7" x="0in" y="0in">
+<assist role="TR"/>
+<draw colSpan="1" h="10mm" name="Cell1" x="0in" y="0mm">
+<border>
+<edge thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<edge thickness="0.5pt"/>
+<edge thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<edge thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<corner thickness="0.1778mm"/>
+<corner thickness="0.1778mm"/>
+<corner thickness="0.1778mm"/>
+<corner thickness="0.1778mm"/>
+</border>
+<ui>
+<textEdit/>
+</ui>
+<value>
+<text>7</text>
+</value>
+<font posture="normal" size="12pt" typeface="Arial" weight="normal">
+<fill>
+<color/>
+</fill>
+</font>
+<margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+<para hAlign="center" vAlign="middle"/>
+</draw>
+<draw colSpan="1" h="10mm" name="Cell2" x="0in" y="0mm">
+<border>
+<edge thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<edge thickness="0.5pt"/>
+<edge thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<edge thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<corner thickness="0.1778mm"/>
+<corner thickness="0.1778mm"/>
+<corner thickness="0.1778mm"/>
+<corner thickness="0.1778mm"/>
+</border>
+<ui>
+<textEdit/>
+</ui>
+<value>
+<text>Рег.№</text>
+</value>
+<font baselineShift="0pt" fontHorizontalScale="100%" fontVerticalScale="100%" kerningMode="none" letterSpacing="0" lineThrough="0" posture="normal" size="12pt" typeface="Arial" underline="0" weight="normal">
+<fill>
+<color value="0,0,0"/>
+</fill>
+</font>
+<margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+<para hAlign="center" lineHeight="0pt" marginLeft="0pt" marginRight="0pt" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" vAlign="middle"/>
+</draw>
+<field colSpan="1" minH="10mm" name="TextField1" usehref=".#som($template.#subform.designer__stylesheet.TextFieldStyle5)" w="51.958mm" x="0in" y="0mm">
+<ui>
+<textEdit multiLine="1">
+<border break="close" presence="hidden">
+<edge presence="hidden" stroke="solid" thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<corner inverted="0" join="square" presence="hidden" radius="0in" stroke="solid" thickness="0.176mm">
+<color value="0,0,0"/>
+</corner>
+<edge presence="hidden" stroke="solid" thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<corner inverted="0" join="square" presence="hidden" radius="0in" stroke="solid" thickness="0.176mm">
+<color value="0,0,0"/>
+</corner>
+<edge presence="hidden" stroke="solid" thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<corner inverted="0" join="square" presence="hidden" radius="0in" stroke="solid" thickness="0.176mm">
+<color value="0,0,0"/>
+</corner>
+<edge presence="hidden" stroke="solid" thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<corner inverted="0" join="square" presence="hidden" radius="0in" stroke="solid" thickness="0.176mm">
+<color value="0,0,0"/>
+</corner>
+</border>
+</textEdit>
+</ui>
+</field>
+<draw colSpan="1" h="10mm" name="Cell4" x="0in" y="0mm">
+<border>
+<edge thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<edge thickness="0.5pt"/>
+<edge thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<edge thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<corner thickness="0.1778mm"/>
+<corner thickness="0.1778mm"/>
+<corner thickness="0.1778mm"/>
+<corner thickness="0.1778mm"/>
+</border>
+<ui>
+<textEdit/>
+</ui>
+<value>
+<text>7</text>
+</value>
+<font posture="normal" size="12pt" typeface="Arial" weight="normal"/>
+<margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+<para hAlign="center" vAlign="middle"/>
+</draw>
+<draw colSpan="1" minH="10mm" name="Cell2" w="30mm" x="0in" y="0mm">
+<border>
+<edge/>
+<corner thickness="0.1778mm"/>
+</border>
+<ui>
+<textEdit/>
+</ui>
+<value>
+<text>Рег.№</text>
+</value>
+<font size="12pt" typeface="Arial"/>
+<margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+<para hAlign="center" vAlign="middle"/>
+</draw>
+<field colSpan="1" minH="10mm" name="TextField1" usehref=".#som($template.#subform.designer__stylesheet.TextFieldStyle5)" w="52.518mm" x="0in" y="0mm">
+<ui>
+<textEdit multiLine="1">
+<border break="close" presence="hidden">
+<edge presence="hidden" stroke="solid" thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<corner inverted="0" join="square" presence="hidden" radius="0in" stroke="solid" thickness="0.176mm">
+<color value="0,0,0"/>
+</corner>
+<edge presence="hidden" stroke="solid" thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<corner inverted="0" join="square" presence="hidden" radius="0in" stroke="solid" thickness="0.176mm">
+<color value="0,0,0"/>
+</corner>
+<edge presence="hidden" stroke="solid" thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<corner inverted="0" join="square" presence="hidden" radius="0in" stroke="solid" thickness="0.176mm">
+<color value="0,0,0"/>
+</corner>
+<edge presence="hidden" stroke="solid" thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<corner inverted="0" join="square" presence="hidden" radius="0in" stroke="solid" thickness="0.176mm">
+<color value="0,0,0"/>
+</corner>
+</border>
+</textEdit>
+</ui>
+</field>
+<border>
+<edge presence="hidden" stroke="solid"/>
+<edge presence="hidden" stroke="solid"/>
+<edge presence="hidden" stroke="solid"/>
+<edge presence="hidden" stroke="solid"/>
+<fill presence="hidden"/>
+</border>
+<?templateDesigner expand 0?>
+</subform>
+<subform layout="row" name="Row8" x="0in" y="0in">
+<assist role="TR"/>
+<draw colSpan="1" h="10mm" name="Cell1" x="0in" y="0mm">
+<border>
+<edge thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<edge thickness="0.5pt"/>
+<edge thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<edge thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<corner thickness="0.1778mm"/>
+<corner thickness="0.1778mm"/>
+<corner thickness="0.1778mm"/>
+<corner thickness="0.1778mm"/>
+</border>
+<ui>
+<textEdit/>
+</ui>
+<value>
+<text>8</text>
+</value>
+<font posture="normal" size="12pt" typeface="Arial" weight="normal">
+<fill>
+<color/>
+</fill>
+</font>
+<margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+<para hAlign="center" vAlign="middle"/>
+</draw>
+<draw colSpan="1" x="0in" y="0mm">
+<font posture="normal" size="12pt" typeface="Arial" weight="normal"/>
+<value>
+<exData contentType="text/html">
+<body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/">
+<p style="text-valign:middle;text-align:center;letter-spacing:0in">Рег.№</p>
+</body>
+</exData>
+</value>
+<ui>
+<textEdit multiLine="1"/>
+</ui>
+<margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+</draw>
+<field colSpan="1" minH="10mm" name="TextField1" usehref=".#som($template.#subform.designer__stylesheet.TextFieldStyle5)" w="51.958mm" x="0in" y="0mm">
+<ui>
+<textEdit multiLine="1">
+<border break="close" presence="hidden">
+<edge presence="hidden" stroke="solid" thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<corner inverted="0" join="square" presence="hidden" radius="0in" stroke="solid" thickness="0.176mm">
+<color value="0,0,0"/>
+</corner>
+<edge presence="hidden" stroke="solid" thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<corner inverted="0" join="square" presence="hidden" radius="0in" stroke="solid" thickness="0.176mm">
+<color value="0,0,0"/>
+</corner>
+<edge presence="hidden" stroke="solid" thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<corner inverted="0" join="square" presence="hidden" radius="0in" stroke="solid" thickness="0.176mm">
+<color value="0,0,0"/>
+</corner>
+<edge presence="hidden" stroke="solid" thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<corner inverted="0" join="square" presence="hidden" radius="0in" stroke="solid" thickness="0.176mm">
+<color value="0,0,0"/>
+</corner>
+</border>
+</textEdit>
+</ui>
+</field>
+<draw colSpan="1" h="10mm" name="Cell4" x="0in" y="0mm">
+<border>
+<edge thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<edge thickness="0.5pt"/>
+<edge thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<edge thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<corner thickness="0.1778mm"/>
+<corner thickness="0.1778mm"/>
+<corner thickness="0.1778mm"/>
+<corner thickness="0.1778mm"/>
+</border>
+<ui>
+<textEdit/>
+</ui>
+<value>
+<text>8</text>
+</value>
+<font posture="normal" size="12pt" typeface="Arial" weight="normal"/>
+<margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+<para hAlign="center" vAlign="middle"/>
+</draw>
+<draw colSpan="1" minH="10mm" name="Cell2" w="30mm" x="0in" y="0mm">
+<border>
+<edge/>
+<corner thickness="0.1778mm"/>
+</border>
+<ui>
+<textEdit/>
+</ui>
+<value>
+<text>Рег.№</text>
+</value>
+<font size="12pt" typeface="Arial"/>
+<margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+<para hAlign="center" vAlign="middle"/>
+</draw>
+<field colSpan="1" minH="10mm" name="TextField1" usehref=".#som($template.#subform.designer__stylesheet.TextFieldStyle5)" w="52.518mm" x="0in" y="0mm">
+<ui>
+<textEdit multiLine="1">
+<border break="close" presence="hidden">
+<edge presence="hidden" stroke="solid" thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<corner inverted="0" join="square" presence="hidden" radius="0in" stroke="solid" thickness="0.176mm">
+<color value="0,0,0"/>
+</corner>
+<edge presence="hidden" stroke="solid" thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<corner inverted="0" join="square" presence="hidden" radius="0in" stroke="solid" thickness="0.176mm">
+<color value="0,0,0"/>
+</corner>
+<edge presence="hidden" stroke="solid" thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<corner inverted="0" join="square" presence="hidden" radius="0in" stroke="solid" thickness="0.176mm">
+<color value="0,0,0"/>
+</corner>
+<edge presence="hidden" stroke="solid" thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<corner inverted="0" join="square" presence="hidden" radius="0in" stroke="solid" thickness="0.176mm">
+<color value="0,0,0"/>
+</corner>
+</border>
+</textEdit>
+</ui>
+</field>
+<border>
+<edge presence="hidden" stroke="solid"/>
+<edge presence="hidden" stroke="solid"/>
+<edge presence="hidden" stroke="solid"/>
+<edge presence="hidden" stroke="solid"/>
+<fill presence="hidden"/>
+</border>
+<?templateDesigner expand 0?>
+</subform>
+<subform layout="row" name="Row9" x="0in" y="0in">
+<assist role="TR"/>
+<draw colSpan="1" h="10mm" name="Cell1" x="0in" y="0in">
+<border>
+<edge thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<edge thickness="0.5pt"/>
+<edge thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<edge thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<corner thickness="0.1778mm"/>
+<corner thickness="0.1778mm"/>
+<corner thickness="0.1778mm"/>
+<corner thickness="0.1778mm"/>
+</border>
+<ui>
+<textEdit/>
+</ui>
+<value>
+<text>9</text>
+</value>
+<font posture="normal" size="12pt" typeface="Arial" weight="normal">
+<fill>
+<color/>
+</fill>
+</font>
+<margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+<para hAlign="center" vAlign="middle"/>
+</draw>
+<draw colSpan="1" h="10mm" name="Cell2" x="0in" y="0in">
+<border>
+<edge thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<edge thickness="0.5pt"/>
+<edge thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<edge thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<corner thickness="0.1778mm"/>
+<corner thickness="0.1778mm"/>
+<corner thickness="0.1778mm"/>
+<corner thickness="0.1778mm"/>
+</border>
+<ui>
+<textEdit/>
+</ui>
+<value>
+<text>Рег.№</text>
+</value>
+<font baselineShift="0pt" fontHorizontalScale="100%" fontVerticalScale="100%" kerningMode="none" letterSpacing="0" lineThrough="0" posture="normal" size="12pt" typeface="Arial" underline="0" weight="normal">
+<fill>
+<color value="0,0,0"/>
+</fill>
+</font>
+<margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+<para hAlign="center" lineHeight="0pt" marginLeft="0pt" marginRight="0pt" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" vAlign="middle"/>
+</draw>
+<field colSpan="1" minH="10mm" name="TextField1" usehref=".#som($template.#subform.designer__stylesheet.TextFieldStyle5)" w="51.958mm" x="0in" y="0in">
+<ui>
+<textEdit multiLine="1">
+<border break="close" presence="hidden">
+<edge presence="hidden" stroke="solid" thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<corner inverted="0" join="square" presence="hidden" radius="0in" stroke="solid" thickness="0.176mm">
+<color value="0,0,0"/>
+</corner>
+<edge presence="hidden" stroke="solid" thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<corner inverted="0" join="square" presence="hidden" radius="0in" stroke="solid" thickness="0.176mm">
+<color value="0,0,0"/>
+</corner>
+<edge presence="hidden" stroke="solid" thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<corner inverted="0" join="square" presence="hidden" radius="0in" stroke="solid" thickness="0.176mm">
+<color value="0,0,0"/>
+</corner>
+<edge presence="hidden" stroke="solid" thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<corner inverted="0" join="square" presence="hidden" radius="0in" stroke="solid" thickness="0.176mm">
+<color value="0,0,0"/>
+</corner>
+</border>
+</textEdit>
+</ui>
+</field>
+<draw colSpan="1" h="10mm" name="Cell4" x="0in" y="0in">
+<border>
+<edge thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<edge thickness="0.5pt"/>
+<edge thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<edge thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<corner thickness="0.1778mm"/>
+<corner thickness="0.1778mm"/>
+<corner thickness="0.1778mm"/>
+<corner thickness="0.1778mm"/>
+</border>
+<ui>
+<textEdit/>
+</ui>
+<value>
+<text>9</text>
+</value>
+<font posture="normal" size="12pt" typeface="Arial" weight="normal"/>
+<margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+<para hAlign="center" vAlign="middle"/>
+</draw>
+<draw colSpan="1" minH="10mm" name="Cell2" w="30mm" x="0in" y="0in">
+<border>
+<edge/>
+<corner thickness="0.1778mm"/>
+</border>
+<ui>
+<textEdit/>
+</ui>
+<value>
+<text>Рег.№</text>
+</value>
+<font size="12pt" typeface="Arial"/>
+<margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+<para hAlign="center" vAlign="middle"/>
+</draw>
+<field colSpan="1" minH="10mm" name="TextField1" usehref=".#som($template.#subform.designer__stylesheet.TextFieldStyle5)" w="52.518mm" x="0in" y="0in">
+<ui>
+<textEdit multiLine="1">
+<border break="close" presence="hidden">
+<edge presence="hidden" stroke="solid" thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<corner inverted="0" join="square" presence="hidden" radius="0in" stroke="solid" thickness="0.176mm">
+<color value="0,0,0"/>
+</corner>
+<edge presence="hidden" stroke="solid" thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<corner inverted="0" join="square" presence="hidden" radius="0in" stroke="solid" thickness="0.176mm">
+<color value="0,0,0"/>
+</corner>
+<edge presence="hidden" stroke="solid" thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<corner inverted="0" join="square" presence="hidden" radius="0in" stroke="solid" thickness="0.176mm">
+<color value="0,0,0"/>
+</corner>
+<edge presence="hidden" stroke="solid" thickness="0.5pt">
+<color value="0,0,0"/>
+</edge>
+<corner inverted="0" join="square" presence="hidden" radius="0in" stroke="solid" thickness="0.176mm">
+<color value="0,0,0"/>
+</corner>
+</border>
+</textEdit>
+</ui>
+</field>
+<border>
+<edge presence="hidden" stroke="solid"/>
+<edge presence="hidden" stroke="solid"/>
+<edge presence="hidden" stroke="solid"/>
+<edge presence="hidden" stroke="solid"/>
+<fill presence="hidden"/>
+</border>
+<?templateDesigner expand 0?>
+</subform>
+<?templateDesigner rowpattern first:1, next:1, firstcolor:f0f0f0, nextcolor:ffffff, apply:0?>
+<overflow leader="HeaderRow"/>
+<?templateDesigner expand 1?>
+</subform>
+<draw h="10.878mm" name="Text1" w="186.992mm">
+<ui>
+<textEdit multiLine="1"/>
+</ui>
+<value>
+<text>За целта прилагам  следните документи:</text>
+</value>
+<font baselineShift="0pt" fontHorizontalScale="100%" fontVerticalScale="100%" kerningMode="none" letterSpacing="0" lineThrough="0" posture="normal" size="12pt" typeface="Arial" underline="0" weight="normal">
+<fill>
+<color value="0,0,0"/>
+</fill>
+</font>
+<margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+<para hAlign="left" lineHeight="0pt" marginLeft="0pt" marginRight="0pt" spaceAbove="10pt" spaceBelow="6pt" textIndent="0pt" vAlign="top"/>
+</draw>
+<field h="32.801mm" hAlign="left" name="chkPrilojenDokument" w="186.443mm">
+<ui>
+<checkButton allowNeutral="0" shape="square" size="10pt">
+<border>
+<edge stroke="lowered"/>
+<fill>
+<solid/>
+<color value="255,255,255"/>
+</fill>
+</border>
+</checkButton>
+</ui>
+<font posture="normal" size="12pt" typeface="Arial" weight="normal"/>
+<margin leftInset="1mm" rightInset="1mm"/>
+<para vAlign="middle"/>
+<value>
+<integer>0</integer>
+</value>
+<caption placement="right" reserve="179.442mm">
+<para hAlign="justify" lineHeight="0pt" marginLeft="0pt" marginRight="0pt" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" vAlign="middle"/>
+<font baselineShift="0pt" fontHorizontalScale="100%" fontVerticalScale="100%" kerningMode="none" letterSpacing="0" lineThrough="0" posture="normal" size="12pt" typeface="Arial" underline="0" weight="normal">
+<fill>
+<color value="0,0,0"/>
+</fill>
+</font>
+<value>
+<text>Заверен Сертификат за съответствие на превозните средства (товарни автомобили и ремаркета/полуремаркета) с техническите норми и изисквания за безопасност и сигурност, издаден от производителя или негов упълномощен представител в Република България (Приложение 4 и Приложение 5 от Ръководството за използване на многократни ЕКМТ разрешителни, издадено от Международен транспортен форум (оригинал + копие):</text>
+</value>
+</caption>
+<items>
+<integer>1</integer>
+<integer>0</integer>
+<integer>2</integer>
+</items>
+</field>
+<field h="9mm" name="TextField2" w="102.904mm">
+<ui>
+<textEdit>
+<border>
+<edge stroke="lowered"/>
+</border>
+<margin/>
+</textEdit>
+</ui>
+<font size="12pt" typeface="Arial"/>
+<margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+<para textIndent="28.346pt" vAlign="middle"/>
+<caption reserve="85.2072mm">
+<font baselineShift="0pt" size="12pt" typeface="Arial"/>
+<para marginLeft="0pt" marginRight="0pt" spaceAbove="0pt" spaceBelow="0pt" textIndent="28.346pt" vAlign="middle"/>
+<value>
+<text>Въведете броя  на сертификатите:</text>
+</value>
+</caption>
+</field>
+<draw h="5.2331mm" name="Text2" w="78.502mm">
+<ui>
+<textEdit/>
+</ui>
+<font size="12pt" typeface="Arial"/>
+<margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+<?renderCache.bounds 219691 12000 0 0 1417 1417 0 0?>
+</draw>
+<field h="13.067mm" hAlign="left" name="chkPrilojenDokument" w="186.717mm">
+<ui>
+<checkButton allowNeutral="0" shape="square" size="10pt">
+<border>
+<edge stroke="lowered"/>
+<fill>
+<solid/>
+<color value="255,255,255"/>
+</fill>
+</border>
+</checkButton>
+</ui>
+<font posture="normal" size="12pt" typeface="Arial" weight="normal"/>
+<margin leftInset="1mm" rightInset="1mm"/>
+<para vAlign="middle"/>
+<value>
+<integer>0</integer>
+</value>
+<caption placement="right" reserve="179.717mm">
+<para vAlign="middle"/>
+<font posture="normal" size="12pt" typeface="Arial" weight="normal"/>
+<value>
+<text>Копие на свидетелство за регистрация на ППС (за регистрираните след 8 декември 2003 - части I и II)</text>
+</value>
+</caption>
+<items>
+<integer>1</integer>
+<integer>0</integer>
+<integer>2</integer>
+</items>
+</field>
+<field h="9mm" name="TextField2" w="127.769mm">
+<ui>
+<textEdit>
+<border>
+<edge stroke="lowered"/>
+</border>
+<margin/>
+</textEdit>
+</ui>
+<font size="12pt" typeface="Arial"/>
+<margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+<para textIndent="28.346pt" vAlign="middle"/>
+<caption reserve="109.7874mm">
+<font baselineShift="0pt" size="12pt" typeface="Arial"/>
+<para marginLeft="0pt" marginRight="0pt" spaceAbove="0pt" spaceBelow="0pt" textIndent="28.346pt" vAlign="middle"/>
+<value>
+<text>Въведете броя на копията на свидетелствата:</text>
+</value>
+</caption>
+</field>
+<draw h="5.2331mm" name="Text2" w="57.65mm">
+<ui>
+<textEdit/>
+</ui>
+<font size="12pt" typeface="Arial"/>
+<margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+<?renderCache.bounds 160583 12000 0 0 1417 1417 0 0?>
+</draw>
+<field h="19.319mm" hAlign="left" name="chkPrilojenDokument" w="186.717mm">
+<ui>
+<checkButton allowNeutral="0" shape="square" size="10pt">
+<border>
+<edge stroke="lowered"/>
+<fill>
+<solid/>
+<color value="255,255,255"/>
+</fill>
+</border>
+</checkButton>
+</ui>
+<font posture="normal" size="12pt" typeface="Arial" weight="normal"/>
+<margin leftInset="1mm" rightInset="1mm"/>
+<para vAlign="middle"/>
+<value>
+<integer>0</integer>
+</value>
+<caption placement="right" reserve="179.717mm">
+<para hAlign="justify" lineHeight="0pt" marginLeft="0pt" marginRight="0pt" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" vAlign="middle">
+<hyphenation/>
+</para>
+<font baselineShift="0pt" fontHorizontalScale="100%" fontVerticalScale="100%" kerningMode="none" letterSpacing="0" lineThrough="0" posture="normal" size="12pt" typeface="Arial" underline="0" weight="normal">
+<fill>
+<color value="0,0,0"/>
+</fill>
+</font>
+<value>
+<text>Документ за платена държавна такса, съгласно Тарифа №5 за таксита, които се събират в системата на Министерството на транспорта, информационните технологии и съобщенията, приета с ПМС №81 от 2000 г.</text>
+</value>
+</caption>
+<items>
+<integer>1</integer>
+<integer>0</integer>
+<integer>2</integer>
+</items>
+</field>
+<field h="9mm" hAlign="left" name="NumericField1" w="68.272mm">
+<ui>
+<numericEdit>
+<border>
+<edge stroke="lowered"/>
+</border>
+<margin/>
+</numericEdit>
+</ui>
+<font posture="normal" size="12pt" typeface="Arial" weight="normal"/>
+<margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+<para vAlign="middle"/>
+<value>
+<float/>
+</value>
+<caption reserve="42.4663mm">
+<font baselineShift="0pt" fontHorizontalScale="100%" fontVerticalScale="100%" kerningMode="none" letterSpacing="0" lineThrough="0" posture="normal" size="12pt" typeface="Arial" underline="0" weight="normal">
+<fill>
+<color value="0,0,0"/>
+</fill>
+</font>
+<para hAlign="left" lineHeight="0pt" marginLeft="0pt" marginRight="0pt" spaceAbove="0pt" spaceBelow="0pt" textIndent="28.346pt" vAlign="middle"/>
+<value>
+<text>За брой ППС</text>
+</value>
+</caption>
+</field>
+<field h="9mm" name="TextField2" w="100.285mm">
+<ui>
+<textEdit>
+<border>
+<edge stroke="lowered"/>
+</border>
+<margin/>
+</textEdit>
+</ui>
+<font size="12pt" typeface="Arial"/>
+<margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+<para textIndent="28.346pt" vAlign="middle"/>
+<caption reserve="51.6839mm">
+<font baselineShift="0pt" size="12pt" typeface="Arial"/>
+<para marginLeft="0pt" marginRight="0pt" spaceAbove="0pt" spaceBelow="0pt" textIndent="28.346pt" vAlign="middle"/>
+<value>
+<text>Обща сума в лв.</text>
+</value>
+</caption>
+</field>
+<draw h="24.807mm" hAlign="left" name="Text3" w="186.992mm">
+<ui>
+<textEdit multiLine="1"/>
+</ui>
+<value>
+<text>При смяна на рег. № на ППС и/или необходимост от корекция на данни в информационната система по чл. 11, ал. 3, т. 2, записани в сертификата за съответствие на ППС е техническите норми и изисквания за бвзопастност и сигурност, съгласни Наредба № Н-32 или др.:</text>
+</value>
+<font baselineShift="0pt" fontHorizontalScale="100%" fontVerticalScale="100%" kerningMode="none" letterSpacing="0" lineThrough="0" posture="normal" size="12pt" typeface="Arial" underline="0" weight="normal">
+<fill>
+<color value="0,0,0"/>
+</fill>
+</font>
+<margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+<para hAlign="justify" lineHeight="0pt" marginLeft="0pt" marginRight="0pt" spaceAbove="8pt" spaceBelow="0pt" textIndent="0pt" vAlign="top"/>
+</draw>
+<field h="11.18mm" hAlign="left" name="chkPrilojenDokument" w="186.992mm">
+<ui>
+<checkButton allowNeutral="0" shape="square" size="10pt">
+<border>
+<edge stroke="lowered"/>
+<fill>
+<solid/>
+<color value="255,255,255"/>
+</fill>
+</border>
+</checkButton>
+</ui>
+<font posture="normal" size="12pt" typeface="Arial" weight="normal"/>
+<margin leftInset="1mm" rightInset="1mm"/>
+<para vAlign="middle"/>
+<value>
+<integer>0</integer>
+</value>
+<caption placement="right" reserve="179.991mm">
+<para vAlign="middle"/>
+<font posture="normal" size="12pt" typeface="Arial" weight="normal"/>
+<value>
+<text>Оригинал на валидния издаден и заверен Сертификат за техническа изправност на ППС,</text>
+</value>
+</caption>
+<items>
+<integer>1</integer>
+<integer>0</integer>
+<integer>2</integer>
+</items>
+</field>
+<field h="9mm" name="TextField3" w="157.945mm">
+<ui>
+<textEdit>
+<border>
+<edge stroke="lowered"/>
+</border>
+<margin/>
+</textEdit>
+</ui>
+<font posture="normal" size="12pt" typeface="Arial" weight="normal"/>
+<margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+<para vAlign="middle"/>
+<caption reserve="140.7977mm">
+<font posture="normal" size="12pt" typeface="Arial" weight="normal"/>
+<para vAlign="middle"/>
+<value>
+<text>Приложение №6 от Наредба № Н-32, брой оригинални сертификати:</text>
+</value>
+</caption>
+</field>
+<draw h="15.393mm" hAlign="left" name="Text4" w="187.551mm">
+<ui>
+<textEdit multiLine="1"/>
+</ui>
+<value>
+<text>Забележка: Всички копия от документите към заявлението да бъдат заверени с "Вярно с оригинала", подпис - име, фамилия, длъжност и печат на превозвача, оператора или собственика.</text>
+</value>
+<font baselineShift="0pt" fontHorizontalScale="100%" fontVerticalScale="100%" kerningMode="none" letterSpacing="0" lineThrough="0" posture="italic" size="10pt" typeface="Arial" underline="0" weight="normal">
+<fill>
+<color value="0,0,0"/>
+</fill>
+</font>
+<margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+<para hAlign="justify" lineHeight="0pt" marginLeft="0pt" marginRight="0pt" spaceAbove="10pt" spaceBelow="6pt" textIndent="0pt" vAlign="top"/>
+</draw>
+<?templateDesigner expand 1?>
+</subform>
+<border>
+<edge/>
+<corner thickness="0.176mm"/>
+</border>
+<?templateDesigner expand 1?>
+</subform>
+<subform h="60.551mm" w="196.528mm">
+<field access="readOnly" h="9mm" name="txtEDeliveryDestination" w="41.275mm" x="81.97mm" y="48.711mm">
+<ui>
+<textEdit>
+<border>
+<edge stroke="lowered"/>
+</border>
+<margin/>
+</textEdit>
+</ui>
+<font typeface="Arial"/>
+<margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+<para vAlign="middle"/>
+<caption reserve="8.1363mm">
+<para vAlign="middle"/>
+<value>
+<text>ЕИК</text>
+</value>
+</caption>
+<calculate>
+<script contentType="application/x-javascript">
+switch(ddl_avtomobilnaAdm.rawValue) {
+    case "ИЗПЪЛНИТЕЛНА АГЕНЦИЯ АВТОМОБИЛНА АДМИНИСТРАЦИЯ":
+      this.rawValue = 121410441;
+      break;
+    case "ОБЛАСТЕН ОТДЕЛ АВТОМОБИЛНА АДМИНИСТРАЦИЯ - ВАРНА":
+        this.rawValue = 1214104410000;
+        break;
+    case "ОБЛАСТЕН ОТДЕЛ АВТОМОБИЛНА АДМИНИСТРАЦИЯ - ВЕЛИКО ТЪРНОВО":
+        this.rawValue = 1214104410001;
+        break;
+    case "ОБЛАСТЕН ОТДЕЛ АВТОМОБИЛНА АДМИНИСТРАЦИЯ - ВИДИН":
+        this.rawValue = 1214104410002;
+        break;
+    case "ОБЛАСТЕН ОТДЕЛ АВТОМОБИЛНА АДМИНИСТРАЦИЯ - ВРАЦА":
+        this.rawValue = 1214104410003;
+        break;
+    case "ОБЛАСТЕН ОТДЕЛ АВТОМОБИЛНА АДМИНИСТРАЦИЯ - ГАБРОВО":
+        this.rawValue = 1214104410004;
+        break;
+    case "ОБЛАСТЕН ОТДЕЛ АВТОМОБИЛНА АДМИНИСТРАЦИЯ - ДОБРИЧ":
+        this.rawValue = 1214104410005;
+        break;
+    case "ОБЛАСТЕН ОТДЕЛ АВТОМОБИЛНА АДМИНИСТРАЦИЯ - КЪРДЖАЛИ":
+        this.rawValue = 1214104410006;
+        break;
+    case "ОБЛАСТЕН ОТДЕЛ АВТОМОБИЛНА АДМИНИСТРАЦИЯ - КЮСТЕНДИЛ":
+        this.rawValue = 1214104410007;
+        break;
+    case "ОБЛАСТЕН ОТДЕЛ АВТОМОБИЛНА АДМИНИСТРАЦИЯ - ЛОВЕЧ":
+        this.rawValue = 1214104410008;
+        break;
+    case "ОБЛАСТЕН ОТДЕЛ АВТОМОБИЛНА АДМИНИСТРАЦИЯ - МОНТАНА":
+        this.rawValue = 1214104410009;
+        break;
+    case "ОБЛАСТЕН ОТДЕЛ АВТОМОБИЛНА АДМИНИСТРАЦИЯ - БЛАГОЕВГРАД":
+        this.rawValue = 1214104410010;
+        break;
+    case "ОБЛАСТЕН ОТДЕЛ АВТОМОБИЛНА АДМИНИСТРАЦИЯ - БУРГАС":
+        this.rawValue = 1214104410011;
+        break;
+    case "ОБЛАСТЕН ОТДЕЛ АВТОМОБИЛНА АДМИНИСТРАЦИЯ - ПАЗАРДЖИК":
+        this.rawValue = 1214104410012;
+        break;
+    case "ОБЛАСТЕН ОТДЕЛ АВТОМОБИЛНА АДМИНИСТРАЦИЯ - ПЕРНИК":
+        this.rawValue = 1214104410013;
+        break;
+    case "ОБЛАСТЕН ОТДЕЛ АВТОМОБИЛНА АДМИНИСТРАЦИЯ - ПЛЕВЕН":
+        this.rawValue = 1214104410014;
+        break;
+    case "ОБЛАСТЕН ОТДЕЛ АВТОМОБИЛНА АДМИНИСТРАЦИЯ - ПЛОВДИВ":
+        this.rawValue = 1214104410015;
+        break;
+    case "ОБЛАСТЕН ОТДЕЛ АВТОМОБИЛНА АДМИНИСТРАЦИЯ - РАЗГРАД":
+        this.rawValue = 1214104410016;
+        break;
+    case "ОБЛАСТЕН ОТДЕЛ АВТОМОБИЛНА АДМИНИСТРАЦИЯ - РУСЕ":
+        this.rawValue = 1214104410017;
+        break;
+    case "ОБЛАСТЕН ОТДЕЛ АВТОМОБИЛНА АДМИНИСТРАЦИЯ - СИЛИСТРА":
+        this.rawValue = 1214104410018;
+        break;
+    case "ОБЛАСТЕН ОТДЕЛ АВТОМОБИЛНА АДМИНИСТРАЦИЯ - СЛИВЕН":
+        this.rawValue = 1214104410019;
+        break;
+    case "ОБЛАСТЕН ОТДЕЛ АВТОМОБИЛНА АДМИНИСТРАЦИЯ - СМОЛЯН":
+        this.rawValue = 1214104410020;
+        break;
+    case "ОБЛАСТЕН ОТДЕЛ АВТОМОБИЛНА АДМИНИСТРАЦИЯ - СОФИЯ":
+        this.rawValue = 1214104410021;
+        break;
+    case "ОБЛАСТЕН ОТДЕЛ АВТОМОБИЛНА АДМИНИСТРАЦИЯ - СТАРА ЗАГОРА":
+        this.rawValue = 1214104410022;
+        break;
+    case "ОБЛАСТЕН ОТДЕЛ АВТОМОБИЛНА АДМИНИСТРАЦИЯ - ТЪРГОВИЩЕ":
+        this.rawValue = 1214104410023;
+        break;
+    case "ОБЛАСТЕН ОТДЕЛ АВТОМОБИЛНА АДМИНИСТРАЦИЯ - ХАСКОВО":
+        this.rawValue = 1214104410024;
+        break;
+    case "ОБЛАСТЕН ОТДЕЛ АВТОМОБИЛНА АДМИНИСТРАЦИЯ - ШУМЕН":
+        this.rawValue = 1214104410025;
+        break;
+    case "ОБЛАСТЕН ОТДЕЛ АВТОМОБИЛНА АДМИНИСТРАЦИЯ - ЯМБОЛ":
+        this.rawValue = 1214104410026;
+        break;
+    default:
+      break;
+  }
+</script>
+</calculate>
+</field>
+<field h="9mm" name="txtEDeliverySource" w="50.8mm" x="29.97mm" y="49.189mm">
+<ui>
+<textEdit>
+<border>
+<edge stroke="lowered"/>
+</border>
+<margin/>
+</textEdit>
+</ui>
+<font typeface="Myriad Pro"/>
+<margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+<para vAlign="middle"/>
+<caption reserve="0.01in">
+<para vAlign="middle"/>
+</caption>
+</field>
+<field h="9mm" name="txtSignatureYN" w="15.875mm" x="13.328mm" y="48.868mm">
+<ui>
+<numericEdit>
+<border>
+<edge stroke="lowered"/>
+</border>
+<margin/>
+</numericEdit>
+</ui>
+<font typeface="Myriad Pro"/>
+<margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+<para vAlign="middle"/>
+<caption reserve="1.2742mm">
+<para vAlign="middle"/>
+</caption>
+<event activity="initialize" name="event__initialize">
+<script contentType="application/x-javascript">if (signature != null) {
+    this.rawValue = 1;
+}
+
+</script>
+</event>
+</field>
+<subform h="41.143mm" w="190.554mm" x="1.173mm" y="2.788mm">
+<field h="9.283mm" name="DateField1" w="50.8mm" y="0mm">
+<ui>
+<dateTimeEdit>
+<border>
+<edge/>
+</border>
+<margin/>
+</dateTimeEdit>
+</ui>
+<font typeface="Myriad Pro"/>
+<margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+<para vAlign="middle"/>
+<value>
+<date/>
+</value>
+<caption reserve="10.9753mm">
+<para vAlign="middle"/>
+<value>
+<text>Дата:</text>
+</value>
+</caption>
+</field>
+<draw h="16.899mm" name="text_363" w="3.334458in" x="101.6mm" y="19.668mm">
+<ui>
+<textEdit/>
+</ui>
+<value>
+<text>Служи за уникално идентифициране на услугата при последващите действия по нейната обработка, заплащане и доставка (генерира се автоматично при подписване)</text>
+</value>
+<font baselineShift="0pt" size="8pt" typeface="Arial"/>
+<margin bottomInset="0.254mm" leftInset="0.508mm" rightInset="0.508mm" topInset="0.254mm"/>
+<para hAlign="center" lineHeight="15pt" marginLeft="0pt" marginRight="0pt" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" vAlign="middle"/>
+<assist>
+<speak disable="1"/>
+</assist>
+</draw>
+<field access="readOnly" h="6.72mm" name="formId" w="84.773mm" x="101.6mm" y="9.844mm">
+<ui>
+<textEdit>
+<border>
+<?templateDesigner StyleID aped2?>
+<edge/>
+</border>
+<margin/>
+</textEdit>
+</ui>
+<font size="8pt" typeface="Arial"/>
+<margin bottomInset="0mm" leftInset="0mm" rightInset="0mm" topInset="0mm"/>
+<para hAlign="center" vAlign="middle"/>
+<caption reserve="40.5471mm">
+<value>
+<text>Уникален номер на заявката:</text>
+</value>
+<para vAlign="middle"/>
+</caption>
+<assist>
+<toolTip>Служи за уникално идентифициране на услугата при последващите действия по нейната обработка, заплащане и доставка (генерира се автоматично при подписване)</toolTip>
+<speak priority="toolTip"/>
+</assist>
+<event activity="enter" name="event__enter">
+<script contentType="application/x-javascript">xfa.host.messageBox("Служи за уникално идентифициране на услугата при последващите действия по нейната обработка, заплащане и доставка (генерира се автоматично при подписване)");
+
+</script>
+</event>
+<bind match="none"/>
+</field>
+<field h="8.149mm" name="signature" w="55.348mm" x="130.175mm" y="0.019mm">
+<ui>
+<signature type="PDF1.6">
+<border>
+<?templateDesigner StyleID aped3?>
+<edge stroke="lowered"/>
+</border>
+<margin/>
+<manifest action="include" use="#ff448a8a-e4da-4e87-a51b-45d1df01fed7"/>
+</signature>
+</ui>
+<font typeface="Arial"/>
+<margin bottomInset="1mm" leftInset="0.508mm" rightInset="0.508mm" topInset="1mm"/>
+<para vAlign="middle"/>
+<caption reserve="15.4171mm">
+<para vAlign="middle"/>
+<value>
+<text>Подпис:</text>
+</value>
+</caption>
+<bind match="none"/>
+<assist>
+<speak disable="1"/>
+</assist>
+<event activity="preSign" name="event__preSign">
+<script contentType="application/x-javascript">
+this.parent.formId.rawValue = Date.now();
+</script>
+</event>
+</field>
+<subform h="9mm" name="StampIT" w="82.55mm" x="3.035mm" y="32.143mm">
+<field h="9mm" name="SignatureField1" w="28.575mm" x="53.975mm">
+<ui>
+<signature type="PDF1.6">
+<border presence="hidden"/>
+<margin/>
+<manifest action="include" use="#c2ac4768-67a7-45ab-9778-bce663ab68aa"/>
+</signature>
+</ui>
+<font size="6pt" typeface="Arial"/>
+<margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+<para vAlign="middle"/>
+<caption reserve="0.01in">
+<para vAlign="middle"/>
+</caption>
+<bind match="none"/>
+</field>
+<field h="9mm" locale="bg_BG" name="DateField2" w="38.1mm" x="15.875mm">
+<ui>
+<dateTimeEdit>
+<border presence="hidden"/>
+<margin/>
+</dateTimeEdit>
+</ui>
+<font size="6pt" typeface="Arial"/>
+<margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+<para vAlign="middle"/>
+<value>
+<date/>
+</value>
+<caption reserve="19.397mm">
+<font baselineShift="0pt" size="6pt" typeface="Arial"/>
+<para marginLeft="0pt" marginRight="0pt" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" vAlign="middle"/>
+<value>
+<text>Дата на създаване</text>
+</value>
+</caption>
+<format>
+<picture>date{DD.MM.YYYY 'г.'}</picture>
+</format>
+<validate>
+<picture>date{DD.MM.YYYY}</picture>
+</validate>
+</field>
+<field h="9mm" name="TextField1" w="15.875mm" x="0mm">
+<ui>
+<textEdit>
+<border presence="hidden"/>
+<margin/>
+</textEdit>
+</ui>
+<font size="6pt" typeface="Arial"/>
+<margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+<para vAlign="middle"/>
+<caption reserve="8.2023mm">
+<font baselineShift="0pt" size="6pt" typeface="Arial"/>
+<para marginLeft="0pt" marginRight="0pt" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" vAlign="middle"/>
+<value>
+<text>Версия</text>
+</value>
+</caption>
+</field>
+<?templateDesigner expand 1?>
+</subform>
+<?templateDesigner expand 1?>
+</subform>
+<?templateDesigner expand 1?>
+</subform>
+<proto/>
+<variables>
+<manifest id="ff448a8a-e4da-4e87-a51b-45d1df01fed7" name="lock">
+<ref>xfa[0].template[0].form1[0].#pageSet[0].Page1[0].metadataFields[0].title[0]</ref>
+<ref>xfa[0].template[0].form1[0].#pageSet[0].Page1[0].CurrentPage[0]</ref>
+<ref>xfa[0].template[0].form1[0].#pageSet[0].Page1[0].PageCount[0]</ref>
+<ref>xfa[0].template[0].form1[0].#subform[0].#subform[1].ddl_avtomobilnaAdm[0]</ref>
+<ref>xfa[0].template[0].form1[0].#subform[0].Subform2[0].txtТriImena[0]</ref>
+<ref>xfa[0].template[0].form1[0].#subform[0].Subform2[0].ddlNaselenoMyasto[0]</ref>
+<ref>xfa[0].template[0].form1[0].#subform[0].Subform2[0].txtUlica[0]</ref>
+<ref>xfa[0].template[0].form1[0].#subform[0].Subform2[0].txtNomerAdres[0]</ref>
+<ref>xfa[0].template[0].form1[0].#subform[0].Subform2[0].txtTelefon[0]</ref>
+<ref>xfa[0].template[0].form1[0].#subform[0].Subform2[0].Table1[0].Row1[0].TextField1[0]</ref>
+<ref>xfa[0].template[0].form1[0].#subform[0].Subform2[0].Table1[0].Row1[0].TextField1[1]</ref>
+<ref>xfa[0].template[0].form1[0].#subform[0].Subform2[0].Table1[0].Row2[0].TextField1[0]</ref>
+<ref>xfa[0].template[0].form1[0].#subform[0].Subform2[0].Table1[0].Row2[0].TextField1[1]</ref>
+<ref>xfa[0].template[0].form1[0].#subform[0].Subform2[0].Table1[0].Row3[0].TextField1[0]</ref>
+<ref>xfa[0].template[0].form1[0].#subform[0].Subform2[0].Table1[0].Row3[0].TextField1[1]</ref>
+<ref>xfa[0].template[0].form1[0].#subform[0].Subform2[0].Table1[0].Row4[0].TextField1[0]</ref>
+<ref>xfa[0].template[0].form1[0].#subform[0].Subform2[0].Table1[0].Row4[0].TextField1[1]</ref>
+<ref>xfa[0].template[0].form1[0].#subform[0].Subform2[0].Table1[0].Row5[0].TextField1[0]</ref>
+<ref>xfa[0].template[0].form1[0].#subform[0].Subform2[0].Table1[0].Row5[0].TextField1[1]</ref>
+<ref>xfa[0].template[0].form1[0].#subform[0].Subform2[0].Table1[0].Row6[0].TextField1[0]</ref>
+<ref>xfa[0].template[0].form1[0].#subform[0].Subform2[0].Table1[0].Row6[0].TextField1[1]</ref>
+<ref>xfa[0].template[0].form1[0].#subform[0].Subform2[0].Table1[0].Row7[0].TextField1[0]</ref>
+<ref>xfa[0].template[0].form1[0].#subform[0].Subform2[0].Table1[0].Row7[0].TextField1[1]</ref>
+<ref>xfa[0].template[0].form1[0].#subform[0].Subform2[0].Table1[0].Row8[0].TextField1[0]</ref>
+<ref>xfa[0].template[0].form1[0].#subform[0].Subform2[0].Table1[0].Row8[0].TextField1[1]</ref>
+<ref>xfa[0].template[0].form1[0].#subform[0].Subform2[0].Table1[0].Row9[0].TextField1[0]</ref>
+<ref>xfa[0].template[0].form1[0].#subform[0].Subform2[0].Table1[0].Row9[0].TextField1[1]</ref>
+<ref>xfa[0].template[0].form1[0].#subform[0].Subform2[0].chkPrilojenDokument[0]</ref>
+<ref>xfa[0].template[0].form1[0].#subform[0].Subform2[0].TextField2[0]</ref>
+<ref>xfa[0].template[0].form1[0].#subform[0].Subform2[0].chkPrilojenDokument[1]</ref>
+<ref>xfa[0].template[0].form1[0].#subform[0].Subform2[0].TextField2[1]</ref>
+<ref>xfa[0].template[0].form1[0].#subform[0].Subform2[0].chkPrilojenDokument[2]</ref>
+<ref>xfa[0].template[0].form1[0].#subform[0].Subform2[0].NumericField1[0]</ref>
+<ref>xfa[0].template[0].form1[0].#subform[0].Subform2[0].TextField2[2]</ref>
+<ref>xfa[0].template[0].form1[0].#subform[0].Subform2[0].chkPrilojenDokument[3]</ref>
+<ref>xfa[0].template[0].form1[0].#subform[0].Subform2[0].TextField3[0]</ref>
+<ref>xfa[0].template[0].form1[0].#subform[3].txtEDeliveryDestination[0]</ref>
+<ref>xfa[0].template[0].form1[0].#subform[3].txtEDeliverySource[0]</ref>
+<ref>xfa[0].template[0].form1[0].#subform[3].txtSignatureYN[0]</ref>
+<ref>xfa[0].template[0].form1[0].#subform[3].#subform[4].DateField1[0]</ref>
+<ref>xfa[0].template[0].form1[0].#subform[3].#subform[4].formId[0]</ref>
+<ref>xfa[0].template[0].form1[0].#subform[3].#subform[4].signature[0]</ref>
+</manifest>
+<manifest id="c2ac4768-67a7-45ab-9778-bce663ab68aa" name="lock1">
+<ref>xfa[0].template[0].form1[0].#subform[3].#subform[4].StampIT[0].SignatureField1[0]</ref>
+<ref>xfa[0].template[0].form1[0].#subform[3].#subform[4].StampIT[0].DateField2[0]</ref>
+<ref>xfa[0].template[0].form1[0].#subform[3].#subform[4].StampIT[0].TextField1[0]</ref>
+</manifest>
+<?templateDesigner expand 1?>
+</variables>
+<?templateDesigner Hyphenation excludeInitialCap:1, excludeAllCaps:1, wordCharCnt:7, remainCharCnt:3, pushCharCnt:3?>
+<desc>
+<text name="version">11.0.0.20130303.1.892433</text>
+</desc>
+<proto>
+<subform name="designer__stylesheet">
+<subform name="SubformStyle1" w="195.815mm">
+<border>
+<edge presence="hidden"/>
+</border>
+<margin bottomInset="0mm" leftInset="5mm" rightInset="5mm" topInset="5mm"/>
+</subform>
+<field h="9mm" name="DropdownListStyle1" w="159.152mm">
+<ui>
+<choiceList>
+<border>
+<?templateDesigner StyleID aped3?>
+<edge stroke="lowered"/>
+</border>
+<margin/>
+</choiceList>
+</ui>
+<font typeface="Arial"/>
+<margin bottomInset="1mm" leftInset="0.508mm" rightInset="0.508mm" topInset="1mm"/>
+<para vAlign="middle"/>
+<caption reserve="38.383mm">
+<font size="12pt" typeface="Arial"/>
+<para vAlign="middle"/>
+</caption>
+<border>
+<edge presence="hidden"/>
+</border>
+</field>
+<field minH="10mm" name="TextFieldStyle1" w="0mm">
+<ui>
+<textEdit>
+<border presence="hidden"/>
+<margin/>
+</textEdit>
+</ui>
+<font size="12pt" typeface="Arial"/>
+<margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+<para hAlign="center" vAlign="middle"/>
+<border>
+<edge/>
+<corner thickness="0.1778mm"/>
+</border>
+</field>
+<field minH="8.527mm" name="TextFieldStyle2" w="81.681mm">
+<ui>
+<textEdit>
+<border>
+<edge stroke="lowered"/>
+<?templateDesigner StyleID aped3?>
+</border>
+<margin/>
+</textEdit>
+</ui>
+<font typeface="Arial"/>
+<margin bottomInset="6mm" leftInset="0.508mm" rightInset="0.508mm" topInset="1mm"/>
+<para vAlign="middle"/>
+<caption reserve="24.3057mm">
+<font size="12pt" typeface="Arial"/>
+<para vAlign="middle"/>
+</caption>
+<border>
+<edge presence="hidden"/>
+</border>
+</field>
+<field minH="8.527mm" name="TextFieldStyle3" w="81.681mm">
+<ui>
+<textEdit>
+<border>
+<edge stroke="lowered"/>
+<?templateDesigner StyleID aped3?>
+</border>
+<margin/>
+</textEdit>
+</ui>
+<font typeface="Arial"/>
+<margin bottomInset="6mm" leftInset="0.508mm" rightInset="0.508mm" topInset="1mm"/>
+<para vAlign="middle"/>
+<caption reserve="24.3057mm">
+<font size="12pt" typeface="Arial"/>
+<para vAlign="middle"/>
+</caption>
+<border>
+<edge presence="hidden"/>
+</border>
+</field>
+<draw anchorType="middleCenter" h="10mm" minW="0mm" name="TextStyle1">
+<ui>
+<textEdit/>
+</ui>
+<font size="12pt" typeface="Arial"/>
+<margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+<para hAlign="center" vAlign="middle"/>
+<border>
+<edge/>
+<corner thickness="0.1778mm"/>
+</border>
+</draw>
+<field minH="10mm" name="TextFieldStyle4" w="0mm">
+<ui>
+<textEdit>
+<border presence="hidden"/>
+<margin/>
+</textEdit>
+</ui>
+<font size="12pt" typeface="Arial"/>
+<margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+<para hAlign="center" vAlign="middle"/>
+<border>
+<corner thickness="0.1778mm"/>
+<edge/>
+</border>
+</field>
+<field minH="10mm" name="TextFieldStyle5" w="30mm">
+<ui>
+<textEdit>
+<border presence="hidden"/>
+<margin/>
+</textEdit>
+</ui>
+<font size="12pt" typeface="Arial"/>
+<margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+<para vAlign="middle"/>
+<border>
+<edge/>
+<corner thickness="0.1778mm"/>
+</border>
+</field>
+<subform name="SubformStyle2" w="159.003mm">
+<border>
+<edge presence="hidden"/>
+</border>
+<margin bottomInset="0mm" leftInset="5mm" rightInset="5mm" topInset="5mm"/>
+</subform>
+<field minH="9mm" name="TextFieldStyle6" w="180.572mm">
+<ui>
+<textEdit>
+<border>
+<edge stroke="lowered"/>
+</border>
+<margin/>
+</textEdit>
+</ui>
+<font size="12pt" typeface="Arial"/>
+<margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+<para vAlign="middle"/>
+<caption reserve="65.0932mm">
+<para vAlign="middle"/>
+</caption>
+<border>
+<edge presence="hidden"/>
+</border>
+</field>
+<field h="5.164mm" name="TextFieldStyle7" w="38.1mm">
+<ui>
+<textEdit>
+<border presence="hidden">
+<?templateDesigner StyleID aped0?>
+</border>
+<margin/>
+</textEdit>
+</ui>
+<font size="8pt" typeface="Arial"/>
+<margin bottomInset="0mm" leftInset="0mm" rightInset="0mm" topInset="0mm"/>
+<para vAlign="middle"/>
+<caption reserve="5.8581mm">
+<para vAlign="middle"/>
+</caption>
+<border break="open">
+<edge presence="hidden">
+<color value="255,255,0"/>
+</edge>
+<corner presence="hidden" thickness="0.176mm">
+<color value="255,255,0"/>
+</corner>
+<fill/>
+</border>
+</field>
+<field h="5.164mm" name="TextFieldStyle8" w="38.1mm">
+<ui>
+<textEdit>
+<border presence="hidden">
+<?templateDesigner StyleID aped0?>
+</border>
+<margin/>
+</textEdit>
+</ui>
+<font size="8pt" typeface="Arial"/>
+<margin bottomInset="0mm" leftInset="0mm" rightInset="0mm" topInset="0mm"/>
+<para vAlign="middle"/>
+<caption reserve="5.8581mm">
+<para vAlign="middle"/>
+</caption>
+<border break="open">
+<edge presence="hidden">
+<color value="255,255,0"/>
+</edge>
+<corner presence="hidden" thickness="0.176mm">
+<color value="255,255,0"/>
+</corner>
+<fill/>
+</border>
+</field>
+</subform>
+</proto>
+<?templateDesigner expand 1?>
+<?renderCache.subset "Arial" 0 0 UTF-16 2 316 00030006000B000C000E000F0010001100120013001400150016001700180019001A001B001C001D002C0035003700380042004400450048004C004E004F005100560057023A023B023C023E023F0241024202440246024702480249024A024B024C024D025A025B025C025D025E025F0260026102620263026402650266026702680269026A026B026C026D026E026F027002710272027302740279028B?>
+<?renderCache.subset "Arial" 1 0 UTF-16 2 100 00030005000F023A023B023C023D023E023F0241024202450246024702480249024A024B024C024E024F0250025302540259?>
+<?renderCache.subset "Arial" 0 1 UTF-16 2 124 00030005000F00100011001D023C0241025A025B025C025D025E025F026002610262026402650266026702680269026A026B026C026D026E027102740279?>
+<?renderCache.subset "Myriad Pro" 0 0 UTF-16 2 52 0001001B0027003500450046004A004D00550059027A029602A8?>
+</subform>
+<?templateDesigner DefaultPreviewDynamic 1?>
+<?templateDesigner Grid show:1, snap:0, units:1, color:ff8080, origin:(0,0), interval:(79375,79375), objsnap:0, guidesnap:0, pagecentersnap:1005741420?>
+<?templateDesigner DefaultRunAt client?>
+<?PDFPrintOptions embedViewerPrefs 0?>
+<?PDFPrintOptions embedPrintOnFormOpen 0?>
+<?PDFPrintOptions scalingPrefs 0?>
+<?PDFPrintOptions enforceScalingPrefs 0?>
+<?PDFPrintOptions paperSource 0?>
+<?PDFPrintOptions duplexMode 0?>
+<?templateDesigner DefaultPreviewType interactive?>
+<?templateDesigner DefaultPreviewPagination simplex?>
+<?templateDesigner XDPPreviewFormat 20?>
+<?templateDesigner DefaultCaptionFontSettings face:Arial;size:12;weight:normal;style:normal?>
+<?templateDesigner DefaultValueFontSettings face:Arial;size:12;weight:normal;style:normal?>
+<?templateDesigner SavePDFWithLog 0?>
+<?templateDesigner DefaultLanguage JavaScript?>
+<?acrobat JavaScript strictScoping?>
+<?templateDesigner WidowOrphanControl 0?>
+<?templateDesigner FormTargetVersion 30?>
+<?templateDesigner Zoom 165?>
+<?templateDesigner SaveTaggedPDF 0?>
+<?templateDesigner SavePDFWithEmbeddedFonts 0?>
+<?templateDesigner Rulers horizontal:1, vertical:1, guidelines:1, crosshairs:0?>
+</template>
+<localeSet xmlns="http://www.xfa.org/schema/xfa-locale-set/2.7/">
+<locale desc="Bulgarian (Bulgaria)" name="bg_BG">
+<calendarSymbols name="gregorian">
+<monthNames>
+<month>януари</month>
+<month>февруари</month>
+<month>март</month>
+<month>април</month>
+<month>май</month>
+<month>юни</month>
+<month>юли</month>
+<month>август</month>
+<month>септември</month>
+<month>октомври</month>
+<month>ноември</month>
+<month>декември</month>
+</monthNames>
+<monthNames abbr="1">
+<month>I</month>
+<month>II</month>
+<month>III</month>
+<month>IV</month>
+<month>V</month>
+<month>VI</month>
+<month>VII</month>
+<month>VIII</month>
+<month>IX</month>
+<month>X</month>
+<month>XI</month>
+<month>XII</month>
+</monthNames>
+<dayNames>
+<day>неделя</day>
+<day>понеделник</day>
+<day>вторник</day>
+<day>сряда</day>
+<day>четвъртък</day>
+<day>петък</day>
+<day>събота</day>
+</dayNames>
+<dayNames abbr="1">
+<day>нд</day>
+<day>пн</day>
+<day>вт</day>
+<day>ср</day>
+<day>чт</day>
+<day>пт</day>
+<day>сб</day>
+</dayNames>
+<meridiemNames>
+<meridiem>AM</meridiem>
+<meridiem>PM</meridiem>
+</meridiemNames>
+<eraNames>
+<era>пр.н.е.</era>
+<era>н.е.</era>
+</eraNames>
+</calendarSymbols>
+<datePatterns>
+<datePattern name="full">DD MMMM YYYY, EEEE</datePattern>
+<datePattern name="long">DD MMMM YYYY</datePattern>
+<datePattern name="med">DD.MM.YYYY</datePattern>
+<datePattern name="short">DD.MM.YY</datePattern>
+</datePatterns>
+<timePatterns>
+<timePattern name="full">HH:MM:SS Z</timePattern>
+<timePattern name="long">HH:MM:SS</timePattern>
+<timePattern name="med">HH:MM:SS</timePattern>
+<timePattern name="short">HH:MM</timePattern>
+</timePatterns>
+<dateTimeSymbols>GanjkHmsSEDFwWxhKzZ</dateTimeSymbols>
+<numberPatterns>
+<numberPattern name="numeric">z,zz9.zzz</numberPattern>
+<numberPattern name="currency">$z,zz9.zz</numberPattern>
+<numberPattern name="percent">z,zz9%</numberPattern>
+</numberPatterns>
+<numberSymbols>
+<numberSymbol name="decimal">,</numberSymbol>
+<numberSymbol name="grouping"> </numberSymbol>
+<numberSymbol name="percent">%</numberSymbol>
+<numberSymbol name="minus">-</numberSymbol>
+<numberSymbol name="zero">0</numberSymbol>
+</numberSymbols>
+<currencySymbols>
+<currencySymbol name="symbol">BGN</currencySymbol>
+<currencySymbol name="isoname">BGN</currencySymbol>
+<currencySymbol name="decimal">,</currencySymbol>
+</currencySymbols>
+<typefaces>
+<typeface name="Myriad Pro"/>
+<typeface name="Minion Pro"/>
+<typeface name="Courier Std"/>
+<typeface name="Adobe Pi Std"/>
+<typeface name="Adobe Hebrew"/>
+<typeface name="Adobe Arabic"/>
+<typeface name="Adobe Thai"/>
+<typeface name="Kozuka Gothic Pro-VI M"/>
+<typeface name="Kozuka Mincho Pro-VI R"/>
+<typeface name="Adobe Ming Std L"/>
+<typeface name="Adobe Song Std L"/>
+<typeface name="Adobe Myungjo Std M"/>
+</typefaces>
+</locale>
+</localeSet>
+<xfa:datasets xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/">
+<xfa:data>
+<form1>
+<ddl_avtomobilnaAdm/>
+<Subform2>
+<txtТriImena/>
+<ddlNaselenoMyasto/>
+<txtUlica/>
+<txtNomerAdres/>
+<txtTelefon/>
+<Table1>
+<HeaderRow xfa:dataNode="dataGroup"/>
+<Row1>
+<TextField1/>
+<TextField1/>
+</Row1>
+<Row2>
+<TextField1/>
+<TextField1/>
+</Row2>
+<Row3>
+<TextField1/>
+<TextField1/>
+</Row3>
+<Row4>
+<TextField1/>
+<TextField1/>
+</Row4>
+<Row5>
+<TextField1/>
+<TextField1/>
+</Row5>
+<Row6>
+<TextField1/>
+<TextField1/>
+</Row6>
+<Row7>
+<TextField1/>
+<TextField1/>
+</Row7>
+<Row8>
+<TextField1/>
+<TextField1/>
+</Row8>
+<Row9>
+<TextField1/>
+<TextField1/>
+</Row9>
+</Table1>
+<chkPrilojenDokument>0</chkPrilojenDokument>
+<TextField2/>
+<chkPrilojenDokument>0</chkPrilojenDokument>
+<TextField2/>
+<chkPrilojenDokument>0</chkPrilojenDokument>
+<NumericField1/>
+<TextField2/>
+<chkPrilojenDokument>0</chkPrilojenDokument>
+<TextField3/>
+</Subform2>
+<txtEDeliveryDestination/>
+<txtEDeliverySource/>
+<txtSignatureYN>1.00000000</txtSignatureYN>
+<DateField1/>
+<StampIT>
+<DateField2>2018-12-15</DateField2>
+<TextField1>1</TextField1>
+</StampIT>
+</form1>
+</xfa:data>
+</xfa:datasets>
+<x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.2-c001 63.139439, 2011/06/07-10:39:26        ">
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+      <rdf:Description xmlns:xmp="http://ns.adobe.com/xap/1.0/" rdf:about="">
+         <xmp:MetadataDate>2019-01-29T09:21:24Z</xmp:MetadataDate>
+         <xmp:CreatorTool>Adobe LiveCycle Designer 11.0</xmp:CreatorTool>
+         <xmp:ModifyDate>2018-12-18T20:49:08+02:00</xmp:ModifyDate>
+         <xmp:CreateDate>2018-12-18T20:46:23+02:00</xmp:CreateDate>
+      </rdf:Description>
+      <rdf:Description xmlns:pdf="http://ns.adobe.com/pdf/1.3/" rdf:about="">
+         <pdf:Producer>Adobe LiveCycle Designer 11.0</pdf:Producer>
+      </rdf:Description>
+      <rdf:Description xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/" rdf:about="">
+         <xmpMM:DocumentID>uuid:09ae0633-7d6d-40d3-ad11-4ff14fb469b5</xmpMM:DocumentID>
+         <xmpMM:InstanceID>uuid:d204f8bf-950c-4259-bb23-2db1b09dc9ad</xmpMM:InstanceID>
+      </rdf:Description>
+      <rdf:Description xmlns:dc="http://purl.org/dc/elements/1.1/" rdf:about="">
+         <dc:format>application/pdf</dc:format>
+      </rdf:Description>
+      <rdf:Description xmlns:desc="http://ns.adobe.com/xfa/promoted-desc/" rdf:about="">
+         <desc:version rdf:parseType="Resource">
+            <rdf:value>11.0.0.20130303.1.892433</rdf:value>
+            <desc:ref>/template/subform[1]</desc:ref>
+         </desc:version>
+      </rdf:Description>
+   </rdf:RDF>
+</x:xmpmeta>
+<xfdf xmlns="http://ns.adobe.com/xfdf/" xml:space="preserve">
+<annots/>
+</xfdf>
+<form xmlns="http://www.xfa.org/schema/xfa-form/2.8/" checksum="WUb8Ds7YTsKT1sl0QR0WHQUJNF8=">
+<subform name="form1">
+<instanceManager name="_"/>
+<subform/>
+<instanceManager name="_"/>
+<subform>
+<field name="txtSignatureYN"/>
+<instanceManager name="_"/>
+<subform>
+<instanceManager name="_StampIT"/>
+<subform name="StampIT">
+<field access="readOnly" name="SignatureField1"/>
+<field access="readOnly" name="DateField2">
+<value override="1"/>
+</field>
+<field access="readOnly" name="TextField1">
+<value override="1"/>
+</field>
+</subform>
+</subform>
+</subform>
+<pageSet>
+<pageArea name="Page1">
+<field name="CurrentPage">
+<value>
+<float>1.00000000</float>
+</value>
+</field>
+<field name="PageCount">
+<value>
+<float>2.00000000</float>
+</value>
+</field>
+</pageArea>
+<pageArea name="Page1">
+<field name="CurrentPage">
+<value>
+<float>2.00000000</float>
+</value>
+</field>
+<field name="PageCount">
+<value>
+<float>2.00000000</float>
+</value>
+</field>
+</pageArea>
+</pageSet>
+</subform>
+</form>
+</xdp:xdp>

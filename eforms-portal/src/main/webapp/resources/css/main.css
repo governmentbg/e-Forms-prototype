@@ -1,0 +1,96 @@
+@font-face {
+	font-family: 'BloggerSans-Light';
+	src: url('../fonts/BloggerSans-Light.woff') format('woff'),
+		/* Pretty Modern Browsers */
+       url('../fonts/BloggerSans-Light.ttf') format('truetype'),
+		/* Safari, Android, iOS */
+       url('../fonts/BloggerSans-Light.svg#svgFontName') format('svg');
+	/* Legacy iOS */
+}
+
+body .ui-datatable td[role="gridcell"], body .ui-treetable td[role="gridcell"], .ui-dialog .ui-dialog-titlebar .ui-dialog-title {
+	font-family: 'BloggerSans-Light';
+}
+.ui-dialog .ui-dialog-titlebar .ui-dialog-title{
+	font-weight:bold;
+}
+.ui-fileupload-simple input[type="file"]:after{
+	 clear:all !important;
+}
+.custom-table th{
+	background: #ececec;
+}
+.ui-fileupload-simple .ui-fileupload-filename{
+	    word-break: break-all !important;
+}
+body {
+	font-family: 'BloggerSans-Light' !important;
+	font-size: 18px !important;
+}
+
+a, .exampleAll, button, p, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4,
+	.h5, .h6, label, li, body .ui-datatable th, body .ui-treetable th, br, b, strong {
+	font-family: 'BloggerSans-Light' !important;
+}
+
+.sidebar-toggle {
+	font: normal normal normal 14px/1 FontAwesome !important;
+}
+.ui-widget .ui-widget {
+    font-size: 16px;
+}
+.form-group, .row {
+	margin-bottom: 15px;
+	margin-top: 15px;
+}
+
+.modal-info .modal-body {
+	background-color: #fff !important;
+}
+
+.main-header .sidebar-toggle:before {
+	content: "" !important;
+}
+
+.instition-button {
+	width: 100% !important;
+}
+
+.login-box, .register-box {
+	margin: 7% auto;
+	background: #fff;
+	width: 50% !important;
+	padding: 2%;
+}
+
+.btn {
+	font-size: 18px;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+}
+
+.no-left-margin {
+	margin-left: 0 !important;
+}
+
+label {
+	display: inline-block;
+	max-width: 100%;
+	margin-bottom: 5px;
+	font-weight: 700;
+	font-size: 16px;
+	font-family: 'BloggerSans-Light' !important;
+}
+
+button, a {
+	font-family: 'BloggerSans-Light' !important;
+	font-size: 18px;
+}
+
+table a {
+	color: #333 !important;
+	font-family: 'BloggerSans-Light' !important;
+	font-size: 16px !important;
+}

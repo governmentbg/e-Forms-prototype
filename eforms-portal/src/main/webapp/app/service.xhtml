@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:sec="http://www.springframework.org/security/tags"
+	template="#{currentLayout.layout}">
+
+	<f:metadata>
+		<f:event type="preRenderComponent"
+			listener="#{serviceController.checkForMessages()}" />
+	</f:metadata>
+
+	<ui:define name="body">
+		<!-- Left side column. contains the logo and sidebar -->
+
+
+		<!-- Content Wrapper. Contains page content -->
+		<div class="content-wrapper">
+
+			<!-- Main content -->
+			<section class="content">
+				<section class="content-header"
+					style="margin-bottom: 1%; margin-top: -3%;">
+					<h1 style="text-align: center; margin-bottom: 2%;">
+						Избор
+						<h:graphicImage value="/images/arrow.png"
+							style="width:20px; margin-right: 1%; margin-left: 1%;" />
+						<h:graphicImage value="/images/1.png" style="width:3%" />
+						Избор на администрация
+						<h:graphicImage value="/images/arrow.png"
+							style="width:20px;   margin-right: 1%; margin-left: 1%;" />
+						<h:graphicImage value="/images/2.png" style="width:3%" />
+						Избор на услуга
+					</h1>
+
+				</section>
+				<h:form prependId="false">
+					<div class="row">
+
+						<div class="col-md-4">
+							<div class="box box-warning">
+								<p:panel styleClass="box-header with-border">
+									<h3>
+										<h:graphicImage value="/images/1.png" style="width:30px; " />
+										Избор на Администрация
+									</h3>
+									<p:selectOneListbox id="advanced" var="t" filter="true"
+										filterMatchMode="contains" converter="#{institutionConverter}"
+										value="#{serviceController.selectedInstitution}"
+										styleClass="inst-class">
+
+										<p:ajax event="click" update="instServicesPanel"
+											process="@this" />
+
+										<f:selectItems
+											value="#{serviceController.institutionsServices}" var="inst"
+											itemLabel="#{inst.institution.title}" itemValue="#{inst}" />
+
+										<p:column>
+											<h:outputText value="#{t.institution.title}" />
+										</p:column>
+									</p:selectOneListbox>
+								</p:panel>
+							</div>
+						</div>
+						<div class="col-md-8">
+							<div class="box box-primary">
+
+								<p:panel id="instServicesPanel"
+									styleClass="box-header with-border">
+									<h3>
+										<h:graphicImage value="/images/2.png" style="width:30px" />
+										Избор на услуга
+									</h3>
+
+									<p:selectOneListbox var="t" filter="true"
+										filterMatchMode="contains" converter="#{serviceConverter}"
+										value="#{serviceController.selectedService}"
+										styleClass="inst-class">
+
+										<p:ajax event="click" process="@this" update="@form"
+											listener="#{serviceController.selectService()}" />
+
+										<f:selectItems value="#{serviceController.services}"
+											var="serv" itemLabel="#{serv.shortName}" itemValue="#{serv}" />
+
+										<p:column>
+											<h:outputText value="#{t.shortName}" />
+										</p:column>
+									</p:selectOneListbox>
+
+
+
+									<!-- 									<p:repeat value="#{serviceController.services}" var="serv"
+										varStatus="status">
+
+										<p:commandButton id="dynaButton"
+											styleClass="institution-button" value="#{serv.shortName}"
+											action="#{serviceController.selectService(status.index)}"
+											process="@this" update="@form" />
+									</p:repeat>
+ -->
+								</p:panel>
+							</div>
+						</div>
+					</div>
+				</h:form>
+			</section>
+			<!-- /.content -->
+		</div>
+		<!-- /.content-wrapper -->
+		<!-- Add the sidebar's background. This div must be placed
+       immediately after the control sidebar -->
+		<div class="control-sidebar-bg"></div>
+
+		<!-- ./wrapper -->
+
+
+	</ui:define>
+</ui:composition>
