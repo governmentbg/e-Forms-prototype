@@ -27,15 +27,18 @@ import bg.bulsi.eforms.model.auth.USER_TYPE;
 @Controller("eauthController")
 @Scope(WebApplicationContext.SCOPE_REQUEST)
 public class EauthController implements Serializable {
+
 	private static final long serialVersionUID = 1L;
 
 	private Logger log = LoggerFactory.getLogger(getClass());
 
 	private AuthRqParams authRqParams;
 
+
 	public String gotoEauth() {
 		return "eauth/eauthRedirector.xhtml?faces-redirect=true";
 	}
+
 
 	public void generateSaml() {
 		if (!FacesContext.getCurrentInstance().isPostback()) {
@@ -47,6 +50,7 @@ public class EauthController implements Serializable {
 		}
 	}
 
+
 	public void processSamlResponse() {
 		if (!FacesContext.getCurrentInstance().isPostback()) {
 			Map<String, String> params = FacesContext.getCurrentInstance().getExternalContext()
@@ -55,11 +59,12 @@ public class EauthController implements Serializable {
 			String relayStateBase64 = params.get("RelayState");
 
 			AuthData authData = EAuthSamlParser.extractUserDetailsFromSamlRs(samlRsBase64, relayStateBase64);
-			log.debug(authData.toString());
+			log.info(authData.toString());
 
 			if (authData.getStatus() == AuthenticationUseCase.AUTHENTICATED_SUCCESSFULLY) {
-				EauthUserDetails user = new EauthUserDetails(authData.getUserData().getName(),
-						authData.getUserData().getEmail(), authData.getUserData().getEgn(), USER_TYPE.INDIVIDUAL);
+				EauthUserDetails user = new EauthUserDetails(	authData.getUserData().getName(),
+																authData.getUserData().getEmail(),
+																authData.getUserData().getEgn(), USER_TYPE.INDIVIDUAL);
 
 				HttpSession session = (HttpSession) FacesContext.getCurrentInstance().getExternalContext()
 						.getSession(true);
@@ -78,9 +83,11 @@ public class EauthController implements Serializable {
 		}
 	}
 
+
 	public AuthRqParams getAuthRqParams() {
 		return authRqParams;
 	}
+
 
 	public void setAuthRqParams(AuthRqParams authRqParams) {
 		this.authRqParams = authRqParams;

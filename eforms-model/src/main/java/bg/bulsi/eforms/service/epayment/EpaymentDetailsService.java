@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 
 import bg.bulsi.eforms.model.epayment.EpaymentUserDetails;
 import bg.bulsi.eforms.model.epayment.Eserviceadminuser;
-import bg.bulsi.eforms.repository.epayment.EserviceadminuserRepository;
+import bg.bulsi.eforms.model.epayment.repository.EserviceadminuserRepository;
 
 @Service
 public class EpaymentDetailsService implements UserDetailsService {

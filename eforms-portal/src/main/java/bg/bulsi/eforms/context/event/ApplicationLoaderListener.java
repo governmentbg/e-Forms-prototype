@@ -5,16 +5,20 @@ import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Component;
 
+import bg.bulsi.eforms.model.autofill.VwAutoFillFormsForUse;
+import bg.bulsi.eforms.model.autofill.repository.VwAutoFillFormsForUseRepository;
 import bg.bulsi.eforms.model.epayment.Eserviceadminuser;
 import bg.bulsi.eforms.model.epayment.VwDepartmentAisClients;
-import bg.bulsi.eforms.repository.epayment.EserviceadminuserRepository;
-import bg.bulsi.eforms.repository.epayment.VwDepartmentAisClientsRepository;
+import bg.bulsi.eforms.model.epayment.repository.EserviceadminuserRepository;
+import bg.bulsi.eforms.model.epayment.repository.VwDepartmentAisClientsRepository;
 
 @Component
 public class ApplicationLoaderListener implements ApplicationListener<ContextRefreshedEvent> {
 
 	private EserviceadminuserRepository eserviceRepository;
 	private VwDepartmentAisClientsRepository vwDepartmentAisClientsRepository;
+	private VwAutoFillFormsForUseRepository autofillFormsForUseRepository;
+
 
 	@Override
 	public void onApplicationEvent(ContextRefreshedEvent event) {
@@ -26,28 +30,21 @@ public class ApplicationLoaderListener implements ApplicationListener<ContextRef
 				initializeDatabaseWithMockData(context);
 			}
 
-			/*List<Eserviceadminuser> users = eserviceRepository.findAll();
-			for (Eserviceadminuser user : users) {
-				System.out.println(user.getUsername());
-				for (VwDepartmentAisClients dep : user.getDepartments()) {
-					System.out.println(dep.getDepartmentname() + " - " + dep.getAisname());
-				}
-			}*/
+			/*
+			 * List<Eserviceadminuser> users = eserviceRepository.findAll();
+			 * for (Eserviceadminuser user : users) {
+			 * System.out.println(user.getUsername());
+			 * for (VwDepartmentAisClients dep : user.getDepartments()) {
+			 * System.out.println(dep.getDepartmentname() + " - " + dep.getAisname());
+			 * }
+			 * }
+			 */
 
 		}
 	}
 
-	private void initializeDatabaseWithMockData(ApplicationContext context) {
-		Eserviceadminuser user = new Eserviceadminuser();
-		user.setEserviceadminuserid(1);
-		user.setUsername("emil");
-		user.setPasswordhash("AAqSAUis7KLsLOUcONqiLFe4sinSlpQaiuQeA5UN4A6Syj0PD+qCcTzcKXZfkagQuA==");
-		user.setPasswordsalt("xPaxnMA6niM6plvFlFgJ9Q==");
-		user.setName("Емил Дечев Денчовски");
-		user.setDepartmentid("1");
-		user.setIsactive(true);
 
-		eserviceRepository.save(user);
+	private void initializeDatabaseWithMockData(ApplicationContext context) {
 
 		this.vwDepartmentAisClientsRepository = context.getBean(VwDepartmentAisClientsRepository.class);
 		VwDepartmentAisClients department1 = new VwDepartmentAisClients();
@@ -60,6 +57,7 @@ public class ApplicationLoaderListener implements ApplicationListener<ContextRef
 		department1.setServiceprovideriban("BG80BNBG96611020345678");
 		department1.setServiceproviderbic("BNBGBGSF");
 		department1.setServiceproviderbank("БНБ");
+		department1.setEserviceclientid(null);
 
 		VwDepartmentAisClients department2 = new VwDepartmentAisClients();
 		department2.setDepartmentid(1);
@@ -71,8 +69,26 @@ public class ApplicationLoaderListener implements ApplicationListener<ContextRef
 		department2.setServiceprovideriban("BG80BNBG96611020345678");
 		department2.setServiceproviderbic("BNBGBGSF");
 		department2.setServiceproviderbank("Българска народна банка");
+		department2.setEserviceclientid(2);
 
 		vwDepartmentAisClientsRepository.save(department1);
 		vwDepartmentAisClientsRepository.save(department2);
+
+		Eserviceadminuser user = new Eserviceadminuser();
+		user.setEserviceadminuserid(1);
+		user.setUsername("emil");
+		user.setPasswordhash("AAqSAUis7KLsLOUcONqiLFe4sinSlpQaiuQeA5UN4A6Syj0PD+qCcTzcKXZfkagQuA==");
+		user.setPasswordsalt("xPaxnMA6niM6plvFlFgJ9Q==");
+		user.setName("Емил Дечев Денчовски");
+		user.setDepartmentid("1");
+		user.setIsactive(true);
+		user.setReferringeserviceclientid(2);
+
+		this.eserviceRepository.save(user);
+		
+		this.autofillFormsForUseRepository = context.getBean(VwAutoFillFormsForUseRepository.class);
+		VwAutoFillFormsForUse vwAutoFillForms = new VwAutoFillFormsForUse("100801ZVLNv01.pdf"); // Агенция за хората с увреждания
+
+		autofillFormsForUseRepository.save(vwAutoFillForms);
 	}
 }

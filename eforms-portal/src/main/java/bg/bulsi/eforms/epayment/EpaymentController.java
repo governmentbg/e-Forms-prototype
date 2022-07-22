@@ -25,9 +25,11 @@ import bg.bulsi.eforms.jsf.util.FacesMessageSeverity;
 import bg.bulsi.eforms.jsf.util.FacesUtils;
 import bg.bulsi.eforms.model.epayment.Epayment;
 import bg.bulsi.eforms.model.epayment.VwDepartmentAisClients;
+import bg.bulsi.eforms.model.epdaeu.AuditCsvEvent;
+import bg.bulsi.eforms.model.epdaeu.AuditCsvEventIdentifier;
 import bg.bulsi.epay.exception.ServiceDataException;
 import bg.bulsi.epay.resteasy.resquest.RestRequestImpl;
-import bg.bulsi.epay.util.Util;
+import bg.bulsi.epay.util.DateUtil;
 import bg.bulsi.epay.xjc.services.ApplicantUinTypeId;
 import bg.bulsi.epay.xjc.services.payment_json.request.PaymentRequestJson;
 import bg.bulsi.epay.xjc.services.payment_json.response.PaymentResponseJson;
@@ -44,20 +46,26 @@ public class EpaymentController implements Serializable {
 	private UserController userController;
 
 	private List<VwDepartmentAisClients> departments;
+	private VwDepartmentAisClients refferingDepartment;
 	private VwDepartmentAisClients selectedDepartment;
 
 	private Epayment epayment = new Epayment();
 	private PaymentResponseJson response = new PaymentResponseJson();
 	private String aisPaymentID = ""; // TODO get
 
+
 	@PostConstruct
 	public void init() {
+		refferingDepartment = userController.getAdmin().getEserviceadminuser().getDepartment();
 		departments = userController.getAdmin().getEserviceadminuser().getDepartments();
-		if (departments != null && !departments.isEmpty()) {
+		if (refferingDepartment != null) {
+			selectedDepartment = refferingDepartment;
+		} else if ((departments != null) && !departments.isEmpty()) {
 			selectedDepartment = departments.get(0);
-			populatePaymentData();
 		}
+		populatePaymentData();
 	}
+
 
 	public void populatePaymentData() {
 		if (selectedDepartment != null) {
@@ -66,6 +74,7 @@ public class EpaymentController implements Serializable {
 			epayment.setBankName(selectedDepartment.getServiceproviderbank());
 		}
 	}
+
 
 	public void registerPayment() {
 		RestRequestImpl ws = null;
@@ -94,15 +103,21 @@ public class EpaymentController implements Serializable {
 			msg = response.toString();
 			severity = FacesMessageSeverity.WARN;
 
-			log.debug(msg);
+			log.info(msg);
 
 			if (response.getAcceptedReceiptJson() != null) {
 				severity = FacesMessageSeverity.INFO;
 				String paymentCode = getPaymentCodeWs(ws, response);
 				if (paymentCode == null) {
-					FacesUtils.addGlobalMessage(FacesMessageSeverity.ERROR, "Възникна проблем при извличане на код за плащане");
+					FacesUtils.addGlobalMessage(FacesMessageSeverity.ERROR,
+							"Възникна проблем при извличане на код за плащане");
 					return;
 				}
+				log.debug("audit csv: ", DateUtil.timestamp.format(new Date()),
+						AuditCsvEvent.REGISTER_PAYMENT.getEvent(),
+						AuditCsvEventIdentifier.PAYMENT_CODE.getIdentifier(), paymentCode, epayment.buildFullName(),
+						epayment.getIdentifier(), selectedDepartment.getDepartmentname(),
+						selectedDepartment.getAisname(), epayment.getSumToPay());
 				registerMsgInEDelivery(paymentCode);
 				epayment = new Epayment();
 				populatePaymentData();
@@ -119,6 +134,7 @@ public class EpaymentController implements Serializable {
 
 	}
 
+
 	private String getPaymentCodeWs(RestRequestImpl ws, PaymentResponseJson response) {
 		String code = null;
 		try {
@@ -132,17 +148,19 @@ public class EpaymentController implements Serializable {
 		return code;
 	}
 
+
 	private void registerMsgInEDelivery(String paymentCode) {
 		try {
-			String msg = "По заявената от Вас услуга {0} дължите {1} лева. Заявената сума можете да видите в средата на плащане https://pay.egov.bg/. Код за плащане {2}";
-
 			ObjectFactory of = new ObjectFactory();
 			IEDeliveryIntegrationService wsEdelivery = EdeliveryClient.initWs();
 
 			DcMessageDetails message = of.createDcMessageDetails();
 			message.setTitle(of.createDcMessageTitle("Дължимо плащане"));
-			message.setMessageText(of.createDcMessageDetailsMessageText(
-					MessageFormat.format(msg, epayment.getAppNumber(), epayment.getSumToPay(), paymentCode)));
+			String administration = selectedDepartment.getDepartmentname() + " - " + selectedDepartment.getAisname();
+			String msg = MessageFormat.format(messageInEDelivery(), epayment.getAppNumber(),
+					administration, epayment.getSumToPay(), paymentCode);
+			log.info("msg: [{}]", msg);
+			message.setMessageText(of.createDcMessageDetailsMessageText(msg));
 
 			EProfileType receiverType = epayment.getIsIndividual() ? EProfileType.PERSON : EProfileType.LEGAL_PERSON;
 			String receiverUniqueIdentifier = epayment.getIsIndividual() ? epayment.getEgn() : epayment.getCompanyEik();
@@ -163,13 +181,16 @@ public class EpaymentController implements Serializable {
 		}
 	}
 
+
 	public Epayment getEpayment() {
 		return epayment;
 	}
 
+
 	public void setEpayment(Epayment epayment) {
 		this.epayment = epayment;
 	}
+
 
 	private PaymentRequestJson fillPaymentResponseJson(Epayment epayment) {
 
@@ -210,24 +231,38 @@ public class EpaymentController implements Serializable {
 		rqJson.setServiceProviderBIC(epayment.getBic());
 		rqJson.setServiceProviderIBAN(epayment.getIban());
 
-		rqJson.setPaymentReferenceDate(Util.sdf.format(new Date()));
+		rqJson.setPaymentReferenceDate(DateUtil.sdf.format(new Date()));
 		rqJson.setPaymentReferenceType(epayment.getPaymentReferenceType());
 		// rqJson.setExpirationDate("2018-12-30");
 
 		return rqJson;
 	}
 
+
+	private static String messageInEDelivery() {
+		String message = "\t Здравейте г-не/г-жо, \n" +
+				"\t По заявената от Вас услуга с Уникален идентификационен номер {0} към {1} дължите сума в размер на {2} лева. Заявената сума можете да видите в средата за електронно плащане https://pay.egov.bg/ и да я заплатите чрез удобен за Вас платежен инструмент. Достъп до средата за електронно плащане можете да осъществите и чрез код за плащане {3}. Ако вече сте заплатили посочената по-горе заявена сума, не е необходимо да предприемате допълнителни действия. \n" +
+				"\t При необходимост от допълнителна информация не се колебайте да се свържете с нас на телефон  0700 20 341, \n" +
+				"\t Това съобщение e изпратено от Системата за еФорми, като част от процеса по заявяване, заплащане и предоставяне на електронни административни услуги и не е необходимо да отговаряте! \n ";
+
+		return message;
+	}
+
+
 	public VwDepartmentAisClients getSelectedDepartment() {
 		return selectedDepartment;
 	}
+
 
 	public void setSelectedDepartment(VwDepartmentAisClients selectedDepartment) {
 		this.selectedDepartment = selectedDepartment;
 	}
 
+
 	public List<VwDepartmentAisClients> getDepartments() {
 		return departments;
 	}
+
 
 	public void setDepartments(List<VwDepartmentAisClients> departments) {
 		this.departments = departments;

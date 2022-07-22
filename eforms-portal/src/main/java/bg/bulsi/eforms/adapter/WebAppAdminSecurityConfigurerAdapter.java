@@ -1,5 +1,7 @@
 package bg.bulsi.eforms.adapter;
 
+import java.nio.charset.StandardCharsets;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -9,6 +11,8 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.web.filter.CharacterEncodingFilter;
 
 import bg.bulsi.eforms.model.auth.ROLES;
 import bg.bulsi.eforms.service.epayment.EpaymentDetailsService;
@@ -20,12 +24,17 @@ public class WebAppAdminSecurityConfigurerAdapter extends WebSecurityConfigurerA
 	@Autowired
 	private EpaymentDetailsService epaymentDetailsService;
 
+
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 
-		http.antMatcher("/admin/**").authorizeRequests().anyRequest().hasRole(ROLES.ADMIN.name());
+		http.antMatcher("/admin/**")
+				.authorizeRequests().anyRequest()
+				.hasRole(ROLES.ADMIN.name());
 
-		http.formLogin() //
+		http.addFilterBefore(new CharacterEncodingFilter(StandardCharsets.UTF_8.name()),
+				UsernamePasswordAuthenticationFilter.class) // utf-8 filter request username/password
+				.formLogin() //
 				.loginPage("/admin/login.xhtml") //
 				.loginProcessingUrl("/admin/login.xhtml")//
 				.defaultSuccessUrl("/admin/payment_registration.xhtml") //
@@ -41,18 +50,19 @@ public class WebAppAdminSecurityConfigurerAdapter extends WebSecurityConfigurerA
 		/*
 		 * http.antMatcher("/protected/**").authorizeRequests().anyRequest().
 		 * hasRole(ROLES.ADMIN.name());
-		 * 
+		 *
 		 * http.formLogin() // .loginPage("/protected/login.xhtml") //
 		 * .loginProcessingUrl("/protected/login.xhtml")//
 		 * .defaultSuccessUrl("/protected/index.xhtml") //
 		 * .failureUrl("/protected/login.xhtml").permitAll();//
-		 * 
+		 *
 		 * http.logout() // .logoutUrl("/protected/logout") //
 		 * .logoutSuccessUrl("/protected/login.xhtml"); //
-		 * 
+		 *
 		 * // http.anonymous().disable(); http.csrf().disable();
 		 */
 	}
+
 
 	@Bean
 	public DaoAuthenticationProvider authenticationProvider() {
@@ -62,10 +72,12 @@ public class WebAppAdminSecurityConfigurerAdapter extends WebSecurityConfigurerA
 		return authProvider;
 	}
 
+
 	@Bean
 	public PasswordEncoder encoder() {
 		return new EpaymentPasswordEncoder();
 	}
+
 
 	@Autowired
 	public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {

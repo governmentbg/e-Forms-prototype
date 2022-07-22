@@ -16,6 +16,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.JpaVendorAdapter;
@@ -27,7 +28,9 @@ import org.springframework.transaction.PlatformTransactionManager;
 import bg.bulsi.eforms.conf.context.WebApplicationInitializer;
 
 @Configuration
-@EnableJpaRepositories(basePackages = "bg.bulsi.eforms")
+@EnableJpaRepositories(basePackages = "bg.bulsi.eforms.model.epayment",
+	entityManagerFactoryRef = "entityManagerFactory",
+	transactionManagerRef = "transactionManager")
 public class Jpa {
 
 	private static final Log log = LogFactory.getLog(Jpa.class);
@@ -35,25 +38,28 @@ public class Jpa {
 	@Value("${epayments.db.type}")
 	private String dbType;
 
+
+	@Primary
 	@Bean
 	@Autowired
-	public LocalContainerEntityManagerFactoryBean entityManagerFactory( //
-			DataSource dataSource, //
-			JpaVendorAdapter jpaVendorAdapter, //
-			@Value("#{packagesToScan}") String[] packagesToScan, //
-			@Value("#{sharedCacheMode}") SharedCacheMode sharedCacheMode, //
+	public LocalContainerEntityManagerFactoryBean entityManagerFactory(
+			DataSource dataSource,
+			JpaVendorAdapter jpaVendorAdapter,
+			@Value("#{packagesToScan}") String[] packagesToScan,
+			@Value("#{sharedCacheMode}") SharedCacheMode sharedCacheMode,
 			@Value("#{jpaPropertiesMap}") Map<String, ?> jpaPropertiesMap) {
 
-		log.info("Loading JPA EntityManagerFactory.");
+		log.info("Loading Main JPA EntityManagerFactory.");
 		LocalContainerEntityManagerFactoryBean bean = new LocalContainerEntityManagerFactoryBean();
 		bean.setDataSource(dataSource);
 		bean.setJpaVendorAdapter(jpaVendorAdapter);
-		bean.setPackagesToScan(packagesToScan);
+		bean.setPackagesToScan("bg.bulsi.eforms.model.epayment"); // override: packagesToScan(def: "bg.bulsi.eforms")
 		bean.setSharedCacheMode(sharedCacheMode);
 		bean.setJpaPropertyMap(jpaPropertiesMap);
 		bean.afterPropertiesSet();
 		return bean;
 	}
+
 
 	/**
 	 * {@link JpaTransactionManager} also supports direct DataSource access
@@ -65,16 +71,19 @@ public class Jpa {
 	 * DataSourceUtils.getConnection(javax.sql.DataSource) or going through a
 	 * TransactionAwareDataSourceProxy). Note that this requires a
 	 * vendor-specific JpaDialect to be configured
-	 * 
+	 *
 	 * @param entityManagerFactory
 	 * @return
 	 */
+
+	@Primary
 	@Bean
 	@Autowired
 	public PlatformTransactionManager transactionManager(EntityManagerFactory entityManagerFactory) {
-		log.info("Loading JPA Transaction Management.");
+		log.info("Loading Main JPA Transaction Management.");
 		return new JpaTransactionManager(entityManagerFactory);
 	}
+
 
 	/*
 	 * DEFINITIONS
@@ -85,6 +94,7 @@ public class Jpa {
 		return WebApplicationInitializer.class.getAnnotation(ComponentScan.class).basePackages();
 	}
 
+
 	@Bean
 	public Database jpaVendorDatabase() {
 		// return Database.POSTGRESQL;
@@ -94,38 +104,49 @@ public class Jpa {
 		return Database.SQL_SERVER;
 	}
 
+
 	@Bean
 	public Boolean generateDdl() {
 		return Boolean.TRUE;
 	}
+
 
 	@Bean
 	public Boolean showSql() {
 		return Boolean.TRUE;
 	}
 
+
 	@Bean
 	public SharedCacheMode sharedCacheMode() {
 		return SharedCacheMode.ENABLE_SELECTIVE;
 	}
+
 
 	/*
 	 * HIBERNATE
 	 */
 
 	public enum Hbm2Ddl {
-		NONE("none"), VALIDATE("validate"), UPDATE("update"), CREATE("create"), CREATE_AND_DROP("create-drop");
+		NONE("none"),
+		VALIDATE("validate"),
+		UPDATE("update"),
+		CREATE("create"),
+		CREATE_AND_DROP("create-drop");
 
 		private String value;
+
 
 		private Hbm2Ddl(String value) {
 			this.value = value;
 		}
 
+
 		public String getValue() {
 			return value;
 		}
 	}
+
 
 	@Bean
 	@Autowired
@@ -144,6 +165,7 @@ public class Jpa {
 		return adapter;
 	}
 
+
 	@Bean
 	public String jpaVendorDialect() {
 		// return PostgreSQL94Dialect.class.getName();
@@ -152,6 +174,7 @@ public class Jpa {
 		}
 		return SQLServer2012Dialect.class.getName();
 	}
+
 
 	@Bean
 	public Map<String, ?> jpaPropertiesMap() {

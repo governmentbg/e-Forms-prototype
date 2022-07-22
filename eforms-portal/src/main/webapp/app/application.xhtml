@@ -9,8 +9,19 @@
 	template="#{currentLayout.layout}">
 
 	<ui:define name="body">
-
-
+		
+		<script type="text/javascript">
+    		//<![CDATA[
+			function start() {
+    			PF('statusDialog').show();
+			}
+ 
+			function stop() {
+    			PF('statusDialog').hide();
+			}
+    		//]]>
+		</script> 
+ 
 		<!-- Left side column. contains the logo and sidebar -->
 
 
@@ -71,16 +82,17 @@
 									Вашия компютър файловете без да променяте имената им.</li>
 								<li><b>2. Попълване на документи</b></li>
 								<li>2.1. Отворете документа с Adobe Reader.</li>
-								<li>2.2. Попълнете всички полета с изискваната информация.
-								</li>
-								<li>2.3. Подпишете документа с Вашия Квалифицира електронен
-									подпис (КЕП)</li>
+								<li>2.2. Попълнете всички полета с изискваната информация.</li>
+								<li>2.3. След попълване на полетата натиснете с мишката в поле Запази 
+									или ако доставчика на услугата изисква подпис подпишете документа 
+									с Вашия Квалифициран електронен подпис (КЕП) за да се генерира 
+									уникален номер на заявката.</li>
 								<li>2.4. Проверете наличието на генериран номер в полето
 									"Уникален номер на заявка". Този номер е идентифициращ
 									заявената от вас услуга и по него ще можете да проверявате
 									статуса на завлението в системите еВръчване и еПлащане. Ако в
 									това поле липсва генериран номер моля уверете се, че правилно
-									сте изпълнили предходните стъпки .</li>
+									сте изпълнили предходните стъпки.</li>
 
 								<li>2.5. Запишете направените промени във файла, без да
 									променяте името му.</li>
@@ -97,8 +109,6 @@
 
 
 								<li><b>4. Заявяване на услугата</b></li>
-
-
 
 								<li>Чрез натискане на бутона "Подаване на заявление",
 									попълнените и прикачени от Вас документи ще бъдат връчени на
@@ -166,13 +176,21 @@
 										</p:column>
 
 										<p:column headerText="Изтегли документ">
-											<i class="fa fa-fw fa-download"
-												style="word-break: break-all;"><h:outputText
+											<i style="word-break: break-all;"><h:outputText
 													value="#{doc.fileName}" escape="false" /></i>
 											<br />
-											<a href="download_file.xhtml?id=#{doc.id}"
-												class="ui-fileupload-simple ui-widget">Изтегли</a>
-
+											
+											<p:commandButton value="Изтегли" immediate="true" onclick="PF('dlg1').show();"  icon="fa fa-fw fa-download"
+												rendered="#{serviceController.fileAvailableForAutofill(doc.fileName)}"
+												actionListener="#{serviceController.prepareFileDownload(doc.id, doc.fileName, doc.mimeType)}" />
+											
+											<p:commandButton value="Изтегли" icon="fa fa-fw fa-download" immediate="true" ajax="false" 
+												rendered="#{!serviceController.fileAvailableForAutofill(doc.fileName)}" onclick="PrimeFaces.monitorDownload(start, stop);"
+												actionListener="#{serviceController.prepareFileDownload(doc.id, doc.fileName, doc.mimeType)}"
+												action="#{serviceController.prepareFileDownloadSave(false)}">
+												<p:fileDownload value="#{serviceController.file}" />
+											</p:commandButton>
+											
 										</p:column>
 
 										<p:column headerText="Прикачи документ">
@@ -183,6 +201,7 @@
 												<br />
 											</div>
 										</p:column>
+											
 									</p:dataTable>
 									<p style="margin-top: 3%">
 										<b>2. Съпътстващи документи: </b>
@@ -200,13 +219,21 @@
 										</p:column>
 
 										<p:column headerText="Изтегли документ">
-											<i class="fa fa-fw fa-download"
-												style="word-break: break-all;"><h:outputText
+											<i style="word-break: break-all;"><h:outputText
 													value="#{doc.fileName}" escape="false" /></i>
 											<br />
-											<a href="download_file.xhtml?id=#{doc.id}"
-												class="ui-fileupload-simple ui-widget">Изтегли</a>
-
+											
+											<p:commandButton value="Изтегли" immediate="true" onclick="PF('dlg1').show();"  icon="fa fa-fw fa-download"
+												rendered="#{serviceController.fileAvailableForAutofill(doc.fileName)}"
+												actionListener="#{serviceController.prepareFileDownload(doc.id, doc.fileName, doc.mimeType)}" />
+											
+											<p:commandButton value="Изтегли" icon="fa fa-fw fa-download" immediate="true" ajax="false" 
+												rendered="#{!serviceController.fileAvailableForAutofill(doc.fileName)}" onclick="PrimeFaces.monitorDownload(start, stop);"
+												actionListener="#{serviceController.prepareFileDownload(doc.id, doc.fileName, doc.mimeType)}"
+												action="#{serviceController.prepareFileDownloadSave(false)}">
+												<p:fileDownload value="#{serviceController.file}" />
+											</p:commandButton>
+											
 										</p:column>
 
 										<p:column headerText="Прикачи документ">
@@ -232,7 +259,7 @@
 								<div class="form-group">
 									<p>
 										<i>При необходимост, имате възможност да прикачите
-											допълнителен документ или архив от докуемтни към заявлението.</i><br />
+											допълнителен документ или архив от документи към заявлението.</i><br />
 										<i>Допустими файлови формати: document, rtf, pdf, jpeg,
 											png, tiff, gif, rar, zip. <br />
 										</i> <i>Допустим размер: до 10МБ</i>
@@ -261,7 +288,17 @@
 							<div class="box-body">След прилагане на всички необходими
 								документи вашето заявление ще бъде изпратено към системата за
 								електронно връчване</div>
-
+							<div>
+								<p:outputLabel for="profileId" value="Профил в еВръчване *" rendered="#{not empty serviceController.profiles}" />
+								<p:spacer width="5" />
+								<p:selectOneMenu id="profileId" rendered="#{not empty serviceController.profiles}"
+									value="#{serviceController.selectedProfileIdentifier}"  
+									style="width:30%; display:inline-block;">
+									<f:selectItem itemLabel="Избери" itemValue="#{null}" />
+									<f:selectItems value="#{serviceController.profiles}"
+										var="profile" itemLabel="#{profile.name}" itemValue="#{profile.identifier}" />
+								</p:selectOneMenu>
+							</div>
 						</div>
 						<!-- /.box-body -->
 
@@ -274,11 +311,62 @@
 						<!-- /.box-body -->
 
 
-
 						<!-- /.box -->
 					</h:form>
 				</div>
+ 			
+				<p:dialog header="Потвърждение" widgetVar="dlg1" modal="true" height="200" closable="false" draggable="false" fitViewport="false" resizable="false"
+					appendTo="@(body)">
+					<h:form>	
+						<div class="box-header with-border">
+							<h3>Искате ли да се извърши автоматично попълване на документа?</h3>
+						</div>
 
+						<br />
+
+						<p:commandButton value="Да" process="@this" update="@this"
+							icon="fa fa-fw fa-edit" oncomplete="PF('dlg1').hide(); PF('dlg2').show();" />
+		
+						<p:spacer width="15" />
+		
+						<p:commandButton value="Не" icon="fa fa-fw fa-remove" immediate="true" ajax="false" 
+							onclick="PF('dlg1').hide(); PrimeFaces.monitorDownload(start, stop);"
+							actionListener="#{serviceController.prepareFileDownloadSave(false)}">
+							<p:fileDownload value="#{serviceController.file}" />
+						</p:commandButton>
+						
+					</h:form>
+				</p:dialog>
+
+
+				<p:dialog header="Декларация" widgetVar="dlg2" modal="true" height="250" width="80%" closable="false" draggable="false" fitViewport="false" resizable="false"
+					appendTo="@(body)">
+					<h:form>
+		
+					<div class="box-header with-border">
+						<h3>Декларирам че съм съгласен Държавна агенция „Електронно управление“ от мое име да изтегли от базите данни на администрацията наличните и необходими данни във връзка с
+							попълването на заявлението за избраната от мен услуга</h3>
+					</div>
+
+					<br />
+		
+					<p:commandButton value="Декларирам" icon="fa fa-fw fa-check" immediate="true" ajax="false" onclick="PF('dlg2').hide(); PrimeFaces.monitorDownload(start, stop);"
+						actionListener="#{serviceController.prepareFileDownloadSave(true)}">
+						<p:fileDownload value="#{serviceController.file}" />
+					</p:commandButton>
+		
+					<p:spacer width="15" />
+					
+					<p:commandButton value="Не съм съгласен" icon="fa fa-fw fa-remove" immediate="true" ajax="false" 
+						onclick="PF('dlg2').hide(); PrimeFaces.monitorDownload(start, stop);"
+						actionListener="#{serviceController.prepareFileDownloadSave(false)}">
+						<p:fileDownload value="#{serviceController.file}" />
+					</p:commandButton>
+		
+					</h:form>
+				</p:dialog>
+	
+	
 			</section>
 			<!-- /.content -->
 		</div>

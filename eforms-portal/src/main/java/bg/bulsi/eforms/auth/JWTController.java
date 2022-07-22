@@ -16,16 +16,18 @@ import bg.bulsi.eforms.jsf.util.FacesUtils;
 @Controller("jwtController")
 @Scope(WebApplicationContext.SCOPE_REQUEST)
 public class JWTController implements Serializable {
+
 	private static final long serialVersionUID = 1L;
 
 	private Logger log = LoggerFactory.getLogger(getClass());
+
 
 	public void redirectToApp() {
 		if (!FacesContext.getCurrentInstance().isPostback()) {
 			Map<String, String> params = FacesContext.getCurrentInstance().getExternalContext()
 					.getRequestParameterMap();
 			String token = params.get("token");
-			log.debug("TOKEN: " + token);
+			log.info("TOKEN: " + token);
 
 			FacesUtils.redirect("/app/service.xhtml?token=" + token);
 		}

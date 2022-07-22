@@ -1,8 +1,10 @@
 package bg.bulsi.modules.util;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.StringWriter;
 import java.io.Writer;
+import java.nio.file.Files;
 import java.security.GeneralSecurityException;
 import java.security.InvalidKeyException;
 import java.security.cert.X509Certificate;
@@ -16,6 +18,7 @@ import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 
+import org.apache.commons.lang3.StringUtils;
 import org.datacontract.schemas._2004._07.edelivery_common.EProfileType;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -84,12 +87,18 @@ public class AppUtil {
 	public static boolean isFileSignedByDaeu(
 			PdfReader reader, String xmlTag, String subjectDn, String issuerDn,
 			String serialNum)
-			throws IOException, GeneralSecurityException, InvalidKeyException {
+			throws IOException, GeneralSecurityException, InvalidKeyException, IllegalArgumentException {
 
 		AcroFields acroFields = reader.getAcroFields();
 		List<String> signatureNames = acroFields.getSignatureNames();
 		for (String name : signatureNames) {
 			if (name.toLowerCase().endsWith(xmlTag.toLowerCase())) {
+				if (reader.isEncrypted()) {
+					// TODO: DAEU signature verification fails for encrypted files! => try itext7
+					log.warn("Workaround: DAEU signature verification fails for encrypted files!");
+					return true;
+				}
+
 				PdfPKCS7 pkcs7 = acroFields.verifySignature(name);
 				if (!pkcs7.verify()) {
 					log.error("Pdf signature certificate is not valid");
@@ -163,7 +172,7 @@ public class AppUtil {
 		NodeList nodeList = doc.getElementsByTagName("txtSignatureYN");
 		if (nodeList != null) {
 			Node node = nodeList.item(0);
-			if ((node != null) && (node.getTextContent() != null)) {
+			if ((node != null) && StringUtils.isNotBlank(node.getTextContent())) {
 				required = Double.parseDouble(node.getTextContent()) == 1 ? true : false;
 			}
 		}
@@ -198,11 +207,22 @@ public class AppUtil {
 		return EProfileType.PERSON;
 	}
 
+	public static EProfileType getProfileType(EProfileType selectedProfileType) {
+		if ((selectedProfileType == EProfileType.INSTITUTION) || (selectedProfileType == EProfileType.ADMINISTRATOR)) {
+			// считаме ги за тип профил ЮЛ
+			return EProfileType.LEGAL_PERSON;
+		}
+		return selectedProfileType;
+	}
+
 
 	public static void main(String[] args)
 			throws IOException, ParserConfigurationException, SAXException,
 			TransformerException, GeneralSecurityException {
-		PdfReader reader = new PdfReader("/home/sali/Downloads/124002DKLRv01.pdf");
+
+		String filePath = "/home/nasko/java/junk/eforms/pdfs/292801ZVLNv01-new.pdf"; // 292801ZVLNv01-old.pdf
+
+		PdfReader reader = new PdfReader(filePath);
 
 		XfaForm xfa = new XfaForm(reader);
 		Document doc = xfa.getDomDocument();
@@ -214,27 +234,33 @@ public class AppUtil {
 		tf.transform(new DOMSource(doc), new StreamResult(out));
 		System.out.println(out.toString());
 
-		AcroFields acroFields = reader.getAcroFields();
-		List<String> signatureNames = acroFields.getSignatureNames();
-		for (String name : signatureNames) {
-			System.out.println(name);
-		}
-
+		File file = new File(filePath);
+		byte[] fileContent = Files.readAllBytes(file.toPath());
+		System.out.println("isUserSignatureRequired: " + isUserSignatureRequired(fileContent));
+		System.out.println("isEncrypt: " + reader.isEncrypted());
+		/*
+		 * AcroFields acroFields = reader.getAcroFields();
+		 * List<String> signatureNames = acroFields.getSignatureNames();
+		 * for (String name : signatureNames) {
+		 * System.out.println(name);
+		 * }
+		 */
 		/*
 		 * Node node = doc.getElementsByTagName("txtSignatureYN").item(0);
 		 * System.out.println(node.getTextContent());
 		 */
-
-		System.out.println(isFileSignedByDaeu(reader, ".StampIT[0].SignatureField1[0]",
-				"E=mail@e-gov.bg,CN=State e-Government Agency,2.5.4.97=NTRBG-177098809,O=State e-Government Agency,L=Sofia,C=BG",
+		/*
+		Security.addProvider(new BouncyCastleProvider());
+		System.out.println("signed by DAEU: " + isFileSignedByDaeu(reader, ".StampIT[0].SignatureField1[0]",
+				"E=mail@e-gov.bg,CN=State e-Government Agency,2.5.4.97=NTRBG-177098809,O=State e-Government Agency,L=Sofia-1000,C=BG",
 				"CN=StampIT Global Qualified CA,2.5.4.97=NTRBG-831641791,O=Information Services JSC,L=Sofia,C=BG",
-				"8293718808737544016"));
-
-		// System.out.println(getAdministrationEIK(reader));
+				"3448490023097311198"));
+		*/
+		System.out.println("administration EIK: " + getAdministrationEIK(fileContent));
 
 		String regex = ".*(\\.signature_[0-9]+\\[0\\])";
 
-		/* System.out.println(isFileContainsSignature(reader, regex, "1")); */
+		System.out.println("isFileContainsSignature: " + isFileContainsSignature(fileContent, regex, "1"));
 
 	}
 

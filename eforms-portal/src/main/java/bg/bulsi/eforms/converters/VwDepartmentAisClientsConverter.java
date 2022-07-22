@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 
 import bg.bulsi.eforms.jsf.util.FacesUtils;
 import bg.bulsi.eforms.model.epayment.VwDepartmentAisClients;
-import bg.bulsi.eforms.repository.epayment.VwDepartmentAisClientsRepository;
+import bg.bulsi.eforms.model.epayment.repository.VwDepartmentAisClientsRepository;
 
 @Component("vwDepartmentAisClientsConverter")
 public class VwDepartmentAisClientsConverter implements Converter, Serializable {

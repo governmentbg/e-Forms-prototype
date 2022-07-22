@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="INFO">
+	<!-- Logging Properties -->
+	<Properties>
+		<Property name="log.pattern">%d{yyyy-MM-dd HH:mm:ss} %-5p - %m%n</Property>
+		<!-- <Property name="log.dir">/home/nasko/java/srv/tomcat9/logs</Property> -->
+		<Property name="log.dir">${sys:catalina.home}/logs</Property>
+		<Property name="csv.header">Дата,Тип операция,Тип идентификатор,Идентификатор,Име заявител,ЕГН заявител,Администрация,Вид услуга,Сума\n</Property>
+	</Properties>
+
+	<!-- Appenders -->
+	<Appenders>
+		<Console name="console" target="SYSTEM_OUT" follow="true">
+			<PatternLayout pattern="${log.pattern}" />
+		</Console>
+		<RollingFile name="file" fileName="${log.dir}/audit.csv" filePattern="${log.dir}/audit-%d{yyyy-MM}-%i.csv.gz" ignoreExceptions="true">
+			<LevelRangeFilter minLevel="DEBUG" maxLevel="DEBUG" onMatch="ACCEPT" onMismatch="DENY" />
+			<CsvParameterLayout delimiter="," charset="UTF-8" header ="${csv.header}" quoteMode="NON_NUMERIC" />
+			<Policies>
+				<OnStartupTriggeringPolicy />
+				<SizeBasedTriggeringPolicy size="10MB" />
+				<!-- Once every month because of filePattern format -->
+				<TimeBasedTriggeringPolicy interval="1" />
+			</Policies>
+			<DefaultRolloverStrategy max="10" />
+		</RollingFile>
+	</Appenders>
+
+	<Loggers>
+		<Logger name="org.hibernate" level="warn">
+			<AppenderRef ref="console" />
+		</Logger>
+		<Logger name="org.springframework.beans" level="warn">
+			<AppenderRef ref="console" />
+		</Logger>
+		<Logger name="org.springframework.binding" level="warn">
+			<AppenderRef ref="console" />
+		</Logger>
+		<Logger name="org.springframework.jdbc" level="warn">
+			<AppenderRef ref="console" />
+		</Logger>
+		<Logger name="org.springframework.transaction" level="warn">
+			<AppenderRef ref="console" />
+		</Logger>
+		<Logger name="org.springframework.orm" level="warn">
+			<AppenderRef ref="console" />
+		</Logger>
+		<Logger name="org.springframework.data" level="warn">
+			<AppenderRef ref="console" />
+		</Logger>
+		<Logger name="org.springframework.web" level="warn">
+			<AppenderRef ref="console" />
+		</Logger>
+		<Logger name="org.springframework.faces" level="warn">
+			<AppenderRef ref="console" />
+		</Logger>
+		<Logger name="org.springframework.security" level="warn">
+			<AppenderRef ref="console" />
+		</Logger>
+		<Logger name="org.hibernate.type" level="warn">
+			<AppenderRef ref="console" />
+		</Logger>
+		<Logger name="com.soahouse.adminfaces" level="error">
+			<AppenderRef ref="console" />
+		</Logger>
+		<Logger name="org.apache.cxf" level="warn">
+			<AppenderRef ref="console" />
+		</Logger>
+		<Logger name="com.sun.xml" level="warn">
+			<AppenderRef ref="console" />
+		</Logger>
+		<Logger name="org.apache.http" level="warn">
+			<AppenderRef ref="console" />
+		</Logger>
+		<Logger name="bg.bulsi.epdaeu" level="warn">
+			<AppenderRef ref="console" />
+		</Logger>
+		<Logger name="bg.bulsi.eforms" level="debug" additivity="false">
+			<AppenderRef ref="console" />
+			<AppenderRef ref="file" />
+		</Logger>
+
+		<!-- Root Logerr -->
+		<Root level="INFO" additivity="false">
+			<AppenderRef ref="console" />
+			<AppenderRef ref="file" />
+		</Root>
+	</Loggers>
+
+</Configuration>
